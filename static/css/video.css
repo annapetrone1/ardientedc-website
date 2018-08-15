@@ -1,0 +1,17 @@
+#video {
+  position: fixed;
+  right: 0;
+  top: 0;
+  min-width: 100%;
+  width: auto;
+  min-height: 90vh;
+  /* this height doesnt really matter, what matters is the offset of #content*/
+  z-index: -1;
+}
+
+#video-logo {
+  position: fixed;
+  top: 25%;
+  right: 35%;
+  width: 60vh;
+}

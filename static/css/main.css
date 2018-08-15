@@ -9,18 +9,59 @@ html, body {
 }
 
 header {
-  background-color: #12101b;
+  background-color: black;
   height: 8vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 0;
 }
 
-#about-us {
-  height: 60vh;
-  min-height: 400px;
+main {
+  height: 500vh;
+  position: relative;
+  top: 8vh
 }
 
-section {
+#content {
+  position: relative;
+  background: rgba(250, 250, 250);
+  width: 100%;
+  top: 90vh;
+  /* keep top at 90*/
+  height: 410vh;
+  /* make this equal to main height - 90 */
+}
+
+#content section {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#content .separator {
+  height: 32px;
+  background-color: rgb(250, 250, 250);
+}
+
+.cool-black {
+  background-color: #12101b;
+  color: white;
+}
+
+#about-us {
+  height: 700px;
+}
+
+#honors-night {
+  height: 720px;
+}
+
+#pro-team {
+  height: 760px;
+}
+
+#student-team {
+  height: 740px;
 }
