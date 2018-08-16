@@ -91,6 +91,10 @@ section {
   padding-top: 0
 }
 
+.text-box span {
+  font-weight: bold
+}
+
 .event-info form {
   text-align: left;
 }
