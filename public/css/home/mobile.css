@@ -1,0 +1,8 @@
+@media only screen and (max-device-width: 1366px) {
+  #video, #video-logo, .separator, #honors-night {
+    display: none;
+  }
+  #content {
+    top: 0vh;
+  }
+}

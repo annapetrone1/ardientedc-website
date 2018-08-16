@@ -1,0 +1,28 @@
+body {
+  height: 450vh;
+}
+
+header {
+  height: 5vh;
+}
+
+footer {
+  height: 12vh;
+}
+
+#video-container {
+  min-height: 98vh;
+}
+
+#about-us {
+  height: 90vh;
+}
+
+#honors-night {
+  height: 80vh;
+  color: white;
+}
+
+#pro-team, #student-team {
+  height: 95vh;
+}
