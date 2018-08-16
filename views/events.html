@@ -4,10 +4,14 @@
   <head>
     <meta charset="utf-8">
     <title>Ardiente | Events</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/events/main.css">
+    <link rel="icon" type="image/png" href="img/favicon.gif">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Montserrat|M+PLUS+1p" rel="stylesheet">
   </head>
 
-  <body class="cool-black">
-    <header class="cool-black">
+  <body>
+    <header>
       <nav>
         <a href="/">Home</a> |
         <a href="/events">Events</a> |
@@ -19,46 +23,68 @@
       <section>
         <h1>Upcoming Events</h1>
 
-        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-          <input type="hidden" name="cmd" value="_s-xclick">
-          <table>
-            <tr>
-              <td><input type="hidden" name="on0" value="Select your pass">Select your pass</td>
-            </tr>
-            <tr>
-              <td><select name="os0">
-        	<option value="Workshop + Social">Workshop + Social $25.00 USD</option>
-        	<option value="Social Only">Social Only $20.00 USD</option>
-        </select> </td>
-            </tr>
-          </table>
-          <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-        ">
-          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-        </form>
+        <article class="event">
+          <h3>Ardiente Dance Company Pres. Ernesto & Denisse - IROKO from NYC!</h3>
+          <div class="event-contents">
+
+            <div class="panel event-pic">
+              <img src="img/iroko-event-alternate.jpg" alt="Ardiente welcomes Iroko Sept 14!">
+            </div>
+            <div class="panel event-info">
+              <h4>Description</h4>
+              <div class="text-box">
+                <p>
+                  That’s right! <a href="https://www.facebook.com/ardientedc/" target="_blank">Ardiente Dance Company</a> is proud to announce that we’ll be having <a href="https://www.facebook.com/ErnestoandDenisse/" target="_blank">Ernesto Bulnes and Denisse Cambria</a>                  as well as their newly formed team Irôko teaching, performing and social dancing Friday, September 14th!</p>
+
+                <p>Don’t miss out on witnessing this bad ass, FRESH team based out of the salsa mecca, NEW YORK CITY! The team is comprised of SEASONED PERFORMERS, STRONG COMPETITORS, HIGH-CLASS INSTRUCTORS, THE WORKS! Make sure to get your tickets ASAP!
+                  This event is gonna be fire!</p>
+
+                <p>
+                  <emph>Friday, September 14, 2018</emph>, join Ardiente Dance Company for a night of dance with a wonderful workshop and performance by Ernesto & Denisse's amazing team, IROKO! DJ Renzo will be on the 1's and 2's all night long playing the
+                  jams.
+                </p>
+
+                <p>Workshop: 9-10pm Social: 10pm Performances: 11:30pm
+                </p>
+
+              </div>
+              <h4>Choose your pass</h4>
+              <div class="buttons">
+
+                <form class="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <table>
+                    <tr>
+                      <td><input type="hidden" name="on0" value="Choose your pass">
+                        <!--<h4>Choose your pass</h4>--></td>
+                    </tr>
+                    <tr>
+                      <td><select name="os0">
+            <option value="Workshop + Social">Workshop + Social $25.00 USD</option>
+            <option value="Social Only">Social Only $20.00 USD</option>
+            </select> </td>
+                    </tr>
+                  </table>
+                  <input type="hidden" name="currency_code" value="USD">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+            ">
+                  <input type="image" class="icons" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+                <p class="facebook">
+                  <a href="https://www.facebook.com/events/456828728120264/" target="_blank">
+                  <img src="img/facebook-icon.png" alt="RSVP on Facebook" width=30px> RSVP on Facebook!
+                </a>
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </article>
 
       </section>
 
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick">
-        <table>
-          <tr>
-            <td><input type="hidden" name="on0" value="Choose your pass">Choose your pass</td>
-          </tr>
-          <tr>
-            <td><select name="os0">
-        <option value="Workshop + Social">Workshop + Social $25.00 USD</option>
-        <option value="Social Only">Social Only $20.00 USD</option>
-      </select> </td>
-          </tr>
-        </table>
-        <input type="hidden" name="currency_code" value="USD">
-        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-      ">
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-      </form>
+
       <section>
         <h1>Past Events</h1>
 
