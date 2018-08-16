@@ -18,9 +18,17 @@ header {
 }
 
 main {
-  height: 500vh;
+  height: 590vh;
   position: relative;
   top: 8vh
+}
+
+footer {
+  height: 8vh;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  background-color: red
 }
 
 #content {
@@ -29,7 +37,7 @@ main {
   width: 100%;
   top: 90vh;
   /* keep top at 90*/
-  height: 410vh;
+  height: 500vh;
   /* make this equal to main height - 90 */
 }
 
@@ -38,11 +46,13 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 2%;
 }
 
 #content .separator {
-  height: 32px;
+  height: 8px;
   background-color: rgb(250, 250, 250);
+  padding: 0;
 }
 
 .cool-black {
@@ -56,10 +66,44 @@ main {
 
 #honors-night {
   height: 720px;
+  color: white;
+}
+
+#honors-night article {
+  position: relative;
+  top: 30%;
+}
+
+#honors-night p {
+  display: block;
+  text-align: center;
+  font-family: 'Dancing Script', cursive, Times;
+  font-size: 60px;
+}
+
+#honors-night p.headline {
+  text-transform: uppercase;
+  font-size: 80px;
+  font-family: 'Lora', sans-serif;
 }
 
 #pro-team {
-  height: 760px;
+  height: 740px;
+}
+
+#pro-team article {
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#pro-team article.pro-bio {
+  width: 35%;
+  margin-right: 2%;
+}
+
+#pro-team article.slides {
+  width: 60%
 }
 
 #student-team {

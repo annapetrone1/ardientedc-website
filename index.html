@@ -6,13 +6,24 @@
     <title>Ardiente Dance Company</title>
     <link rel="stylesheet" href="static/css/main.css">
     <link rel="stylesheet" href="static/css/video.css">
+    <link rel="stylesheet" href="static/css/slides.css">
     <link rel="icon" type="image/png" href="static/img/favicon.gif">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Dancing+Script" rel="stylesheet">
 
+    <!--
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    -->
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/slides.js"></script>
 
     <script type="text/javascript">
+      var slideIndex;
       $(document).ready(function() {
+        console.log('DOM loaded');
         document.querySelector('video').playbackRate = 0.5;
+        slideIndex = 1;
+        showSlides(slideIndex);
+
       })
     </script>
   </head>
@@ -35,19 +46,51 @@
           <p>Lorem ipsum...</p>
         </section>
         <section class="separator"></section>
-        <section id="honors-night" style="background-image: url('static/img/honors-night.jpg')"></section>
+        <section id="honors-night" style="background-image: url('static/img/honors-night.jpg')">
+          <article>
+            <p class="headline">WINNER: Best New Salsa Team</p>
+            <p>DC Latin Honors 2017</p>
+          </article>
+
+        </section>
 
         <section class="separator"></section>
         <section id="pro-team" class="cool-black">
-          <h1>Professional Choreography</h1>
+          <article class="pro-bio">
+            <h1>Professional Choreography</h1>
+          </article>
+          <article class="slides slideshow-container">
+            <!-- Slideshow container -->
+
+
+            <div class="mySlides fade">
+              <img src="static/img/slides-ladies.png">
+            </div>
+
+            <div class="mySlides fade">
+              <img id="chicago" src="static/img/slides-chicago.png">
+            </div>
+
+            <div class="mySlides fade">
+              <img src="static/img/slides-houston.png">
+            </div>
+
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </article>
+
         </section>
-        <section id="student-team" style="background-image: url('static/img/student-team.jpg')">
+        <section id="student-team" class="cool-black" style="background-image: url('static/img/student-team.jpg')">
           <h1>Ardiente Student Team</h1>
           <p>Lorem ipsum...</p>
         </section>
       </div>
 
     </main>
+    <footer>
+    </footer>
   </body>
 
 </html>
