@@ -7,15 +7,15 @@
   justify-content: center;
   font-size: 48px;*/
   overflow: hidden;
+  min-height: 98vh;
 }
 
 #video {
   position: fixed;
-  right: 0;
+  /*right: 0;*/
   top: 0;
   min-width: 100%;
-  width: auto;
-  min-height: 90vh;
+  min-height: 100%;
   /* this height doesnt really matter, what matters is the offset of #content*/
   z-index: -1;
 }
