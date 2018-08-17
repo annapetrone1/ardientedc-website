@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/home/slides.css">
     <link rel="stylesheet" href="css/home/mobile.css">
     <link rel="icon" type="image/png" href="img/favicon.gif">
-    <link href="https://fonts.googleapis.com/css?family=Lora|Dancing+Script|M+PLUS+1p|Alegreya+Sans+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Dancing+Script|M+PLUS+1p|Alegreya+Sans+SC|Raleway" rel="stylesheet">
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/slides.js"></script>
@@ -22,10 +22,10 @@
         document.querySelector('video').playbackRate = 0.5;
 
         setTimeout(function() {
-          $('#video-logo img').fadeIn(2000);
+          $('#video-logo img').fadeTo(2000, 0.75);
         }, 1000)
         setTimeout(function() {
-          $('#video-logo p').fadeIn(1000);
+          $('#video-logo p').fadeTo(1000, 0.7);
         }, 2000)
         slideIndex = 1;
         showSlides(slideIndex);
@@ -63,11 +63,14 @@
       </div>
       <div id="content">
         <section class="separator"></section>
-        <section id="" style="background-image: url('img/about-us.jpg')">
+        <section id="about-us" style="background-image: url('img/about-us.jpg'); opacity: .5">
           <img id="overlay1" src="img/logo-overlay-white.gif">
+        </section>
+        <div id="about-us-text" class="fg">
           <h1>DC's Rising Salsa Company</h1>
           <p>About Ardiente...</p>
-        </section>
+        </div>
+
         <section class="separator"></section>
         <section id="honors-night" style="background-image: url('img/honors-night.jpg')">
           <article>

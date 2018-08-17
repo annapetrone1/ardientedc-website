@@ -14,7 +14,7 @@ footer {
   min-height: 98vh;
 }
 
-#about-us {
+#about-us, #about-us-screen {
   height: 90vh;
   overflow: hidden;
 }
