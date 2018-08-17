@@ -3,19 +3,28 @@ body {
 }
 
 header {
-  height: 5vh;
+  max-height: 5vh;
 }
 
 footer {
   height: 12vh;
 }
 
-#video-container {
+#video-container, #video-screen {
   min-height: 98vh;
 }
 
 #about-us {
   height: 90vh;
+  overflow: hidden;
+}
+
+#overlay1, #overla2 {
+  /* this height should be higher than the #about-us height
+  so that the logo is cropped*/
+  height: 140vh;
+  /* hop much the top part is clipped*/
+  top: -10vh;
 }
 
 #honors-night {

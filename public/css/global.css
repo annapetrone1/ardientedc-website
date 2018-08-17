@@ -3,6 +3,16 @@
   color: white;
 }
 
+.dc {
+  /*Font for "Dance Company"*/
+  font-family: 'Alegreya Sans SC'
+}
+
+.fg {
+  /* foreground */
+  z-index: 2;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,17 +27,20 @@ body {
 }
 
 header {
-  background-color: black;
-  width: 100%;
   position: fixed;
   top: 0;
-  z-index: 0;
+  padding: 12px
 }
 
 footer {
-  width: 100%;
   position: relative;
   bottom: 0;
+}
+
+header, footder {
+  width: 100%;
+  background-color: black;
+  z-index: 5;
 }
 
 nav {

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/home/slides.css">
     <link rel="stylesheet" href="css/home/mobile.css">
     <link rel="icon" type="image/png" href="img/favicon.gif">
-    <link href="https://fonts.googleapis.com/css?family=Lora|Dancing+Script|M+PLUS+1p" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Dancing+Script|M+PLUS+1p|Alegreya+Sans+SC" rel="stylesheet">
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/slides.js"></script>
@@ -20,6 +20,13 @@
       $(document).ready(function() {
         console.log('DOM loaded');
         document.querySelector('video').playbackRate = 0.5;
+
+        setTimeout(function() {
+          $('#video-logo img').fadeIn(2000);
+        }, 1000)
+        setTimeout(function() {
+          $('#video-logo p').fadeIn(1000);
+        }, 2000)
         slideIndex = 1;
         showSlides(slideIndex);
 
@@ -46,25 +53,33 @@
         <video id="video" class="" muted preload="none" autoplay="autoplay" loop="loop" poster="img/video-poster.png">
          <source id="mp4" src="video/ardiente-capital-congress.mp4" type="video/mp4">
          </video>
-        <img id="video-logo" src="img/full-logo-white.gif">
+        <div id="video-logo" class="fg">
+          <img src="img/full-logo-white.gif" height=100%>
+          <p class="dc">Dance Company</p>
+        </div>
+      </div>
+      <div id="video-screen">
+
       </div>
       <div id="content">
         <section class="separator"></section>
-        <section id="about-us" style="background-image: url('img/about-us.jpg')">
+        <section id="" style="background-image: url('img/about-us.jpg')">
+          <img id="overlay1" src="img/logo-overlay-white.gif">
           <h1>DC's Rising Salsa Company</h1>
-          <p>Lorem ipsum...</p>
+          <p>About Ardiente...</p>
         </section>
         <section class="separator"></section>
         <section id="honors-night" style="background-image: url('img/honors-night.jpg')">
           <article>
             <p class="headline"><i>WINNER:</i> Team of the Year</p>
-            <p>DC Latin Honors Night 2017</p>
+            <p class="cursive">DC Latin Honors Night 2017</p>
           </article>
 
         </section>
 
         <section class="separator"></section>
         <section id="pro-team" class="cool-black">
+          <!--<img id="overlay2" src="img/logo-overlay-black.gif">-->
           <article class="pro-bio">
             <h1>Professional Choreography</h1>
           </article>

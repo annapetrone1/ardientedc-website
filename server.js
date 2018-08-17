@@ -28,7 +28,7 @@ app.get('/events', (req, res) => {
   res.sendFile(__dirname+'/views/events.html');
 });
 
-app.listen(3000, () => {
-  console.log('Listening on http://localhost:3000');
+app.listen(4000, () => {
+  console.log('Listening on http://localhost:4000');
   // open('http://localhost:' + config.port);
 });

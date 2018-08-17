@@ -14,6 +14,10 @@
   padding: 2%;
 }
 
+#content section p {
+  z-index: 2;
+}
+
 #content .separator {
   height: 8px;
   background-color: rgb(250, 250, 250);
@@ -21,6 +25,13 @@
 }
 
 #about-us {}
+
+#overlay1, #overlay2 {
+  position: relative;
+  opacity: .5;
+  display: block;
+  margin: 0 auto;
+}
 
 #honors-night {}
 
@@ -31,10 +42,13 @@
   top: 30%;
 }
 
+.cursive {
+  font-family: 'Dancing Script', cursive, Times;
+}
+
 #honors-night p {
   display: block;
   text-align: center;
-  font-family: 'Dancing Script', cursive, Times;
   font-size: 60px;
 }
 

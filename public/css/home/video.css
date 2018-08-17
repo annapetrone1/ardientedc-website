@@ -9,20 +9,46 @@
   overflow: hidden;
 }
 
-#video {
+#video, #video-screen {
   position: fixed;
   /*right: 0;*/
   top: 0;
-  min-width: 100%;
+  right: -5vh;
+  min-width: 110%;
   min-height: 100%;
   /* this height doesnt really matter, what matters is the offset of #content*/
+}
+
+#video {
   z-index: -1;
+}
+
+#video-screen {
+  background-color: black;
+  opacity: .4;
 }
 
 #video-logo {
   position: relative;
-  top: 50%;
-  right: 50%;
-  width: 60vh;
-  z-index: 10;
+  top: 20vh;
+  height: 40vh;
+  max-width: 50vw;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  /*z-index: 10;*/
+}
+
+#video-logo * {
+  display: none;
+  /*hide the logo at first*/
+}
+
+#video-logo img {
+  opacity: 80%;
+}
+
+#video-logo p {
+  font-size: 40px;
+  color: white;
 }
