@@ -5,17 +5,40 @@ body, html {
 .parallax {
   border: 1px solid red;
   /* The image used */
-  background-image: url("img_parallax.jpg");
   /* Set a specific height */
   height: 500px;
   /* Create the parallax scrolling effect */
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: fixed;
+  top: 0
+}
+
+#about-us {
+  overflow: hidden;
 }
 
 #about-us-text {
-  background-color: purple;
-  height: 300px
+  background-color: rgba(255, 255, 255, 0);
+  height: 900px;
+  position: relative;
+  top: 500px;
+  border: 1px solid purple
+}
+
+#overlay1 {
+  position: relative;
+  opacity: .3;
+  display: block;
+  margin: 0 auto;
+}
+
+#overlay1 {
+  /* this height should be higher than the #about-us height
+  so that the logo is cropped*/
+  height: 140vh;
+  /* hop much the top part is clipped*/
+  top: -20vh;
 }

@@ -1,5 +1,7 @@
 body {
-  height: 450vh;
+  /*height: 450vh;*/
+  /*  height: 190vh;*/
+  overflow-x: hidden;
 }
 
 header {
@@ -8,6 +10,10 @@ header {
 
 footer {
   height: 12vh;
+}
+
+#content {
+  height: 100vh;
 }
 
 #video-container, #video-screen {

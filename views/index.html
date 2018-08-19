@@ -23,10 +23,13 @@
 
         setTimeout(function() {
           $('#video-logo img').fadeTo(2000, 0.75);
-        }, 1000)
+        }, 1000);
         setTimeout(function() {
           $('#video-logo p').fadeTo(1000, 0.7);
-        }, 2000)
+        }, 2000);
+        setTimeout(function() {
+          $('button[name="enter"]').fadeTo(1000, 0.7);
+        }, 3000)
         slideIndex = 1;
         showSlides(slideIndex);
 
@@ -36,6 +39,13 @@
           plusSlides(1)
         }, 1000);
 
+        /*$('#enter button').on('click', function() {
+          console.log('enter button clicked');
+          $('#about-us').animate({
+            position: 'fixed',
+            top: 0
+          });
+        })*/
       })
     </script>
   </head>
@@ -49,41 +59,45 @@
       </nav>
     </header>
     <main>
-      <div id="video-container">
+      <div id="video-container" class="top">
         <video id="video" class="" muted preload="none" autoplay="autoplay" loop="loop" poster="img/video-poster.png">
          <source id="mp4" src="video/ardiente-capital-congress.mp4" type="video/mp4">
          </video>
         <div id="video-logo" class="fg">
           <img src="img/full-logo-white.gif" height=100%>
           <p class="dc">Dance Company</p>
+          <!--<p id="enter"><button type="button" name="enter">ENTER</button></p>-->
         </div>
       </div>
       <div id="video-screen">
 
       </div>
+
+
+
+
       <div id="content">
         <section class="separator"></section>
-        <div id="about-us-container">
-          <div id="about-us" class="parallax" style="background-image: url('img/about-us.jpg'); opacity: .5">
-            <img id="overlay1" src="img/logo-overlay-white.gif">
 
-          </div>
-          <div id="about-us-text">
-            <h1><span>DC's</span> <span>Rising</span> <span>Salsa</span> <span>Company</span></h1>
-            <article>
-              <div id="about-us-text-box">
-                <h2>About Ardiente</h2>
-                <p>The name is Spanish for <b>passionate</b>, but in the DMV, <i>Ardiente</i> has become synonymous with precision, musicality, and style.</p>
-                <p>The team was founded in 2016 by six young, dedicated dancers with over 10 years of experience in creating choreography, performing and teaching Latin dance.</p>
-                <p> Although all Ardiente dancers come from different backgrounds, they are brought together by their passion for dance. The goal of Ardiente Dance Project is to introduce a fresh new perspective to the dance community by expressing everyone's
-                  unique and energetic style.</p>
-              </div>
-            </article>
+        <div id="about-us" class="top" style="background-image: url('img/about-us.jpg');">
+          <!-- opacity: .5" -->
+          <!--<img id="meridian" src="img/about-us.jpg">-->
+          <img id="overlay1" src="img/logo-overlay-white.gif">
 
-          </div>
         </div>
+        <div id="about-us-text">
+          <h1><span>DC's</span> <span>Rising</span> <span>Salsa</span> <span>Company</span></h1>
+          <article>
+            <div id="about-us-text-box">
+              <h2>About Ardiente</h2>
+              <p>The name is Spanish for <b>passionate</b>, but in the DMV, <i>Ardiente</i> has become synonymous with precision, musicality, and style.</p>
+              <p>The team was founded in 2016 by six young, dedicated dancers with over 10 years of experience in creating choreography, performing and teaching Latin dance.</p>
+              <p> Although all Ardiente dancers come from different backgrounds, they are brought together by their passion for dance. The goal of Ardiente Dance Project is to introduce a fresh new perspective to the dance community by expressing everyone's
+                unique and energetic style.</p>
+            </div>
+          </article>
 
-
+        </div>
         <section class="separator"></section>
         <section id="honors-night" style="background-image: url('img/honors-night.jpg')">
           <article>
