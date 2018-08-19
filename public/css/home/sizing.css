@@ -14,9 +14,14 @@ footer {
   min-height: 98vh;
 }
 
-#about-us, #about-us-screen {
+#about-us, #about-us-text, #about-us-placeholder {
   height: 90vh;
   overflow: hidden;
+}
+
+#about-us-container {
+  height: 90vh;
+  overflow-y: scroll;
 }
 
 #overlay1, #overla2 {
@@ -24,7 +29,7 @@ footer {
   so that the logo is cropped*/
   height: 140vh;
   /* hop much the top part is clipped*/
-  top: -10vh;
+  top: -20vh;
 }
 
 #honors-night {

@@ -6,7 +6,7 @@
   /* make this equal to main height - 90 */
 }
 
-#content section {
+#content section, .parallax {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -24,13 +24,50 @@
   padding: 0;
 }
 
-#about-us {}
+#about-us {
+  position: absolute;
+  top: 0
+}
 
-#about-us h1 {
+#about-us-placeholder {
+  background-color: orange
+}
+
+#about-us-text {
+  padding: 32px;
+  margin: 0 auto;
+  width: auto;
+}
+
+#about-us-text h1 {
   font-family: Verdana, Raleway;
   font-weight: bold;
-  font-size: 80px;
-  color: red
+  font-size: 100px;
+  color: #262626;
+  width: 40%
+}
+
+#about-us-text h1, #about-us-text article {
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+}
+
+#about-us-text article {
+  width: 45%;
+  padding: 5% 5%
+}
+
+#about-us-text-box {
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
+  padding: 2em;
+  font-family: 'Raleway', Georgia
+}
+
+#about-us-text-box p {
+  margin-top: 1em;
+  font-size: 135%
 }
 
 #about-us .fg {
