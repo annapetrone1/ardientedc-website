@@ -14,11 +14,11 @@
   padding: 2%;
 }
 
-.background-img {
+#overlay {
   /*background-attachment: fixed;*/
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 150%;
+  background-size: 125%;
 }
 
 #content section p {
@@ -57,23 +57,25 @@
 #about-us-text h1 {
   font-family: 'Montserrat', Verdana, 'Raleway';
   font-weight: bold;
-  font-size: 150px;
+  font-size: 9vw;
   margin-right: 3%;
-  /*top: 20vh;*/
-  margin-top: 10vh;
+  top: 70vh;
+  /*margin-top: 10vh;*/
   margin-bottom: 5vh;
   margin-left: 2%;
+  width: 40%;
 }
 
 #about-us-text h1 span {
   background-color: none;
   display: block;
+  width: 100%;
 }
 
-/*#about-us-text h1, #about-us-text article {
+#about-us-text h1, #about-us-text article {
   display: inline-block;
   position: relative;
-}*/
+}
 
 #about-us-text article {
   border: 1px solid black;
@@ -81,34 +83,27 @@
   display: block;
   margin: 0 auto;
   top: 0;
-  /*float: right;
-  margin-right: 40px;*/
-  width: 60%;
-  padding: 8% 5%;
+  float: right;
+  margin-right: 5%;
+  width: 38%;
   color: black;
-  /*top: 70vh;*/
+  padding: 64px 18px;
+  top: 95vh;
   background-color: rgba(239, 239, 245, .8);
   /*rgba(208, 208, 225, .9);*/
   font-family: 'M PLUS 1p', 'Montserrat', Georgia;
 }
 
 #about-us-text article h2 {
-  text-decoration: underline;
-  font-size: 30px;
+  font-size: 34px;
+  font-family: "Montserrat"
 }
 
 #about-us-text-box p {
   text-align: justify;
   margin-top: 1em;
-  font-size: 150%
+  font-size: 120%
 }
-
-/*#overlay1 {
-  position: relative;
-  opacity: .3;
-  display: block;
-  margin: 0 auto;
-}*/
 
 #honors-night {}
 
