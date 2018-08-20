@@ -18,21 +18,13 @@ footer {
   min-height: 98vh;
 }
 
-#about-us, #about-us-text, #about-screen {
+#about-us {
   height: 180vh;
   overflow: hidden;
 }
 
-#about-screen {
-  display: none;
-  background-color: white;
-  position: relative;
-  top: -180vh;
-}
-
-#about-us-container {
-  height: 90vh;
-  overflow-y: scroll;
+#about-us-text {
+  height: 180vh
 }
 
 #overlay1 {

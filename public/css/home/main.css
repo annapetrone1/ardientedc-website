@@ -26,21 +26,23 @@
 
 #about-us {
   padding: 0 !important;
+  overflow: hidden;
 }
 
 #about-us-text {
-  padding: 32px;
+  padding: 0 32px;
   margin: 0 auto;
   width: auto;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
-  top: 50vh
+  top: 1vh;
+  /*  height of a separator */
 }
 
 #about-us-text h1 {
   font-family: 'Montserrat', Verdana, 'Raleway';
   font-weight: bold;
-  /*color: rgb(240, 240, 240);*/
+  color: rgb(240, 240, 240);
   font-size: 100px;
   width: 40%;
   margin-right: 3%;
@@ -54,31 +56,32 @@
   display: inline-block;
   vertical-align: top;
   height: 80vh;
+  position: relative;
+  top: 70vh
 }
 
 #about-us-text article {
   width: 45%;
-  padding: 5% 5%
+  padding: 5% 5%;
+  /*position: absolute;
+  top: 40vh;
+  right: 40%*/
 }
 
 #about-us-text-box {
-  background-color: rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, 0);
   height: 90%;
   color: white;
   padding: 2em;
-  font-family: 'Montserrat', Georgia
+  font-family: 'Montserrat', Georgia;
 }
 
 #about-us-text-box p {
   margin-top: 1em;
-  font-size: 135%
+  font-size: 150%
 }
 
-#about-us .fg {
-  margin: 0 auto;
-}
-
-#overlay1, #overlay2, #meridian {
+#overlay1 {
   position: relative;
   opacity: .3;
   display: block;
