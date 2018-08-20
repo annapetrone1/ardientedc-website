@@ -1,5 +1,5 @@
 body {
-  /*height: 450vh;*/
+  height: 450vh;
   /*  height: 190vh;*/
   overflow-x: hidden;
 }
@@ -12,17 +12,22 @@ footer {
   height: 12vh;
 }
 
-#content {
-  height: 100vh;
-}
+#content {}
 
 #video-container, #video-screen {
   min-height: 98vh;
 }
 
-#about-us, #about-us-text, #about-us-placeholder {
-  height: 90vh;
+#about-us, #about-us-text, #about-screen {
+  height: 180vh;
   overflow: hidden;
+}
+
+#about-screen {
+  display: none;
+  background-color: white;
+  position: relative;
+  top: -180vh;
 }
 
 #about-us-container {
@@ -30,11 +35,13 @@ footer {
   overflow-y: scroll;
 }
 
-#overlay1, #overla2 {
+#overlay1 {
   /* this height should be higher than the #about-us height
   so that the logo is cropped*/
-  height: 140vh;
+  height: 220vh;
+  z-index: 0;
   /* hop much the top part is clipped*/
+  position: relative;
   top: -20vh;
 }
 

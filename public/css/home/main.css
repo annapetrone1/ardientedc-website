@@ -25,38 +25,35 @@
 }
 
 #about-us {
-  /*z-index: 2;
-  position: absolute;
-  top: 90vh;
-  width: 100%;*/
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-#about-us-placeholder {
-  background-color: orange
+  padding: 0 !important;
 }
 
 #about-us-text {
   padding: 32px;
   margin: 0 auto;
   width: auto;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50vh
 }
 
 #about-us-text h1 {
-  font-family: Verdana, Raleway;
+  font-family: 'Montserrat', Verdana, 'Raleway';
   font-weight: bold;
+  /*color: rgb(240, 240, 240);*/
   font-size: 100px;
-  color: #262626;
-  width: 40%
+  width: 40%;
+  margin-right: 3%;
+}
+
+#about-us-text h1 span {
+  background-color: none;
 }
 
 #about-us-text h1, #about-us-text article {
   display: inline-block;
   vertical-align: top;
-  height: 100%;
+  height: 80vh;
 }
 
 #about-us-text article {
@@ -65,10 +62,11 @@
 }
 
 #about-us-text-box {
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, .6);
+  height: 90%;
   color: white;
   padding: 2em;
-  font-family: 'Raleway', Georgia
+  font-family: 'Montserrat', Georgia
 }
 
 #about-us-text-box p {
@@ -78,10 +76,6 @@
 
 #about-us .fg {
   margin: 0 auto;
-}
-
-#meridian {
-  min-width: 100%;
 }
 
 #overlay1, #overlay2, #meridian {
