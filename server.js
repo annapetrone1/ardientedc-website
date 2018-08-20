@@ -19,13 +19,15 @@ app.get('/', (req, res) => {
 });
 
 
-
 app.get('/events', (req, res) => {
-  console.log('root');
-  // todo: check if it's a mobile device or desktop
-  // md = new MobileDetect(req.headers['user-agent']);
-  //res.render('index');
+  console.log('events');
   res.sendFile(__dirname+'/views/events.html');
+});
+
+
+app.get('/classes', (req, res) => {
+  console.log('classes');
+  res.sendFile(__dirname+'/views/classes.html');
 });
 
 app.listen(4000, () => {
