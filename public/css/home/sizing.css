@@ -4,14 +4,6 @@ body {
   overflow-x: hidden;
 }
 
-header {
-  max-height: 5vh;
-}
-
-footer {
-  height: 12vh;
-}
-
 #content {}
 
 #video-container, #video-screen {

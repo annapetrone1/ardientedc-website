@@ -8,11 +8,12 @@ main {
   margin: 0 auto;
   text-align: center;
   padding: 16px;
-  border: 1px black solid
+  border: 1px black solid;
+  background-color: rgb(240, 240, 240)
 }
 
 body {
-  background-color: rgb(240, 240, 240);
+  background-color: #a1a1c4;
 }
 
 h1 {

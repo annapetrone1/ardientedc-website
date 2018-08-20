@@ -44,15 +44,17 @@ header {
   position: fixed;
   top: 0;
   padding: 12px;
+  max-height: 5vh;
   text-align: center
 }
 
 footer {
   position: relative;
   bottom: 0;
+  height: 12vh;
 }
 
-header, footder {
+header, footer {
   width: 100%;
   background-color: black;
   z-index: 5;
