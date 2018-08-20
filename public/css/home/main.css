@@ -55,11 +55,11 @@
 }
 
 #about-us-text h1 {
-  font-family: 'Montserrat', Verdana, 'Raleway';
+  font-family: 'Raleway', Verdana, 'Raleway';
   font-weight: bold;
-  font-size: 9vw;
+  font-size: 150px;
   margin-right: 3%;
-  top: 70vh;
+  top: 60vh;
   /*margin-top: 10vh;*/
   margin-bottom: 5vh;
   margin-left: 2%;
@@ -84,14 +84,14 @@
   margin: 0 auto;
   top: 0;
   float: right;
-  margin-right: 5%;
-  width: 38%;
+  margin-right: 2%;
+  width: 35%;
   color: black;
-  padding: 64px 18px;
-  top: 95vh;
+  padding: 72px 24px;
+  top: 80vh;
   background-color: rgba(239, 239, 245, .8);
   /*rgba(208, 208, 225, .9);*/
-  font-family: 'M PLUS 1p', 'Montserrat', Georgia;
+  font-family: 'Montserrat', Georgia;
 }
 
 #about-us-text article h2 {
@@ -102,7 +102,7 @@
 #about-us-text-box p {
   text-align: justify;
   margin-top: 1em;
-  font-size: 120%
+  font-size: 130%
 }
 
 #honors-night {}
@@ -136,10 +136,35 @@
   height: 100%;
   display: inline-block;
   vertical-align: top;
+  padding: 0;
+}
+
+#pro-bio-text-box {
+  width: 80%;
+  margin: 0 auto;
+  padding: 12px 0;
+  text-align: center;
+}
+
+#pro-bio-text-box h1 {
+  font-family: "Raleway";
+  font-size: 60px;
+  margin-top: .25em;
+  margin-bottom: .5em
+}
+
+#pro-bio-text-box img {
+  width: 15%;
+}
+
+#pro-bio-text-box p {
+  font-family: 'M PLUS 1p', 'Montserrat', Georgia;
+  font-size: 120%;
+  margin-top: 1em;
 }
 
 #pro-team article.pro-bio {
-  width: 45%;
+  width: 40%;
   margin-right: 2%;
 }
 
