@@ -3,6 +3,10 @@
   color: white;
 }
 
+.cool-black-text {
+  color: rgba(21, 19, 32, .8);
+}
+
 .gray-black {
   color: #262626;
 }

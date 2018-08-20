@@ -14,6 +14,13 @@
   padding: 2%;
 }
 
+.background-img {
+  /*background-attachment: fixed;*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 150%;
+}
+
 #content section p {
   z-index: 2;
 }
@@ -29,64 +36,79 @@
   overflow: hidden;
 }
 
-#about-us-text {
-  padding: 0 32px;
-  margin: 0 auto;
-  width: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+#about-us-text, #overlay {
+  width: 100%;
   position: absolute;
   top: 1vh;
   /*  height of a separator */
 }
 
+#overlay {
+  opacity: .4
+}
+
+#about-us-text {
+  padding: 0 0;
+  margin: 0 auto;
+  background-color: rgba(225, 222, 237, .6);
+  z-index: 2
+}
+
 #about-us-text h1 {
   font-family: 'Montserrat', Verdana, 'Raleway';
   font-weight: bold;
-  color: rgb(240, 240, 240);
-  font-size: 100px;
-  width: 40%;
+  font-size: 150px;
   margin-right: 3%;
+  /*top: 20vh;*/
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+  margin-left: 2%;
 }
 
 #about-us-text h1 span {
   background-color: none;
+  display: block;
 }
 
-#about-us-text h1, #about-us-text article {
+/*#about-us-text h1, #about-us-text article {
   display: inline-block;
-  vertical-align: top;
-  height: 80vh;
   position: relative;
-  top: 70vh
-}
+}*/
 
 #about-us-text article {
-  width: 45%;
-  padding: 5% 5%;
-  /*position: absolute;
-  top: 40vh;
-  right: 40%*/
+  border: 1px solid black;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  top: 0;
+  /*float: right;
+  margin-right: 40px;*/
+  width: 60%;
+  padding: 8% 5%;
+  color: black;
+  /*top: 70vh;*/
+  background-color: rgba(239, 239, 245, .8);
+  /*rgba(208, 208, 225, .9);*/
+  font-family: 'M PLUS 1p', 'Montserrat', Georgia;
 }
 
-#about-us-text-box {
-  background-color: rgba(0, 0, 0, 0);
-  height: 90%;
-  color: white;
-  padding: 2em;
-  font-family: 'Montserrat', Georgia;
+#about-us-text article h2 {
+  text-decoration: underline;
+  font-size: 30px;
 }
 
 #about-us-text-box p {
+  text-align: justify;
   margin-top: 1em;
   font-size: 150%
 }
 
-#overlay1 {
+/*#overlay1 {
   position: relative;
   opacity: .3;
   display: block;
   margin: 0 auto;
-}
+}*/
 
 #honors-night {}
 

@@ -18,23 +18,9 @@ footer {
   min-height: 98vh;
 }
 
-#about-us {
-  height: 180vh;
+#about-us, #about-us-text, #overlay {
+  height: 210vh;
   overflow: hidden;
-}
-
-#about-us-text {
-  height: 180vh
-}
-
-#overlay1 {
-  /* this height should be higher than the #about-us height
-  so that the logo is cropped*/
-  height: 220vh;
-  z-index: 0;
-  /* hop much the top part is clipped*/
-  position: relative;
-  top: -20vh;
 }
 
 #honors-night {
