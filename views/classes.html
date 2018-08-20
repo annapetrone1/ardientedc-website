@@ -3,10 +3,56 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Register for Classes</title>
+    <title>Ardiente Dance Company</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="icon" type="image/png" href="img/favicon.gif">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Dancing+Script|M+PLUS+1p|Alegreya+Sans+SC|Raleway|Montserrat:200|M+PLUS+1p:100|Lateef" rel="stylesheet">
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        console.log('DOM loaded');
+        document.querySelector('video').playbackRate = 0.5;
+
+        setTimeout(function() {
+          $('#video-logo img').fadeTo(2000, 0.75);
+        }, 1000);
+        setTimeout(function() {
+          $('#video-logo p').fadeTo(1000, 0.7);
+        }, 2000);
+
+        $(`.mySlides[num=0]`).fadeIn();
+        var slideIndex = 0;
+        var nslides = $('.mySlides').length;
+
+        // change the slide every 2 seconds
+        setInterval(function() {
+          console.log('changing slide');
+          slideIndex = (slideIndex + 1) % nslides;
+          $(`.mySlides[num=${slideIndex}]`).fadeIn(500);
+          $(`.mySlides[num!=${slideIndex}]`).fadeOut(500);
+        }, 4000);
+
+        /*$('#enter button').on('click', function() {
+          console.log('enter button clicked');
+          $('#about-us').animate({
+            position: 'fixed',
+            top: 0
+          });
+        })*/
+      })
+    </script>
   </head>
 
   <body>
+    <header>
+      <nav>
+        <a href="/">Home</a> |
+        <a href="/events">Events</a> |
+        <a href="/classes">Classes</a>
+      </nav>
+    </header>
 
     <form class="jotform-form" action="https://submit.jotform.us/submit/82316779852166/" method="post" name="form_82316779852166" id="82316779852166" accept-charset="utf-8">
       <input type="hidden" name="formID" value="82316779852166" />

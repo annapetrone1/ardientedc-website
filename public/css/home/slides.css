@@ -18,6 +18,8 @@
   overflow: hidden;
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
   background-position: center top;
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -36,6 +38,8 @@
 /* Next & previous buttons */
 
 .prev, .next {
+  display: none;
+  /* TODO: disable buttons for now */
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -59,7 +63,7 @@
 /* On hover, add a black background color with a little bit see-through */
 
 .prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(240, 240, 240, 0.8);
 }
 
 /* Caption text */
@@ -110,6 +114,7 @@
   animation-duration: 1.5s;
 }
 
+/*
 @-webkit-keyframes fade {
   from {
     opacity: .4
@@ -126,4 +131,4 @@
   to {
     opacity: 1
   }
-}
+}*/

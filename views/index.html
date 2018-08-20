@@ -14,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css?family=Lora|Dancing+Script|M+PLUS+1p|Alegreya+Sans+SC|Raleway|Montserrat:200|M+PLUS+1p:100|Lateef" rel="stylesheet">
 
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/slides.js"></script>
 
     <script type="text/javascript">
       $(document).ready(function() {
@@ -27,25 +26,24 @@
         setTimeout(function() {
           $('#video-logo p').fadeTo(1000, 0.7);
         }, 2000);
-        setTimeout(function() {
-          $('button[name="enter"]').fadeTo(1000, 0.7);
-        }, 3000)
-        slideIndex = 1;
-        showSlides(slideIndex);
 
-        // change the slide every 3 seconds
-        setTimeout(function() {
-          console.log('changing slide')
-          plusSlides(1)
-        }, 1000);
+        $(`.mySlides[num=0]`).fadeIn();
+        var slideIndex = 0;
+        var nslides = $('.mySlides').length;
 
-        /*$('#enter button').on('click', function() {
-          console.log('enter button clicked');
-          $('#about-us').animate({
-            position: 'fixed',
-            top: 0
-          });
-        })*/
+        function showSlide(slideIndex = 0) {
+          $(`.mySlides[num!=${slideIndex}]`).fadeOut(100);
+          $(`.mySlides[num=${slideIndex}]`).fadeIn(1000);
+        }
+
+        // change the slide every 2 seconds
+        var slideshow = setInterval(function() {
+          console.log('changing slide');
+          slideIndex = (slideIndex + 1) % nslides;
+          showSlide(slideIndex);
+        }, 4000);
+
+
       })
     </script>
   </head>
@@ -83,7 +81,7 @@
       <div id="content">
         <section class="separator"></section>
 
-        <section id="about-us" style="background-image: url('img/about-us.jpg');">
+        <section class="parallax" id="about-us" style="background-image: url('img/about-us.jpg');">
           <!--<img id="overlay1" src="img/logo-overlay-white.gif">-->
           <div id="about-us-text">
             <h1 class="cool-black-text"><span>DC's</span> <span>Rising</span> <span>Salsa</span> <span>Company</span></h1>
@@ -105,7 +103,7 @@
 
 
         <section class="separator"></section>
-        <section id="honors-night" style="background-image: url('img/honors-night.jpg')">
+        <section class="parallax" id="honors-night" style="background-image: url('img/honors-night.jpg')">
           <article>
             <p class="headline"><i>WINNER:</i> Team of the Year</p>
             <p class="cursive">DC Latin Honors Night 2017</p>
@@ -114,7 +112,7 @@
         </section>
 
         <section class="separator"></section>
-        <section id="pro-team" class="cool-black">
+        <section class="parallax cool-black" id="pro-team">
           <!--<img id="overlay2" src="img/logo-overlay-black.gif">-->
           <article class="pro-bio">
             <div id="pro-bio-text-box">
@@ -129,24 +127,24 @@
           <article class="slides slideshow-container">
             <!-- Slideshow container -->
 
-            <div class="mySlides fade" style="background-image: url('img/slides-david.png')">
+            <div class="mySlides fade" num=0 style="background-image: url('img/slides-david.png')">
             </div>
 
-            <div class="mySlides fade" style="background-image: url('img/slides-ladies.png')">
+            <div class="mySlides fade" num=1 style="background-image: url('img/slides-ladies.png')">
               <!--  <img src="static/img/slides-ladies.png"> -->
             </div>
 
-            <div class="mySlides fade" style="background-image: url('img/slides-houston.png')">
+            <div class="mySlides fade" num=2 style="background-image: url('img/slides-houston.png')">
             </div>
 
 
             <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
           </article>
 
         </section>
-        <section id="student-team" class="cool-black" style="background-image: url('img/student-team.jpg')">
+        <section class="parallax" id="student-team" class="cool-black" style="background-image: url('img/student-team.jpg')">
           <h1>Ardiente Student Team</h1>
           <p>Lorem ipsum...</p>
         </section>
