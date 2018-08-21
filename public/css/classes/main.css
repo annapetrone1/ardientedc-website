@@ -1,0 +1,69 @@
+body {
+  height: 275vh;
+  /*  height: 190vh;*/
+  overflow-x: hidden;
+}
+
+main {
+  width: 80vw;
+  margin: 0 auto;
+  background-color: rgb(240, 240, 240);
+}
+
+#cover {
+  height: 75vh;
+  /*  position: relative;
+  top: 10vh;
+  padding: 0 !important;*/
+}
+
+#lessons, .spacer {}
+
+#lessons {}
+
+h1 {
+  color: white;
+  font-family: "Raleway";
+  font-size: 60px;
+  text-align: center;
+  background-color: black;
+}
+
+video {
+  min-width: 100%;
+  height: 40%
+}
+
+.spacer {
+  height: 10vh
+}
+
+#lessons article {
+  width: 50%;
+  overflow: hidden;
+}
+
+#lessons article, #lessons ul {
+  height: 70vh;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#lessons ul {
+  width: 40%;
+  overflow-y: scroll;
+}
+
+#lessons ul li {
+  list-style-type: none;
+  border: 1px solid black;
+  background-color: white;
+  padding: 32px;
+  color: black
+}
+
+#lessons ul li:hover {
+  background-color: rgbs(0, 0, 0, .4)
+}
+
+#lessons ul li button {}

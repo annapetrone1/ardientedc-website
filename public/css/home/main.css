@@ -6,21 +6,6 @@
   /* make this equal to main height - 90 */
 }
 
-.parallax {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 2%;
-}
-
-#overlay {
-  /*background-attachment: fixed;*/
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 125%;
-}
-
 #content section p {
   z-index: 2;
 }
