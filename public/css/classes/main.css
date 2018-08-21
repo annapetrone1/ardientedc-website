@@ -35,11 +35,18 @@ main {
   margin-top: 2em;
 }
 
-main h1 {
+p.dow {
+  display: none !important;
+}
+
+h1 {
   color: white;
   font-family: "Raleway";
   font-size: 60px;
   text-align: center;
+}
+
+main h1 {
   background-color: black;
 }
 

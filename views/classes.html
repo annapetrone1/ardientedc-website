@@ -7,16 +7,34 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/classes/main.css">
     <link rel="stylesheet" href="css/classes/modal.css">
-
     <link rel="icon" type="image/png" href="img/favicon.gif">
     <link href="https://fonts.googleapis.com/css?family=Lora|Dancing+Script|M+PLUS+1p|Alegreya+Sans+SC|Raleway|Montserrat:200|M+PLUS+1p:100|Lateef" rel="stylesheet">
 
     <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 
     <script type="text/javascript">
       $(document).ready(function() {
         console.log('DOM loaded');
 
+        $('.register').on('click', function(e) {
+          $('.modal').show();
+          /*get their registration info
+          and send to jotform */
+          var dow = $(this).siblings('.dow').text();
+          var days = dow.split(',');
+          filterDow = function(date) {
+            return [days.indexOf(date.getDay()) != -1, "color:red"]
+          }
+          $("#datepicker").datepicker({
+            minDate: 0,
+            beforeShowDay: function(date) {
+              console.log(date, dow, filterDow(date))
+              return filterDow(date, dow);
+            }
+          });
+
+        })
 
         $('a.expand').on('click', function(e) {
           e.preventDefault();
@@ -31,21 +49,12 @@
 
           return false;
         })
-        /*function playVideo(n = 0) {
-          $(`video[num!=${n}]`).hide();
-          $(`video[num=${n}]`).show();
-          $(`video[num=${n}]`).get(0).play();
-          //$(`video[num=${n}]`).fadeIn()()
 
-
-        }
-        var videoIndex = 0;
-        playVideo(videoIndex);
-        $('video').on('ended', function() {
-          videoIndex = 1 - videoIndex;
-
-          playVideo(videoIndex);
-        })*/
+        $('.modal .close').on('click', function(e) {
+          e.preventDefault();
+          $('.modal').hide();
+          return false;
+        })
       })
     </script>
   </head>
@@ -78,7 +87,8 @@
             <article class="info">
               <img src="img/classes-mambo-thursdays.jpg" alt="Mambo Thursdays class">
               <h3>Mambo on2 Thursday Workshop Series</h3>
-              <button type="button" name="button">Register Here</button>
+              <button class="register" name="button">Register Here</button>
+              <p class="dow">4</p>
             </article>
             <a href="" class="expand">Class Description</a>
             <article class="description">
@@ -94,6 +104,7 @@
               <img src="img/classes-mambo-thursdays.jpg" alt="Mambo Thursdays class">
               <h3>Mambo thursdays</h3>
               <button type="button" name="button">Register Here</button>
+              <p class="dow">4</p>
             </article>
             <a href="" class="expand">Class Description</a>
             <article class="description">
@@ -109,6 +120,7 @@
               <img src="img/classes-mambo-thursdays.jpg" alt="Mambo Thursdays class">
               <h3>Mambo thursdays</h3>
               <button type="button" name="button">Register Here</button>
+              <p class="dow">4</p>
             </article>
             <a href="" class="expand">Class Description</a>
             <article class="description">
@@ -124,10 +136,15 @@
     <hr>
     <div id="registration" class="modal">
 
-      <article class="modal-content">
+      <div class="modal-content">
         <h1>MODAL</h1>
-        <span class="close">&times;</span>
-      </article>
+        <a class="close" href="#">&times;</a>
+        <article>
+          <form class="" action="#">
+            <input type="text" name="date" id="datepicker">
+          </form>
+        </article>
+      </div>
 
 
     </div>

@@ -1,5 +1,5 @@
 .modal {
-  /*display: none;*/
+  display: none;
   /* Hidden by default */
   position: fixed;
   z-index: 1;
@@ -23,12 +23,23 @@
   display: block;
   overflow: scroll;
   background-color: rgba(59, 59, 94, .8);
+  position: relative;
 }
 
 .modal-content .close {
   color: white;
-  font-size: 130%;
+  font-size: 200%;
   position: absolute;
   top: 0;
-  right: 0
+  right: 0;
+  padding: 16px;
+  text-decoration: none;
+}
+
+input {
+  padding: 8px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 100%
 }
