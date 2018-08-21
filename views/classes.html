@@ -16,6 +16,35 @@
       $(document).ready(function() {
         console.log('DOM loaded');
 
+
+        $('a.expand').on('click', function(e) {
+          e.preventDefault();
+          $desc = $(this).siblings('.description');
+          if ($desc.css('display') == "none") {
+            $desc.slideDown();
+            $(this).text('Hide Description');
+          } else {
+            $desc.slideUp();
+            $(this).text('Class Description');
+          }
+
+          return false;
+        })
+        /*function playVideo(n = 0) {
+          $(`video[num!=${n}]`).hide();
+          $(`video[num=${n}]`).show();
+          $(`video[num=${n}]`).get(0).play();
+          //$(`video[num=${n}]`).fadeIn()()
+
+
+        }
+        var videoIndex = 0;
+        playVideo(videoIndex);
+        $('video').on('ended', function() {
+          videoIndex = 1 - videoIndex;
+
+          playVideo(videoIndex);
+        })*/
       })
     </script>
   </head>
@@ -28,130 +57,69 @@
         <a href="/classes">Classes</a>
       </nav>
     </header>
-    <section class="parallax" id="cover" style="background-image: url('img/classes-capital-workshop.jpg');">
 
-    </section>
-    <section>
-      <h1>Learn with Us!</h1>
-    </section>
     <main>
 
-      <section class="spacer">
-
+      <section class="" id="cover" style="background-image: url('img/classes-capital-workshop.jpg');">
+        <!-- -->
+        <!--<div class="screen">
+          <h2>Learn with us!!</h2>
+        </div>-->
+        <!--<img src="img/classes-capital-workshop.jpg" alt="">-->
       </section>
+      <section>
+        <h1>Learn with Us!</h1>
+      </section>
+
       <section id="lessons">
         <ul>
-          <li>Mambo thursdays
-            <button type="button" name="button">Register Here</button>
+          <li>
+            <article class="info">
+              <img src="img/classes-mambo-thursdays.jpg" alt="Mambo Thursdays class">
+              <h3>Mambo on2 Thursday Workshop Series</h3>
+              <button type="button" name="button">Register Here</button>
+            </article>
+            <a href="" class="expand">Class Description</a>
+            <article class="description">
+              <p>Catch us at “The Dancing Club” every Thursday from 8-9pm teaching Mambo/ChaCha/Fusion and much more! Classes will vary so make sure you follow us to stay updated. This Thursday David Cuevas will be teaching “Mambo On2” so make sure to come
+                groove with us.</p>
+              <p>We will cover: Basic Fundamentals, Footwork, Timing, Styling, Lead & Follow technique, Spins, and much more! This is an open level class so everyone is welcomed!</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="info">
+              <img src="img/classes-mambo-thursdays.jpg" alt="Mambo Thursdays class">
+              <h3>Mambo thursdays</h3>
+              <button type="button" name="button">Register Here</button>
+            </article>
+            <a href="" class="expand">Class Description</a>
+            <article class="description">
+              <p>Catch us at “The Dancing Club” every Thursday from 8-9pm teaching Mambo/ChaCha/Fusion and much more! Classes will vary so make sure you follow us to stay updated. This Thursday David Cuevas will be teaching “Mambo On2” so make sure to come
+                groove with us.</p>
+              <p>We will cover: Basic Fundamentals, Footwork, Timing, Styling, Lead & Follow technique, Spins, and much more! This is an open level class so everyone is welcomed!</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="info">
+              <img src="img/classes-mambo-thursdays.jpg" alt="Mambo Thursdays class">
+              <h3>Mambo thursdays</h3>
+              <button type="button" name="button">Register Here</button>
+            </article>
+            <a href="" class="expand">Class Description</a>
+            <article class="description">
+              <p>Catch us at “The Dancing Club” every Thursday from 8-9pm teaching Mambo/ChaCha/Fusion and much more! Classes will vary so make sure you follow us to stay updated. This Thursday David Cuevas will be teaching “Mambo On2” so make sure to come
+                groove with us.</p>
+              <p>We will cover: Basic Fundamentals, Footwork, Timing, Styling, Lead & Follow technique, Spins, and much more! This is an open level class so everyone is welcomed!</p>
+            </article>
           </li>
         </ul>
-        <article id="video-container" class="top">
-          <video id="video" class="" muted preload="none" autoplay="autoplay" loop="loop"> <!-- TODO poster="img/video-poster.png"-->
-           <source id="mp4" src="video/classes-demo-2018-08-17.mp4" type="video/mp4">
-          </video>
-          <video id="video" class="" muted preload="none" autoplay="autoplay" loop="loop"> <!-- TODO poster="img/video-poster.png"-->
-           <source id="mp4" src="video/classes-2018-08-17.mp4" type="video/mp4">
-          </video>
-        </article>
+
       </section>
     </main>
     <hr>
-    <form class="jotform-form" action="https://submit.jotform.us/submit/82316779852166/" method="post" name="form_82316779852166" id="82316779852166" accept-charset="utf-8">
-      <input type="hidden" name="formID" value="82316779852166" />
-      <div class="form-all">
-        <ul class="form-section page-section">
-          <li id="cid_1" class="form-input-wide" data-type="control_head">
-            <div class="form-header-group ">
-              <div class="header-text httal htvam">
-                <h2 id="header_1" class="form-header" data-component="header">
-                  Class Signup
-                </h2>
-              </div>
-            </div>
-          </li>
-          <li class="form-line" data-type="control_textbox" id="id_8">
-            <label class="form-label form-label-top form-label-auto" id="label_8" for="input_8"> Name </label>
-            <div id="cid_8" class="form-input-wide">
-              <input type="text" id="input_8" name="q8_typeA" data-type="input-textbox" class="form-textbox" size="20" value="" data-component="textbox" />
-            </div>
-          </li>
-          <li class="form-line" data-type="control_textbox" id="id_9">
-            <label class="form-label form-label-top form-label-auto" id="label_9" for="input_9"> Quantity </label>
-            <div id="cid_9" class="form-input-wide">
-              <input type="text" id="input_9" name="q9_typeA9" data-type="input-textbox" class="form-textbox" size="20" value="" data-component="textbox" />
-            </div>
-          </li>
-          <li class="form-line" data-type="control_textbox" id="id_11">
-            <label class="form-label form-label-top form-label-auto" id="label_11" for="input_11"> Date </label>
-            <div id="cid_11" class="form-input-wide">
-              <input type="text" id="input_11" name="q11_date" data-type="input-textbox" class="form-textbox" size="20" value="" data-component="textbox" />
-            </div>
-          </li>
-          <li class="form-line" data-type="control_textbox" id="id_12">
-            <label class="form-label form-label-top form-label-auto" id="label_12" for="input_12"> Time </label>
-            <div id="cid_12" class="form-input-wide">
-              <input type="text" id="input_12" name="q12_time" data-type="input-textbox" class="form-textbox" size="20" value="" data-component="textbox" />
-            </div>
-          </li>
-          <li class="form-line" data-type="control_textbox" id="id_10">
-            <label class="form-label form-label-top form-label-auto" id="label_10" for="input_10"> Email </label>
-            <div id="cid_10" class="form-input-wide">
-              <input type="text" id="input_10" name="q10_typeA10" data-type="input-textbox" class="form-textbox" size="20" value="" data-component="textbox" />
-            </div>
-          </li>
-          <li class="form-line" data-type="control_textbox" id="id_13">
-            <label class="form-label form-label-top form-label-auto" id="label_13" for="input_13"> Instructor </label>
-            <div id="cid_13" class="form-input-wide">
-              <input type="text" id="input_13" name="q13_instructor" data-type="input-textbox" class="form-textbox" size="20" value="" data-component="textbox" />
-            </div>
-          </li>
-          <li class="form-line" data-type="control_textbox" id="id_14">
-            <label class="form-label form-label-top form-label-auto" id="label_14" for="input_14"> Location </label>
-            <div id="cid_14" class="form-input-wide">
-              <input type="text" id="input_14" name="q14_location" data-type="input-textbox" class="form-textbox" size="20" value="" data-component="textbox" />
-            </div>
-          </li>
-          <li class="form-line" data-type="control_textarea" id="id_17">
-            <label class="form-label form-label-top form-label-auto" id="label_17" for="input_17"> Address </label>
-            <div id="cid_17" class="form-input-wide">
-              <textarea id="input_17" class="form-textarea" name="q17_typeA17" cols="40" rows="6" data-component="textarea"></textarea>
-            </div>
-          </li>
-          <li class="form-line" data-type="control_textarea" id="id_18">
-            <label class="form-label form-label-top form-label-auto" id="label_18" for="input_18"> Reminders </label>
-            <div id="cid_18" class="form-input-wide">
-              <textarea id="input_18" class="form-textarea" name="q18_reminders" cols="40" rows="6" data-component="textarea"></textarea>
-            </div>
-          </li>
-          <li class="form-line" data-type="control_button" id="id_2">
-            <div id="cid_2" class="form-input-wide">
-              <div style="margin-left:156px" class="form-buttons-wrapper">
-                <button id="input_2" type="submit" class="form-submit-button" data-component="button">
-                  Submit
-                </button>
-              </div>
-            </div>
-          </li>
-          <li style="display:none">
-            Should be Empty:
-            <input type="text" name="website" value="" />
-          </li>
-        </ul>
-      </div>
-      <input type="hidden" id="simple_spc" name="simple_spc" value="82316779852166" />
 
-      <div class="formFooter-heightMask">
-      </div>
-      <div class="formFooter">
-        <a href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=82316779852166&utm_content=jotform_logo&utm_campaign=powered_by_jotform_le" target="_blank" class="formFooter-logoLink"><img class="formFooter-logo" src="https://cdn.jotfor.ms/assets/img/logo/logo-new@1x.png" alt="" style="height: 44px;"></a>
-        <div class="formFooter-rightSide">
-          <span class="formFooter-text">
-            Now create your own JotForm - It's free!
-          </span>
-          <a class="formFooter-button" href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=82316779852166&utm_content=jotform_button&utm_campaign=powered_by_jotform_le" target="_blank">Create your own JotForm</a>
-        </div>
-      </div>
-    </form>
   </body>
 
 </html>

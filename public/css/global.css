@@ -58,7 +58,7 @@ body {
 header {
   position: fixed;
   top: 0;
-  height: auto;
+  height: 5vh;
   padding: 12px;
   text-align: center
 }
