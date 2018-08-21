@@ -35,7 +35,7 @@ main {
   margin-top: 2em;
 }
 
-h1 {
+main h1 {
   color: white;
   font-family: "Raleway";
   font-size: 60px;
@@ -73,7 +73,7 @@ video {
   border-left: none;
   border-right: none;
   background-color: none;
-  padding: 32px 8px;
+  padding: 32px 12px;
   color: black;
   margin-bottom: 5em;
   font-family: Georgia

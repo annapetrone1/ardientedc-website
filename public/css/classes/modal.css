@@ -1,0 +1,34 @@
+.modal {
+  /*display: none;*/
+  /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 10vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: rgba(250, 250, 250, .90);
+}
+
+/* Modal Content (Image) */
+
+.modal-content {
+  margin: 0 auto;
+  width: 80%;
+  height: 85vh;
+  display: block;
+  overflow: scroll;
+  background-color: rgba(59, 59, 94, .8);
+}
+
+.modal-content .close {
+  color: white;
+  font-size: 130%;
+  position: absolute;
+  top: 0;
+  right: 0
+}
