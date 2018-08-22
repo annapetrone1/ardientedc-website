@@ -1,17 +1,17 @@
 body {
   background-color: rgb(240, 240, 240);
-  height: 100vh;
+  /*height: 100vh;*/
 }
 
 .jotform-form {
-  display: none
+  display: none !important
 }
 
 main {
   width: 80%;
   margin: 0 auto;
   margin-top: 16px;
-  height: 100%;
+  position: relative;
 }
 
 h1, h2 {
@@ -51,17 +51,19 @@ h3 {
 }*/
 
 .form-container {
-  width: 50%;
+  width: 40%;
   padding: 48px 42px;
+  padding-left: 50px;
   background-color: rgba(250, 250, 250, .95);
   margin: 0 auto;
-  position: relative;
-  top: -85%;
+  position: absolute;
+  top: 25%;
+  left: 25%;
   border: 1px darkgray solid
 }
 
 .userform input {
-  width: 70%
+  width: 85%
 }
 
 .userform select {
