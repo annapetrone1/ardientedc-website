@@ -50,7 +50,7 @@ app.get('/class/:id', (req, res) => {
   var cancelled = schedule.cancelled;
   var loopday = new Date(); // get the next 4 weeks of classes
 
-  var startHour = schedule['start-time'].split(':')[0];
+  var startHour = schedule['startTime'].split(':')[0];
   var datelist = [];
   if (loopday.getDay() == dow && loopday.getHours() >= startHour){
     // class is today and already started

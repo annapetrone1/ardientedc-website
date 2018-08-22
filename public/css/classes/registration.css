@@ -39,6 +39,7 @@ h2 {
 h3 {
   font-family: "M PLUS 1p";
   font-size: 28px;
+  margin-bottom: .5em;
 }
 
 .img-container {
@@ -50,18 +51,34 @@ h3 {
   text-align: center;
 }
 
+/*
+.img-container img {
+  min-width: 100%;
+}*/
+
 .form-container {
-  width: 60%;
-  padding: 32px;
+  width: 50%;
+  padding: 48px 42px;
   background-color: rgba(250, 250, 250, .9);
   margin: 0 auto;
   position: relative;
   top: -80%;
 }
 
-.userform {}
+.userform input {
+  width: 70%
+}
 
 .userform select {
-  width: 100%;
   font-family: 'M PLUS 1p';
+}
+
+.userform label {
+  display: block;
+  font-family: "Raleway";
+  margin-bottom: .5em;
+}
+
+.userform input, .userform select {
+  margin-bottom: 2.5em;
 }
