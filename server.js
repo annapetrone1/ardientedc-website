@@ -65,8 +65,9 @@ app.get('/class/:id', (req, res) => {
 
   schedule['availableDates'] = datelist;
   schedule['id'] = p.id;
+  schedule['startTimeFmt'] = dateFormat('2000-01-01 ' + schedule['startTime'],'hh:MM TT');
   res.render('register',schedule);
-
+  // res.json(schedule);
 });
 
 app.listen(4000, () => {

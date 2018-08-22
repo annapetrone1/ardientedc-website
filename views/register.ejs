@@ -18,12 +18,32 @@
 
       <script type="text/javascript">
         $(document).ready(function() {
-
+          console.log('startTimeFmt', '<%= startTimeFmt %>');
           $('.userform form').on('submit', function(e) {
             e.preventDefault();
+            for (field of ['fullname', 'email', 'date']) {
+              $(`.payment p .${field}`).text($(`.userform .input[name="${field}"]`).val());
+            }
             $('.form-container .userform').hide();
-            $('.form-container .payment').children().not('form').fadeIn();
+            $('.form-container .payment input[type="checkbox"]').get(0).checked = false; // always require them to check it
+            $('.form-container .payment .user-confirm').fadeIn()
+            /* TODO: add "edit" button to go back to .userform. and a confirm check box -> lets paypal button appear*/
             /*TODO: copy the info to the jotform and submit, also process payment.*/
+          })
+
+          $('.edit').on('click', function(e) {
+            e.preventDefault();
+            $('.form-container .payment').hide();
+            $('.form-container .userform').fadeIn();
+          })
+
+          $('.form-container .payment input[type="checkbox"]').change(function() {
+            if ($(this).is(':checked')) {
+              // show the paypal button
+              $('.form-container .payment form').fadeIn();
+            } else {
+              $('.form-container .payment form').hide();
+            }
           })
         })
       </script>
@@ -52,10 +72,10 @@
             <form action="" method="post">
 
               <label for="name">Your name</label>
-              <input type="text" name="fullname" value="">
+              <input class="input" type="text" name="fullname" value="">
 
-              <label for="date">Select Class Date</label>
-              <select class="" name="date">
+              <label for="date">Select Date</label>
+              <select class="input" name="date">
               <!-- TODO: might make these buttons-->
               <option value="0" disabled >=== Choose a date ===</option>
               <% for(var i=0; i < availableDates.length; i++) { %>
@@ -64,25 +84,39 @@
               <% } %>
               </select>
 
-              <label for="time">Class Time</label>
-              <input type="time" value="20:00" readonly>
+
+              <input class="input" type="hidden" name="time" value="<%= startTime %>" readonly>
 
               <label for="email">Email address</label>
-              <input type="email" name="email" value="">
+              <input class="input" type="email" name="email" value="">
 
               <!-- later support buying more than 1 pass -->
-              <input type="hidden" name="quantity" value="1">
+              <input class="input" type="hidden" name="quantity" value="1">
 
               <!-- info to set to jotform -->
-              <input type="hidden" name="instructor" value="<%= instructor %>">
-              <div class="address">
-                <label for="locationName">Class location and Address</label>
+              <input class="input" type="hidden" name="instructor" value="<%= instructor %>">
+
+              <div class="classinfo">
+                <label for="time">Class Time</label>
+                <p>
+                  <%= startTimeFmt %>
+                </p>
+              </div>
+              <div class="address classinfo">
+                <label for="locationName">Location and Address</label>
                 <h5><%= locationName %></h5>
                 <p>
                   <%= locationAddress %>
                 </p>
-                <input type="hidden" name="locationName" value="<%= locationName %>">
-                <input type="hidden" name="locationAddress" value="<%= locationAddress %>">
+                <input class="input" type="hidden" name="locationName" value="<%= locationName %>">
+                <input class="input" type="hidden" name="locationAddress" value="<%= locationAddress %>">
+              </div>
+              <div class="price classinfo">
+                <label for="price">Price</label>
+                <p>$
+                  <%= price %>
+                </p>
+                <input class="input" type="hidden" name="price" value="<%= price %>">
               </div>
 
 
@@ -94,10 +128,23 @@
 
 
           <article class="payment">
-            <h3>Confirm your registration, and submit payment</h3>
-            <div class="user-confirm">
 
-              <p class="name"></p>
+            <div class="user-confirm">
+              <h3>Confirm your registration, and submit payment</h3>
+              <p> Name: <span class="fullname"></span></p>
+              <p> Email address <span class="email"></span></p>
+              <p> Class Date <span class="date"></span></p>
+              <p> Class Time <span class="time"><%= startTimeFmt %></span></p>
+              <p> Price: <span class="price"><%= price %></span></p>
+              <div class="address">
+                <label>Class Location and Address</label>
+                <h5><%= locationName %></h5>
+                <p>
+                  <%= locationAddress %>
+                </p>
+              </div>
+              <a class="edit" href="#">Edit info</a>
+              <input type="checkbox" name="confirm" value=unchecked><span>I confirm my information is correct</span>
             </div>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
               <input type="hidden" name="cmd" value="_s-xclick">

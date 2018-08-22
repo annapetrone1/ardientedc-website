@@ -52,9 +52,9 @@ h3 {
 
 .form-container {
   width: 40%;
-  min-height: calc(80% - 25%);
+  min-height: calc(60% - 15%);
   padding: 48px 42px;
-  padding-left: 50px;
+  padding-left: 30px;
   background-color: rgba(250, 250, 250, .95);
   margin: 0 auto;
   position: absolute;
@@ -81,9 +81,11 @@ h3 {
   margin-bottom: 2.5em;
 }
 
-.address {
+.classinfo {
   font-family: "M PLUS 1p";
-  background-color: rgba(225, 222, 237, .45)
+  background-color: rgba(225, 222, 237, .45);
+  margin-bottom: 1em;
+  padding: 8px;
 }
 
 input[type="submit"] {
@@ -92,13 +94,17 @@ input[type="submit"] {
   padding: 12px 8px;
   font-family: "Raleway";
   color: white;
-  margin-top: 3em;
+  margin-top: 1em;
 }
 
 .form-container .userform {
   display: block;
 }
 
-.form-container .payment * {
+.form-container .payment .user-confirm {
+  display: none;
+}
+
+.form-container .payment form {
   display: none;
 }
