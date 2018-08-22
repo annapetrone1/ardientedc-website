@@ -1,0 +1,13 @@
+{
+  "mambo-thursdays": {
+    "title": "Mambo on2 Thursday Workshop Series",
+    "dow": 4,
+    "start-time": "16:00",
+    "end-time": "17:00",
+    "location-name": "The Dancing Club",
+    "location-address": "D, 5050 Nicholson Ln, Rockville, MD 20852",
+    "instructor": "David Cuevas",
+    "description": "Catch us at “The Dancing Club” every Thursday from 8-9pm teaching Mambo/ChaCha/Fusion and much more! Classes will vary so make sure you follow us to stay updated. Instructor David Cuevas will be teaching Mambo On2 so make sure to come groove with us. | We will cover: Basic Fundamentals, Footwork, Timing, Styling, Lead & Follow technique, Spins, and much more! This is an open level class so everyone is welcomed!",
+    "cancelled": ["2018-08-23"]
+  }
+}
