@@ -52,6 +52,7 @@ h3 {
 
 .form-container {
   width: 40%;
+  min-height: calc(80% - 25%);
   padding: 48px 42px;
   padding-left: 50px;
   background-color: rgba(250, 250, 250, .95);
@@ -80,9 +81,24 @@ h3 {
   margin-bottom: 2.5em;
 }
 
+.address {
+  font-family: "M PLUS 1p";
+  background-color: rgba(225, 222, 237, .45)
+}
+
 input[type="submit"] {
   font-size: 120%;
   background-color: rgba(64, 120, 165, .8);
   padding: 12px 8px;
+  font-family: "Raleway";
   color: white;
+  margin-top: 3em;
+}
+
+.form-container .userform {
+  display: block;
+}
+
+.form-container .payment * {
+  display: none;
 }

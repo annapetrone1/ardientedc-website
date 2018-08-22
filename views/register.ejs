@@ -16,13 +16,13 @@
 
       <script src="/js/jquery-3.3.1.min.js"></script>
 
-
       <script type="text/javascript">
         $(document).ready(function() {
 
-          $('.userform').on('submit', function(e) {
-            e.preventDefault()
-            //return false;
+          $('.userform form').on('submit', function(e) {
+            e.preventDefault();
+            $('.form-container .userform').hide();
+            $('.form-container .payment').children().not('form').fadeIn();
             /*TODO: copy the info to the jotform and submit, also process payment.*/
           })
         })
@@ -40,41 +40,82 @@
       <main>
         <h1>Register for:</h1>
         <h2><%= title %></h2>
-        <article class="img-container">
+        <section class="img-container">
           <!-- style="background-image: url('/img/classes/<%= id %>.jpg');"-->
           <img src="/img/classes/<%= id %>.jpg" alt="">
 
-        </article>
-        <article class="form-container">
-          <h3>Sign up here</h3>
-          <form class="userform" action="" method="post">
+        </section>
+        <section class="form-container">
+          <article class="userform">
+            <h3>Sign up here</h3>
 
-            <label for="name">Your name</label>
-            <input type="text" name="fullname" value="">
+            <form action="" method="post">
 
-            <label for="date">Select Class Date</label>
-            <select class="" name="date">
-            <!-- TODO: might make these buttons-->
-            <option value="0" disabled >=== Choose a date ===</option>
-            <% for(var i=0; i < availableDates.length; i++) { %>
-              <option value="<%= availableDates[i][0] %>"
-                 <%if (availableDates[i][2] == 1) { %> title="Class cancelled on this day" disabled  <% } %> ><%= availableDates[i][1] %></option>
-            <% } %>
-            </select>
+              <label for="name">Your name</label>
+              <input type="text" name="fullname" value="">
 
-            <label for="time">Class Time</label>
-            <input type="time" value="20:00" readonly>
+              <label for="date">Select Class Date</label>
+              <select class="" name="date">
+              <!-- TODO: might make these buttons-->
+              <option value="0" disabled >=== Choose a date ===</option>
+              <% for(var i=0; i < availableDates.length; i++) { %>
+                <option value="<%= availableDates[i][0] %>"
+                   <%if (availableDates[i][2] == 1) { %> title="Class cancelled on this day" disabled  <% } %> ><%= availableDates[i][1] %></option>
+              <% } %>
+              </select>
 
-            <label for="email">Email address</label>
-            <input type="email" name="email" value="">
+              <label for="time">Class Time</label>
+              <input type="time" value="20:00" readonly>
 
-            <input type="hidden" name="quantity" value="1">
-            <!-- later support buying more than 1 pass -->
-            <input type="hidden" name="instructor" value="David Cuevas">
-            <!-- later support buying more than 1 pass -->
-            <input type="submit" name="saveinfo" value="Save info and pay">
-          </form>
-        </article>
+              <label for="email">Email address</label>
+              <input type="email" name="email" value="">
+
+              <!-- later support buying more than 1 pass -->
+              <input type="hidden" name="quantity" value="1">
+
+              <!-- info to set to jotform -->
+              <input type="hidden" name="instructor" value="<%= instructor %>">
+              <div class="address">
+                <label for="locationName">Class location and Address</label>
+                <h5><%= locationName %></h5>
+                <p>
+                  <%= locationAddress %>
+                </p>
+                <input type="hidden" name="locationName" value="<%= locationName %>">
+                <input type="hidden" name="locationAddress" value="<%= locationAddress %>">
+              </div>
+
+
+              <input type="submit" name="saveinfo" value="Save info and pay">
+            </form>
+
+
+          </article>
+
+
+          <article class="payment">
+            <h3>Confirm your registration, and submit payment</h3>
+            <div class="user-confirm">
+
+              <p class="name"></p>
+            </div>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+  ">
+              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+              <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+          </article>
+
+
+
+
+
+
+
+
+        </section>
 
 
       </main>
