@@ -63,7 +63,8 @@ app.get('/class/:id', (req, res) => {
     loopday.setDate(loopday.getDate() + 1);
   }
 
-  schedule['available-dates'] = datelist;
+  schedule['availableDates'] = datelist;
+  schedule['id'] = p.id;
   res.render('register',schedule);
 
 });

@@ -1,39 +1,6 @@
-.modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  z-index: 1;
-  /* Sit on top */
-  padding-top: 10vh;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  background-color: rgba(250, 250, 250, .90);
-}
-
-/* Modal Content (Image) */
-
-.modal-content {
-  margin: 0 auto;
-  width: 80%;
-  height: 85vh;
-  display: block;
-  overflow: scroll;
-  background-color: rgba(59, 59, 94, .8);
-  position: relative;
-}
-
-.modal-content .close {
-  color: white;
-  font-size: 200%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 16px;
-  text-decoration: none;
+body {
+  background-color: rgb(240, 240, 240);
+  height: 100vh;
 }
 
 input {
@@ -41,4 +8,60 @@ input {
   display: block;
   border: none;
   border-bottom: 1px solid #ccc;
+}
+
+form.jotform-form {
+  display: none
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 16px;
+  height: 100%;
+}
+
+h1, h2 {
+  color: black;
+  font-family: "Raleway";
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 1em;
+}
+
+h3 {
+  font-family: "M PLUS 1p";
+  font-size: 28px;
+}
+
+.img-container {
+  height: 100%;
+  margin: 0 auto;
+  width: auto;
+  opacity: .3;
+  overflow: hidden;
+  text-align: center;
+}
+
+.form-container {
+  width: 60%;
+  padding: 32px;
+  background-color: rgba(250, 250, 250, .9);
+  margin: 0 auto;
+  position: relative;
+  top: -80%;
+}
+
+.userform {}
+
+.userform select {
+  width: 100%;
+  font-family: 'M PLUS 1p';
 }

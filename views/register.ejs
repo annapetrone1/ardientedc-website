@@ -8,22 +8,58 @@
     <head>
       <meta charset="utf-8">
       <title>Class Registration Form</title>
-      <link rel="stylesheet" href="css/global.css">
-      <link rel="icon" type="image/png" href="img/favicon.gif">
+
+      <link rel="stylesheet" href="/css/global.css">
+      <link rel="stylesheet" href="/css/classes/registration.css">
+      <link rel="icon" type="image/png" href="/img/favicon.gif">
       <link href="https://fonts.googleapis.com/css?family=Lora|Dancing+Script|M+PLUS+1p|Alegreya+Sans+SC|Raleway|Montserrat:200|M+PLUS+1p:100|Lateef" rel="stylesheet">
 
       <script src="/js/jquery-3.3.1.min.js"></script>
 
 
       <script type="text/javascript">
-        $(document).ready(function() {})
+        $(document).ready(function() {
+
+          $('.userform').on('submit', function() {
+            /*TODO: copy the info to the jotform and submit, also process payment.*/
+          })
+        })
       </script>
     </head>
 
     <body>
-      <h1>Register for  <%= title %> </h1>
+      <header>
+        <nav>
+          <a href="/">Home</a> |
+          <a href="/events">Events</a> |
+          <a href="/classes">Classes</a>
+        </nav>
+      </header>
+      <main>
+        <h1>Register for:</h1>
+        <h2><%= title %></h2>
+        <article class="img-container">
+          <!-- style="background-image: url('/img/classes/<%= id %>.jpg');"-->
+          <img src="/img/classes/<%= id %>.jpg" alt="">
 
-      <form class="jotform-form" action="https://submit.jotform.us/submit/82316779852166/" method="post" name="form_82316779852166" id="82316779852166" accept-charset="utf-8">
+        </article>
+        <article class="form-container">
+          <h3>Sign up here</h3>
+          <form class="userform" action="" method="post">
+            <select class="" name="date">
+            <!-- TODO: might make these buttons-->
+            <% for(var i=0; i < availableDates.length; i++) { %>
+              <option value="<%= availableDates[i][0] %>"
+                 <%if (availableDates[i][2] == 1) { %> title="Class cancelled on this day" disabled <% } %> ><%= availableDates[i][1] %></option>
+          <% } %>
+          </select>
+          </form>
+        </article>
+
+
+      </main>
+
+      <form style="display:none" class="jotform-form" action="https://submit.jotform.us/submit/82316779852166/" method="post" name="form_82316779852166" id="82316779852166" accept-charset="utf-8">
         <input type="hidden" name="formID" value="82316779852166" />
         <div class="form-all">
           <ul class="form-section page-section">
