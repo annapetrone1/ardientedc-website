@@ -20,7 +20,9 @@
       <script type="text/javascript">
         $(document).ready(function() {
 
-          $('.userform').on('submit', function() {
+          $('.userform').on('submit', function(e) {
+            e.preventDefault()
+            //return false;
             /*TODO: copy the info to the jotform and submit, also process payment.*/
           })
         })
@@ -53,23 +55,24 @@
             <label for="date">Select Class Date</label>
             <select class="" name="date">
             <!-- TODO: might make these buttons-->
+            <option value="0" disabled >=== Choose a date ===</option>
             <% for(var i=0; i < availableDates.length; i++) { %>
               <option value="<%= availableDates[i][0] %>"
-                 <%if (availableDates[i][2] == 1) { %> title="Class cancelled on this day" disabled <% } %> ><%= availableDates[i][1] %></option>
+                 <%if (availableDates[i][2] == 1) { %> title="Class cancelled on this day" disabled  <% } %> ><%= availableDates[i][1] %></option>
             <% } %>
             </select>
 
             <label for="time">Class Time</label>
-            <input type="time" value="<%= startTime %>" disabled>
+            <input type="time" value="20:00" readonly>
 
             <label for="email">Email address</label>
             <input type="email" name="email" value="">
 
             <input type="hidden" name="quantity" value="1">
             <!-- later support buying more than 1 pass -->
-            <input type="hidden" name="instructor" value="<%= instructor %>">
+            <input type="hidden" name="instructor" value="David Cuevas">
             <!-- later support buying more than 1 pass -->
-
+            <input type="submit" name="saveinfo" value="Save info and pay">
           </form>
         </article>
 
@@ -172,6 +175,9 @@
           </div>
         </div>
       </form>
+
+      <footer>
+      </footer>
     </body>
 
 </html>

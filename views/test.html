@@ -6,20 +6,46 @@
     <title>jQuery UI Datepicker functionality</title>
     <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
     <!-- Javascript -->
     <script>
-      $(function() {
-        $("#datepicker-13").datepicker();
-        /*$("#datepicker-13").datepicker("show");*/
-      });
+      $(document).ready(function() {
+
+        $('form').on('submit', function(e) {
+          e.preventDefault()
+          //return false;
+          /*TODO: copy the info to the jotform and submit, also process payment.*/
+        })
+      })
     </script>
   </head>
 
   <body>
     <!-- HTML -->
-    <p>Enter Date: <input type="text" id="datepicker-13"></p>
+    <form class="userform" action="" method="post">
+
+      <label for="name">Your name</label>
+      <input type="text" name="fullname" value="">
+
+      <label for="date">Select Class Date</label>
+      <select class="" name="date">
+      <!-- TODO: might make these buttons-->
+        <option value="Aug 23">August 23</option>
+
+      </select>
+
+      <label for="time">Class Time</label>
+      <input type="time" value="20:00">
+
+      <label for="email">Email address</label>
+      <input type="email" name="email" value="">
+
+      <input type="hidden" name="quantity" value="1">
+      <!-- later support buying more than 1 pass -->
+      <input type="hidden" name="instructor" value="David Cuevas">
+      <!-- later support buying more than 1 pass -->
+      <input type="submit" name="saveinfo" value="Save info and pay">
+    </form>
   </body>
 
 </html>

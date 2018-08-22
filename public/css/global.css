@@ -65,13 +65,13 @@ body {
 header {
   position: fixed;
   top: 0;
-  height: 4vh;
+  height: 5vh;
   padding: 12px;
   text-align: center
 }
 
 main {
-  padding-top: calc(5vh + 24px + 4px);
+  padding-top: calc(5vh + 24px);
   /* to be under the header*/
 }
 

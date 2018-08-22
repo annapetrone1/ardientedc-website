@@ -3,14 +3,7 @@ body {
   height: 100vh;
 }
 
-input {
-  padding: 8px;
-  display: block;
-  border: none;
-  border-bottom: 1px solid #ccc;
-}
-
-form.jotform-form {
+.jotform-form {
   display: none
 }
 
@@ -29,6 +22,7 @@ h1, h2 {
 
 h1 {
   font-size: 40px;
+  margin-bottom: .25em
 }
 
 h2 {
@@ -82,4 +76,11 @@ h3 {
 
 .userform input, .userform select {
   margin-bottom: 2.5em;
+}
+
+input[type="submit"] {
+  font-size: 120%;
+  background-color: rgba(64, 120, 165, .8);
+  padding: 12px 8px;
+  color: white;
 }
