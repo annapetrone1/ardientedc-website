@@ -4,6 +4,7 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 const dateFormat = require('dateformat');
+const uuidv1 = require('uuid/v1');
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -44,13 +45,13 @@ function longDate(date){
 app.get('/class/:id', (req, res) => {
   var p = req.params;
   console.log(`register for class ${p.id}`);
-  var schedule = JSON.parse(fs.readFileSync(__dirname + '/data/schedule.json', 'utf8'));
-  schedule = schedule[p.id];
-  var dow = schedule.dow; // should be a single value
-  var cancelled = schedule.cancelled;
+  var config = JSON.parse(fs.readFileSync(__dirname + '/data/schedule.json', 'utf8'));
+  config = config[p.id];
+  var dow = config.dow; // should be a single value
+  var cancelled = config.cancelled;
   var loopday = new Date(); // get the next 4 weeks of classes
 
-  var startHour = schedule['startTime'].split(':')[0];
+  var startHour = config['startTime'].split(':')[0];
   var datelist = [];
   if (loopday.getDay() == dow && loopday.getHours() >= startHour){
     // class is today and already started
@@ -63,13 +64,18 @@ app.get('/class/:id', (req, res) => {
     loopday.setDate(loopday.getDate() + 1);
   }
 
-  schedule['availableDates'] = datelist;
-  schedule['id'] = p.id;
-  schedule['startTimeFmt'] = dateFormat('2000-01-01 ' + schedule['startTime'],'hh:MM TT');
-  res.render('register',schedule);
-  // res.json(schedule);
+  config['availableDates'] = datelist;
+  config['id'] = p.id;
+  config['startTimeFmt'] = dateFormat('2000-01-01 ' + config['startTime'],'hh:MM TT');
+  config['orderid'] = uuidv1(); // generate a unique id for every visit to the reg page
+  res.render('register',config);
+  // res.json(config);
 });
 
+app.post('/class/:id/:orderid', (req, res)=>{
+  console.log('NEW ORDER ALERT! PAYMENT SUCCESSFUL!!', req.params);
+
+});
 app.listen(4000, () => {
   console.log('Listening on http://localhost:4000');
   // open('http://localhost:' + config.port);

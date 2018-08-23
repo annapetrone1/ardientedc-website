@@ -164,121 +164,21 @@
 
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
               <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="notify_url" value="/registration/<%= id %>/<%= orderid %>">
+              <!-- TODO notify_url should holdfully wourl when server has been deployed -->
               <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-  ">
+            ">
               <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
               <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
             </form>
           </article>
-
-
-
-
-
-
-
 
         </section>
 
 
       </main>
 
-      <form style="display:none" class="jotform-form" action="https://submit.jotform.us/submit/82316779852166/" method="post" name="form_82316779852166" id="82316779852166" accept-charset="utf-8">
-        <input type="hidden" name="formID" value="82316779852166" />
-        <div class="form-all">
-          <ul class="form-section page-section">
-            <li id="cid_1" class="form-input-wide" data-type="control_head">
-              <div class="form-header-group ">
-                <div class="header-text httal htvam">
-                  <h2 id="header_1" class="form-header" data-component="header">
-                  Class Signup
-                </h2>
-                </div>
-              </div>
-            </li>
-            <li class="form-line" data-type="control_textbox" id="id_8">
-              <label class="form-label form-label-top form-label-auto" id="label_8" for="input_8"> Name </label>
-              <div id="cid_8" class="form-input-wide">
-                <input type="text" id="input_8" name="q8_typeA" data-type="input-textbox" class="form-textbox" size="20" value="" data-component="textbox" />
-              </div>
-            </li>
-            <li class="form-line" data-type="control_textbox" id="id_9">
-              <label class="form-label form-label-top form-label-auto" id="label_9" for="input_9"> Quantity </label>
-              <div id="cid_9" class="form-input-wide">
-                <input type="text" id="input_9" name="q9_typeA9" data-type="input-textbox" class="form-textbox" size="20" value="" data-component="textbox" />
-              </div>
-            </li>
-            <li class="form-line" data-type="control_textbox" id="id_11">
-              <label class="form-label form-label-top form-label-auto" id="label_11" for="input_11"> Date </label>
-              <div id="cid_11" class="form-input-wide">
-                <input type="text" id="input_11" name="q11_date" data-type="input-textbox" class="form-textbox" size="20" value="" data-component="textbox" />
-              </div>
-            </li>
-            <li class="form-line" data-type="control_textbox" id="id_12">
-              <label class="form-label form-label-top form-label-auto" id="label_12" for="input_12"> Time </label>
-              <div id="cid_12" class="form-input-wide">
-                <input type="text" id="input_12" name="q12_time" data-type="input-textbox" class="form-textbox" size="20" value="" data-component="textbox" />
-              </div>
-            </li>
-            <li class="form-line" data-type="control_textbox" id="id_10">
-              <label class="form-label form-label-top form-label-auto" id="label_10" for="input_10"> Email </label>
-              <div id="cid_10" class="form-input-wide">
-                <input type="text" id="input_10" name="q10_typeA10" data-type="input-textbox" class="form-textbox" size="20" value="" data-component="textbox" />
-              </div>
-            </li>
-            <li class="form-line" data-type="control_textbox" id="id_13">
-              <label class="form-label form-label-top form-label-auto" id="label_13" for="input_13"> Instructor </label>
-              <div id="cid_13" class="form-input-wide">
-                <input type="text" id="input_13" name="q13_instructor" data-type="input-textbox" class="form-textbox" size="20" value="" data-component="textbox" />
-              </div>
-            </li>
-            <li class="form-line" data-type="control_textbox" id="id_14">
-              <label class="form-label form-label-top form-label-auto" id="label_14" for="input_14"> Location </label>
-              <div id="cid_14" class="form-input-wide">
-                <input type="text" id="input_14" name="q14_location" data-type="input-textbox" class="form-textbox" size="20" value="" data-component="textbox" />
-              </div>
-            </li>
-            <li class="form-line" data-type="control_textarea" id="id_17">
-              <label class="form-label form-label-top form-label-auto" id="label_17" for="input_17"> Address </label>
-              <div id="cid_17" class="form-input-wide">
-                <textarea id="input_17" class="form-textarea" name="q17_typeA17" cols="40" rows="6" data-component="textarea"></textarea>
-              </div>
-            </li>
-            <li class="form-line" data-type="control_textarea" id="id_18">
-              <label class="form-label form-label-top form-label-auto" id="label_18" for="input_18"> Reminders </label>
-              <div id="cid_18" class="form-input-wide">
-                <textarea id="input_18" class="form-textarea" name="q18_reminders" cols="40" rows="6" data-component="textarea"></textarea>
-              </div>
-            </li>
-            <li class="form-line" data-type="control_button" id="id_2">
-              <div id="cid_2" class="form-input-wide">
-                <div style="margin-left:156px" class="form-buttons-wrapper">
-                  <button id="input_2" type="submit" class="form-submit-button" data-component="button">
-                  Submit
-                </button>
-                </div>
-              </div>
-            </li>
-            <li style="display:none">
-              Should be Empty:
-              <input type="text" name="website" value="" />
-            </li>
-          </ul>
-        </div>
-        <input type="hidden" id="simple_spc" name="simple_spc" value="82316779852166" />
 
-        <div class="formFooter-heightMask">
-        </div>
-        <div class="formFooter">
-          <a href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=82316779852166&utm_content=jotform_logo&utm_campaign=powered_by_jotform_le" target="_blank" class="formFooter-logoLink"><img class="formFooter-logo" src="https://cdn.jotfor.ms/assets/img/logo/logo-new@1x.png" alt="" style="height: 44px;"></a>
-          <div class="formFooter-rightSide">
-            <span class="formFooter-text">
-            Now create your own JotForm - It's free!
-          </span>
-            <a class="formFooter-button" href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=82316779852166&utm_content=jotform_button&utm_campaign=powered_by_jotform_le" target="_blank">Create your own JotForm</a>
-          </div>
-        </div>
-      </form>
 
       <footer>
       </footer>

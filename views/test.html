@@ -22,30 +22,17 @@
 
   <body>
     <!-- HTML -->
-    <form class="userform" action="" method="post">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="notify_url" value="/registration/<%= id %>/<%= orderid %>">
 
-      <label for="name">Your name</label>
-      <input type="text" name="fullname" value="">
-
-      <label for="date">Select Class Date</label>
-      <select class="" name="date">
-      <!-- TODO: might make these buttons-->
-        <option value="Aug 23">August 23</option>
-
-      </select>
-
-      <label for="time">Class Time</label>
-      <input type="time" value="20:00">
-
-      <label for="email">Email address</label>
-      <input type="email" name="email" value="">
-
-      <input type="hidden" name="quantity" value="1">
-      <!-- later support buying more than 1 pass -->
-      <input type="hidden" name="instructor" value="David Cuevas">
-      <!-- later support buying more than 1 pass -->
-      <input type="submit" name="saveinfo" value="Save info and pay">
+      <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
     </form>
+
+
   </body>
 
 </html>
