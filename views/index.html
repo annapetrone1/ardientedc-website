@@ -27,13 +27,13 @@
           $('#video-logo p').fadeTo(1000, 0.7);
         }, 2000);
 
-        $(`.mySlides[num=0]`).fadeIn();
+        $(`.mySlides[num=0]`).fadeIn(2000);
         var slideIndex = 0;
         var nslides = $('.mySlides').length;
 
         function showSlide(slideIndex = 0) {
-          $(`.mySlides[num!=${slideIndex}]`).fadeOut(100);
-          $(`.mySlides[num=${slideIndex}]`).fadeIn(1000);
+          $(`.mySlides[num!=${slideIndex}]`).fadeOut(2000);
+          $(`.mySlides[num=${slideIndex}]`).fadeIn(2000);
         }
 
         // change the slide every 2 seconds
@@ -61,7 +61,7 @@
         <!-- empty unpositioned div-->
       </div>
       <div id="video-container" class="top">
-        <video id="video" class="" muted preload="none" autoplay="autoplay" loop="loop" poster="img/video-poster.png">
+        <video id="video" class="" muted preload="auto" autoplay="autoplay" loop="loop" poster="img/video-poster.png">
          <source id="mp4" src="video/ardiente-capital-congress.mp4" type="video/mp4">
          </video>
         <div id="video-logo" class="fg">
@@ -120,7 +120,7 @@
               <img src="img/logo-mini-white.gif">
               <p>Ardiente is run under the direction of David Cuevas, who has been dancing and teaching salsa since he was __ years old, and who was named the 2017 <i>Instructor of the Year</i> at the fifth annual DC Latin Honors Night ceremony.
               </p>
-              <p>Known for creating intricate and elegant turn patterns, accompanied by sharp stylish footwork, it's no surprise that the team has been turning heads at cogresses nationwide, including Houston, Chicago, Washington DC, ____... </p>
+              <p>Known for creating intricate and elegant turn patterns, accompanied by sharp stylish footwork, it's no surprise that the team has been turning heads at congresses nationwide, including Houston, Chicago, Washington DC, ____... </p>
             </div>
 
           </article>

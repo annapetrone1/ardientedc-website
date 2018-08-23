@@ -19,6 +19,7 @@
 #about-us {
   padding: 0 !important;
   overflow: hidden;
+  background-position: center 30%;
 }
 
 #about-us-text, #overlay {
@@ -73,7 +74,7 @@
   width: 35%;
   color: black;
   padding: 72px 24px;
-  top: 75vh;
+  top: 65vh;
   background-color: rgba(239, 239, 245, .8);
   /*rgba(208, 208, 225, .9);*/
   font-family: 'Montserrat', Georgia;
