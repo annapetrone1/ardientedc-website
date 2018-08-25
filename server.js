@@ -17,23 +17,23 @@ app.get('/', (req, res) => {
   // todo: check if it's a mobile device or desktop
   // md = new MobileDetect(req.headers['user-agent']);
   // res.render('index');
-  res.sendFile(__dirname + '/views/index.html');
+  res.render('index');
 });
 
 
 app.get('/test', (req, res) => {
-  res.sendFile(__dirname + '/views/test.html');
+  res.render('test');
 });
 
 app.get('/events', (req, res) => {
   console.log('events');
-  res.sendFile(__dirname + '/views/events.html');
+  res.render('events');
 });
 
 app.get('/classes', (req, res) => {
   console.log('classes');
   // TODO: read from the schedule and make classes a template
-  res.sendFile(__dirname + '/views/classes.html');
+  res.render('classes');
 });
 
 function shortDate(date){
