@@ -31,7 +31,7 @@ main {
 #lessons {
   width: 90%;
   margin: 0 auto;
-  margin-top: 2em;
+  margin-top: 4em;
 }
 
 p.dow {
@@ -79,14 +79,14 @@ video {
   border-left: none;
   border-right: none;
   background-color: none;
-  padding: 32px 12px;
+  padding: 32px;
   color: black;
   margin-bottom: 5em;
   font-family: Georgia
 }
 
 #lessons ul li .info {
-  height: 20vh;
+  height: 25vh;
   font-family: 'Montserrat';
   display: flex;
   flex-direction: row;
@@ -99,6 +99,10 @@ video {
 
 #lessons ul li:hover {
   background-color: rgba(225, 222, 237, .45);
+}
+
+#lessons .title_price {
+  flex-grow: 2;
 }
 
 #lessons .title_price * {
@@ -148,10 +152,11 @@ video {
 #lessons ul li .img-container {
   /*  max-width: 20%;*/
   flex-basis: 20%;
+  height: 100%;
 }
 
 #lessons ul li .img-container img {
-  width: 100%;
+  height: 100%;
 }
 
 #lessons ul li .info h3 {
