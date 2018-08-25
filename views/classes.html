@@ -25,10 +25,10 @@
           $desc = $(this).siblings('.description');
           if ($desc.css('display') == "none") {
             $desc.slideDown();
-            $(this).text('Hide Description');
+            $(this).children('span').text('Hide Description');
           } else {
             $desc.slideUp();
-            $(this).text('Class Description');
+            $(this).children('span').text('Class Description');
           }
 
           return false;
@@ -65,13 +65,20 @@
           <li>
             <article class="info">
               <!-- TODO: this div sizing is trash -->
-              <img src="img/classes/mambo-thursdays.jpg" alt="Mambo Thursdays class">
-              <h3>Mambo on2 Thursday Workshop Series</h3>
+              <div class="img-container">
+                <img src="img/classes/mambo-thursdays.jpg" alt="Mambo Thursdays class">
+              </div>
+
+              <div class="title_price">
+                <h3>Mambo on2 Thursday Workshop Series</h3>
+                <h4>Price: $12</h4>
+              </div>
+
               <a href="/class/mambo-thursdays"><button class="register" name="button">Register Here</button></a>
               <!-- TODO: add price/ loop over schedulejson -->
 
             </article>
-            <a href="" class="expand">Class Description</a>
+            <a href="" class="expand"><span>Class Description</span></a>
             <article class="description">
               <p>Catch us at “The Dancing Club” every Thursday from 8-9pm teaching Mambo/ChaCha/Fusion and much more! Classes will vary so make sure you follow us to stay updated. Instructor David Cuevas will be teaching "Mambo On2" so make sure to come
                 groove with us.
