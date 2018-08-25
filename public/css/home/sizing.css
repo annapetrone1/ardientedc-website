@@ -4,6 +4,10 @@ body {
   overflow-x: hidden;
 }
 
+footer {
+  margin-top: 0 !important
+}
+
 #content {}
 
 #video-container, #video-screen {

@@ -7,7 +7,28 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/events/main.css">
     <link rel="icon" type="image/png" href="img/favicon.gif">
-    <link href="https://fonts.googleapis.com/css?family=Lora|Montserrat|M+PLUS+1p" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Raleway|Montserrat|M+PLUS+1p|Forum" rel="stylesheet">
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('a.buy').on('click', function(e) {
+          e.preventDefault();
+          if ($('.buttons').css('display') == 'none') {
+            $('.buttons').slideDown();
+          } else {
+            $('.buttons').slideUp();
+          }
+
+          return false;
+        })
+        $('.close a').on('click', function(e) {
+          e.preventDefault();
+          $('.buttons').slideUp();
+          return false;
+        })
+      })
+    </script>
   </head>
 
   <body>
@@ -20,6 +41,9 @@
     </header>
 
     <main>
+      <!--<section id="overlay" class="background-img" style="background-image: url('img/logo-overlay-black.gif');">
+
+      </section>-->
       <section>
         <h1>Upcoming Events</h1>
 
@@ -43,8 +67,8 @@
                   <span>This event is gonna be fire!</span></p>
 
                 <p>
-                  <span>Friday, September 14, 2018</span>, join Ardiente Dance Company for a night of dance with a wonderful workshop and performance by Ernesto & Denisse's amazing team, IROKO! DJ Renzo will be on the 1's and 2's all night long playing
-                  the jams.
+                  <span>Friday, September 14, 2018</span>, join Ardiente Dance Company for a night of dance with a wonderful workshop and performance by Ernesto & Denisse's amazing team, IROKO! <b>DJ RENZO</b> will be on the 1's and 2's all night long
+                  playing the jams.
                 </p>
 
                 <p><span>Workshop:</span> 9-10pm
@@ -59,9 +83,15 @@
             </div>
 
           </div>
-          <hr>
+          <div class="spacer">
+
+          </div>
+          <a href="#" class="buy cool-black-text"><h4>Get your pass</h4>
+
+          </a>
           <div class="buttons">
-            <h4>Buy your pass</h4>
+            <!--<p class="close">
+              <a href="#">&#10005;</a></p>-->
 
             <div class="form-container">
               <form class="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -97,7 +127,13 @@
               <p>RSVP on Facebook!</p>
             </a>
             </div>
+
+            <div class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3104.438809069035!2d-77.22508778468183!3d38.913946753573576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64cb1bafc9bf3%3A0x6f9512b38889748b!2sTysons+Ballroom+%26+Dancesport+Center!5e0!3m2!1sen!2sus!4v1535217954488"
+                width="90%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
           </div>
+
         </article>
 
       </section>
