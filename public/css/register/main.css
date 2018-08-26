@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(240, 240, 240);
+  background-color: rgba(57, 53, 77, .2);
 }
 
 .jotform-form {
@@ -12,6 +12,7 @@ main {
   margin-top: 16px;
   position: relative;
   margin-bottom: 100px;
+  background-color: rgb(240, 240, 240);
 }
 
 main h1, main h2 {
@@ -22,7 +23,8 @@ main h1, main h2 {
 
 main h1 {
   font-size: 40px;
-  margin-bottom: .25em
+  margin-bottom: .25em;
+  margin-top: .25em;
 }
 
 main h2 {
@@ -40,7 +42,7 @@ main h3 {
   height: 100%;
   margin: 0 auto;
   width: auto;
-  opacity: .4;
+  opacity: .6;
   overflow: hidden;
   text-align: center;
 }
@@ -54,7 +56,7 @@ main h3 {
   min-height: calc(60% - 15%);
   padding: 48px 42px;
   padding-left: 30px;
-  background-color: rgba(250, 250, 250, .95);
+  background-color: rgba(250, 250, 250, .98);
   margin: 0 auto;
   position: absolute;
   top: 20%;

@@ -27,3 +27,7 @@ footer {
 #pro-team, #student-team {
   height: 95vh;
 }
+
+#student-team {
+  padding: 0
+}
