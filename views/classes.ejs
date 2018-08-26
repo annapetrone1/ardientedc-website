@@ -3,32 +3,36 @@
 
   <head>
     <title>Ardiente | Classes</title>
-    <% include partials/head %>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="icon" type="image/png" href="/img/favicon.gif">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Montserrat:200|M+PLUS+1p:100|Raleway:100" rel="stylesheet">
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+
+    <link rel="stylesheet" href="css/classes/main.css">
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        console.log('DOM loaded');
 
 
-      <link rel="stylesheet" href="css/classes/main.css">
+        $('a.expand').on('click', function(e) {
+          e.preventDefault();
+          $desc = $(this).siblings('.description');
+          if ($desc.css('display') == "none") {
+            $desc.slideDown();
+            $(this).children('span').text('Hide Description');
+          } else {
+            $desc.slideUp();
+            $(this).children('span').text('Class Description');
+          }
 
-      <script type="text/javascript">
-        $(document).ready(function() {
-          console.log('DOM loaded');
-
-
-          $('a.expand').on('click', function(e) {
-            e.preventDefault();
-            $desc = $(this).siblings('.description');
-            if ($desc.css('display') == "none") {
-              $desc.slideDown();
-              $(this).children('span').text('Hide Description');
-            } else {
-              $desc.slideUp();
-              $(this).children('span').text('Class Description');
-            }
-
-            return false;
-          })
-
+          return false;
         })
-      </script>
+
+      })
+    </script>
   </head>
 
   <body>

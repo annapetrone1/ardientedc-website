@@ -3,53 +3,58 @@
 
   <head>
     <title>Ardiente | Class Registration</title>
-    <% include partials/head %>
-      <link rel="stylesheet" href="/css/register/main.css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="icon" type="image/png" href="/img/favicon.gif">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Montserrat:200|M+PLUS+1p:100|Raleway:100" rel="stylesheet">
 
-      <script type="text/javascript">
-        $(document).ready(function() {
-          console.log('startTimeFmt', '<%= startTimeFmt %>');
-          $('.userform form').on('submit', function(e) {
-            //$('.userform button').on('click', function(e) {
-            console.log('user form submitted')
-            e.preventDefault();
-            for (field of ['fullname', 'email', 'date']) {
-              $(`.payment p .${field}`).text($(`.userform .input[name="${field}"]`).val());
-            }
-            $('.form-container .userform').hide();
-            $('.form-container .payment input[type="checkbox"]').get(0).checked = false; // always require them to check it
-            $('.form-container .payment .user-confirm').fadeIn()
-            /* TODO: add "edit" button to go back to .userform. and a confirm check box -> lets paypal button appear*/
-            /*TODO: copy the info to the jotform and submit, also process payment.*/
-          })
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/css/register/main.css">
 
-          $('.cancel').on('click', function(e) {
-            var ok = confirm("Are you sure you want to canel your registration?");
-            if (ok == true) {
-              // leave registration and go back to main class page
-              return true
-            } else {
-              // stay on page
-              e.preventDefault();
-            }
-          })
-          $('.edit').on('click', function(e) {
-            e.preventDefault();
-            $('.form-container .payment .user-confirm').hide();
-            $('.form-container .payment form').hide();
-            $('.form-container .userform').fadeIn();
-          })
-
-          $('.form-container .payment input[type="checkbox"]').change(function() {
-            if ($(this).is(':checked')) {
-              // show the paypal button
-              $('.form-container .payment form').fadeIn();
-            } else {
-              $('.form-container .payment form').hide();
-            }
-          })
+    <script type="text/javascript">
+      $(document).ready(function() {
+        console.log('startTimeFmt', '<%= startTimeFmt %>');
+        $('.userform form').on('submit', function(e) {
+          //$('.userform button').on('click', function(e) {
+          console.log('user form submitted')
+          e.preventDefault();
+          for (field of ['fullname', 'email', 'date']) {
+            $(`.payment p .${field}`).text($(`.userform .input[name="${field}"]`).val());
+          }
+          $('.form-container .userform').hide();
+          $('.form-container .payment input[type="checkbox"]').get(0).checked = false; // always require them to check it
+          $('.form-container .payment .user-confirm').fadeIn()
+          /* TODO: add "edit" button to go back to .userform. and a confirm check box -> lets paypal button appear*/
+          /*TODO: copy the info to the jotform and submit, also process payment.*/
         })
-      </script>
+
+        $('.cancel').on('click', function(e) {
+          var ok = confirm("Are you sure you want to canel your registration?");
+          if (ok == true) {
+            // leave registration and go back to main class page
+            return true
+          } else {
+            // stay on page
+            e.preventDefault();
+          }
+        })
+        $('.edit').on('click', function(e) {
+          e.preventDefault();
+          $('.form-container .payment .user-confirm').hide();
+          $('.form-container .payment form').hide();
+          $('.form-container .userform').fadeIn();
+        })
+
+        $('.form-container .payment input[type="checkbox"]').change(function() {
+          if ($(this).is(':checked')) {
+            // show the paypal button
+            $('.form-container .payment form').fadeIn();
+          } else {
+            $('.form-container .payment form').hide();
+          }
+        })
+      })
+    </script>
   </head>
 
   <body>

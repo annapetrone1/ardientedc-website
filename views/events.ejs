@@ -3,29 +3,33 @@
 
   <head>
     <title>Ardiente | Events</title>
-    <% include partials/head %>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="icon" type="image/png" href="/img/favicon.gif">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Montserrat:200|M+PLUS+1p:100|Raleway:100" rel="stylesheet">
 
-      <link rel="stylesheet" href="css/events/main.css">
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="css/events/main.css">
 
-      <script type="text/javascript">
-        $(document).ready(function() {
-          $('a.buy').on('click', function(e) {
-            e.preventDefault();
-            if ($('.buttons').css('display') == 'none') {
-              $('.buttons').slideDown();
-            } else {
-              $('.buttons').slideUp();
-            }
-
-            return false;
-          })
-          $('.close a').on('click', function(e) {
-            e.preventDefault();
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('a.buy').on('click', function(e) {
+          e.preventDefault();
+          if ($('.buttons').css('display') == 'none') {
+            $('.buttons').slideDown();
+          } else {
             $('.buttons').slideUp();
-            return false;
-          })
+          }
+
+          return false;
         })
-      </script>
+        $('.close a').on('click', function(e) {
+          e.preventDefault();
+          $('.buttons').slideUp();
+          return false;
+        })
+      })
+    </script>
   </head>
 
   <body>
