@@ -14,23 +14,23 @@ main {
   margin-bottom: 100px;
 }
 
-h1, h2 {
+main h1, main h2 {
   color: black;
   font-family: "Raleway";
   text-align: center;
 }
 
-h1 {
+main h1 {
   font-size: 40px;
   margin-bottom: .25em
 }
 
-h2 {
+main h2 {
   font-size: 36px;
   margin-bottom: 1em;
 }
 
-h3 {
+main h3 {
   font-family: "M PLUS 1p";
   font-size: 28px;
   margin-bottom: .5em;
@@ -40,15 +40,14 @@ h3 {
   height: 100%;
   margin: 0 auto;
   width: auto;
-  opacity: .5;
+  opacity: .4;
   overflow: hidden;
   text-align: center;
 }
 
-/*
 .img-container img {
-  min-width: 100%;
-}*/
+  min-width: 90%;
+}
 
 .form-container {
   width: 40%;

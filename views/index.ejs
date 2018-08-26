@@ -2,59 +2,53 @@
 <html>
 
   <head>
-    <meta charset="utf-8">
     <title>Ardiente Dance Company</title>
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/home/main.css">
-    <link rel="stylesheet" href="css/home/sizing.css">
-    <link rel="stylesheet" href="css/home/video.css">
-    <link rel="stylesheet" href="css/home/slides.css">
-    <link rel="stylesheet" href="css/home/mobile.css">
-    <link rel="icon" type="image/png" href="img/favicon.gif">
-    <link href="https://fonts.googleapis.com/css?family=Lora|Dancing+Script|M+PLUS+1p|Alegreya+Sans+SC|Raleway|Montserrat:200|M+PLUS+1p:100|Lateef" rel="stylesheet">
+    <% include partials/head %>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-
-    <script type="text/javascript">
-      $(document).ready(function() {
-        console.log('DOM loaded');
-        document.querySelector('video').playbackRate = 0.5;
-
-        setTimeout(function() {
-          $('#video-logo img').fadeTo(2000, 0.75);
-        }, 1000);
-        setTimeout(function() {
-          $('#video-logo p').fadeTo(1000, 0.7);
-        }, 2000);
-
-        $(`.mySlides[num=0]`).fadeIn(2000);
-        var slideIndex = 0;
-        var nslides = $('.mySlides').length;
-
-        function showSlide(slideIndex = 0) {
-          $(`.mySlides[num!=${slideIndex}]`).fadeOut(2000);
-          $(`.mySlides[num=${slideIndex}]`).fadeIn(2000);
-        }
-
-        // change the slide every 2 seconds
-        var slideshow = setInterval(function() {
-          // console.log('changing slide');
-          slideIndex = (slideIndex + 1) % nslides;
-          showSlide(slideIndex);
-        }, 4000);
+      <link rel="stylesheet" href="css/home/main.css">
+      <link rel="stylesheet" href="css/home/sizing.css">
+      <link rel="stylesheet" href="css/home/video.css">
+      <link rel="stylesheet" href="css/home/slides.css">
+      <link rel="stylesheet" href="css/home/mobile.css">
+      <link href="https://fonts.googleapis.com/css?family=Lora|Dancing+Script|Raleway" rel="stylesheet">
 
 
-      })
-    </script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          console.log('DOM loaded');
+          document.querySelector('video').playbackRate = 0.5;
+
+          setTimeout(function() {
+            $('#video-logo img').fadeTo(2000, 0.75);
+          }, 1000);
+          setTimeout(function() {
+            $('#video-logo p').fadeTo(1000, 0.7);
+          }, 2000);
+
+          $(`.mySlides[num=0]`).fadeIn(2000);
+          var slideIndex = 0;
+          var nslides = $('.mySlides').length;
+
+          function showSlide(slideIndex = 0) {
+            $(`.mySlides[num!=${slideIndex}]`).fadeOut(2000);
+            $(`.mySlides[num=${slideIndex}]`).fadeIn(2000);
+          }
+
+          // change the slide every 2 seconds
+          var slideshow = setInterval(function() {
+            // console.log('changing slide');
+            slideIndex = (slideIndex + 1) % nslides;
+            showSlide(slideIndex);
+          }, 4000);
+
+
+        })
+      </script>
   </head>
 
   <body>
     <header>
-      <nav>
-        <a href="/">Home</a> |
-        <a href="/events">Events</a> |
-        <a href="/classes">Classes</a>
-      </nav>
+      <% include partials/header %>
     </header>
     <main>
       <div class="empty">
@@ -154,6 +148,8 @@
 
     </main>
     <footer>
+      <% include partials/footer %>
+
     </footer>
   </body>
 

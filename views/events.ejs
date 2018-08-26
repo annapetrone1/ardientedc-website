@@ -2,42 +2,35 @@
 <html>
 
   <head>
-    <meta charset="utf-8">
     <title>Ardiente | Events</title>
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/events/main.css">
-    <link rel="icon" type="image/png" href="img/favicon.gif">
-    <link href="https://fonts.googleapis.com/css?family=Lora|Raleway|Montserrat:200|M+PLUS+1p|Forum" rel="stylesheet">
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <% include partials/head %>
 
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $('a.buy').on('click', function(e) {
-          e.preventDefault();
-          if ($('.buttons').css('display') == 'none') {
-            $('.buttons').slideDown();
-          } else {
+      <link rel="stylesheet" href="css/events/main.css">
+
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('a.buy').on('click', function(e) {
+            e.preventDefault();
+            if ($('.buttons').css('display') == 'none') {
+              $('.buttons').slideDown();
+            } else {
+              $('.buttons').slideUp();
+            }
+
+            return false;
+          })
+          $('.close a').on('click', function(e) {
+            e.preventDefault();
             $('.buttons').slideUp();
-          }
-
-          return false;
+            return false;
+          })
         })
-        $('.close a').on('click', function(e) {
-          e.preventDefault();
-          $('.buttons').slideUp();
-          return false;
-        })
-      })
-    </script>
+      </script>
   </head>
 
   <body>
     <header>
-      <nav>
-        <a href="/">Home</a> |
-        <a href="/events">Events</a> |
-        <a href="/classes">Classes</a>
-      </nav>
+      <% include partials/header %>
     </header>
     <section id="overlay" class="background-img" style="background-image: url('img/logo-overlay-black.gif');opacity: 1">
       <!--class="background-img" -->
@@ -147,6 +140,8 @@
 
 
     <footer>
+      <% include partials/footer %>
+
     </footer>
   </body>
 

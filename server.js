@@ -2,14 +2,15 @@
 const express = require('express');
 // const MobileDetect = require('mobile-detect'),
 const fs = require('fs');
-const app = express();
 const dateFormat = require('dateformat');
 const uuidv1 = require('uuid/v1');
 
+var app = express();
+app.set('port', process.env.PORT || 4000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-app.use(express.static('public'));
 
+app.use(express.static(__dirname + '/public'));
 
 
 app.get('/', (req, res) => {
