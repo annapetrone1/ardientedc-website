@@ -1,74 +1,76 @@
-  #video-container {
-    /*position: fixed;
+#video-container {
+  /*position: fixed;
   right: 0;
   top: 0;*/
-    /*  display: flex;
+  /*  display: flex;
   align-items: center;
   justify-content: center;
   font-size: 48px;*/
-    overflow: hidden;
-  }
+  overflow: hidden;
+}
 
-  #video, #video-screen {
-    position: fixed;
-    /*right: 0;*/
-    top: 0;
-    right: -5vh;
-    min-width: 110%;
-    overflow: hidden;
-    /* this height doesnt really matter, what matters is the offset of #content*/
-  }
+#video, #video-screen {
+  position: fixed;
+  /*right: 0;*/
+  top: 0;
+  right: -5vh;
+  min-width: 110%;
+  overflow: hidden;
+  /* this height doesnt really matter, what matters is the offset of #content*/
+}
 
-  #video {
-    z-index: -1;
-    min-height: 100%;
-  }
+#video {
+  z-index: -1;
+  min-height: 100%;
+  display: none;
+  /* hide at first */
+}
 
-  #video-screen {
-    background-color: black;
-    opacity: .4;
-    z-index: -1;
-    height: 100vh;
-  }
+#video-screen {
+  background-color: black;
+  opacity: .4;
+  z-index: -1;
+  height: 100vh;
+}
 
-  #video-logo {
-    position: relative;
-    top: 20vh;
-    height: 78vh;
-    /* top + height should add to 98*/
-    max-width: 50vw;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-  }
+#video-logo {
+  position: relative;
+  top: 20vh;
+  height: 78vh;
+  /* top + height should add to 98*/
+  max-width: 50vw;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
 
-  #video-logo * {
-    display: none;
-    /*hide the logo at first*/
-  }
+#video-logo * {
+  display: none;
+  /*hide the logo at first*/
+}
 
-  #video-logo img {
-    height: 40vh;
-    /*opacity: 50%;*/
-    /* see the .fadeTo() to set this*/
-  }
+#video-logo img {
+  height: 40vh;
+  /*opacity: 50%;*/
+  /* see the .fadeTo() to set this*/
+}
 
-  #video-logo p {
-    font-size: 40px;
-    color: white;
-  }
+#video-logo p {
+  font-size: 40px;
+  color: white;
+}
 
-  #enter {
-    position: absolute;
-    bottom: 5vh;
-    left: 50%;
-    margin: 0 auto;
-  }
+#enter {
+  position: absolute;
+  bottom: 5vh;
+  left: 50%;
+  margin: 0 auto;
+}
 
-  #enter button {
-    background-color: black;
-    font-family: 'M PLUS 1p', sans-serif;
-    font-size: 32px;
-    text-transform: uppercase;
-    color: white;
-  }
+#enter button {
+  background-color: black;
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 32px;
+  text-transform: uppercase;
+  color: white;
+}
