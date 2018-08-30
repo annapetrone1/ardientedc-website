@@ -16,6 +16,7 @@ main {
   margin: 0 auto;
   overflow: hidden;
   background-position: center 20%;
+  background-repeat: no-repeat;
 }
 
 /*
