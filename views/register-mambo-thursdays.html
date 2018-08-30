@@ -9,10 +9,11 @@
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Montserrat:200|M+PLUS+1p:100|Raleway:100" rel="stylesheet">
 
     <script src="/js/jquery-3.3.1.min.js"></script>
+
     <link rel="stylesheet" href="/css/register/main.css">
 
     <script type="text/javascript">
-      function formatDate(date) {
+      function longDate(date) {
         var options = {
           weekday: 'long',
           year: 'numeric',
@@ -22,17 +23,25 @@
         return date.toLocaleDateString("en-US", options);
       }
 
+      function zero_pad(num) {
+        return (num < 10 ? '0' : '') + num;
+      }
+
+      function shortDate(date) {
+        return `${date.getFullYear()}-${zero_pad(date.getMonth()+1)}-${zero_pad(date.getDate())}`;
+      }
+
       function makeDates(dow, startHour) {
         var $date_select = $('select[name="date"]');
         var loopday = new Date(); // get the next 4 weeks of classes
 
         if (loopday.getDay() == dow && loopday.getHours() >= startHour) {
           // class is today and already started
-          loopday.setDate(date.getDate() + i);
+          loopday.setDate(date.getDate() + 1);
         }
         for (let i = 0; i <= 28; i += 1) {
           if (loopday.getDay() == dow) {
-            $date_select.append(`<option value="${formatDate(loopday)}">${formatDate(loopday)}</option>`);
+            $date_select.append(`<option value="${shortDate(loopday)}">${longDate(loopday)}</option>`);
           }
           loopday.setDate(loopday.getDate() + 1);
         }
@@ -44,44 +53,30 @@
         var dow = 4;
         makeDates(dow, startHour);
 
-
         $('.userform form').on('submit', function(e) {
           //$('.userform button').on('click', function(e) {
           console.log('user form submitted')
           e.preventDefault();
 
-          /**TESTING AWS API GATEWAY**/
-          var api = 'https://l29kjanpb9.execute-api.us-east-1.amazonaws.com/prod/register';
+          var faviconS3 = 'http://ardientedc.com.s3-website-us-east-1.amazonaws.com/img/favicon.gif';
+          var $selectedDate = $('.userform select[name="date"] option:selected');
+          var query = $(this).serialize();
+          $('.payment form').append(`<input type="hidden" name="image_url" value="${faviconS3}">`);
+          $('.payment form').append(`<input type="hidden" name="item_name" value="Mambo Thursdays with Ardiente: ${$selectedDate.val()}">`);
 
-          $.ajax({
-            type: "POST",
-            url: api,
-            crossDomain: true,
-            contentType: "application/json",
-            data: JSON.stringify({
-              data: $(this).serialize()
-            }),
-            success: function() {
-              console.log('successfully posted to aws', err, response);
-            },
-            error: function(err) {
-              console.log('error posting to aws', err)
-            }
-          });
-
-
-          for (field of ['fullname', 'email', 'date']) {
+          for (field of ['fullname', 'email']) {
             $(`.payment p .${field}`).text($(`.userform .input[name="${field}"]`).val());
           }
+          $(`.payment p .date`).text($selectedDate.text());
+
           $('.form-container .userform').hide();
           $('.form-container .payment input[type="checkbox"]').get(0).checked = false; // always require them to check it
           $('.form-container .payment .user-confirm').fadeIn()
-          /* TODO: add "edit" button to go back to .userform. and a confirm check box -> lets paypal button appear*/
-          /*TODO: copy the info to the jotform and submit, also process payment.*/
+          /*TODO: copy the info to the jotform and submit*/
         })
 
         $('.cancel').on('click', function(e) {
-          var ok = confirm("Are you sure you want to canel your registration?");
+          var ok = confirm("Are you sure you want to cancel your registration?");
           if (ok == true) {
             // leave registration and go back to main class page
             return true
@@ -95,16 +90,18 @@
           $('.form-container .payment .user-confirm').hide();
           $('.form-container .payment form').hide();
           $('.form-container .userform').fadeIn();
-        })
+        });
 
         $('.form-container .payment input[type="checkbox"]').change(function() {
           if ($(this).is(':checked')) {
-            // show the paypal button
+            // show the paypal button and hide the edit link
             $('.form-container .payment form').fadeIn();
+            $('.form-container .edit').css('display', 'none');
           } else {
             $('.form-container .payment form').hide();
+            $('.form-container .edit').css('display', 'block');
           }
-        })
+        });
       })
     </script>
   </head>
@@ -188,31 +185,35 @@
 
           <div class="user-confirm">
             <h3>Confirm your registration, and submit payment</h3>
-            <p> Name: <span class="fullname"></span></p>
-            <p> Email address <span class="email"></span></p>
-            <p> Class Date <span class="date"></span></p>
-            <p> Class Time <span class="time">08:00 PM</span></p>
-            <p> Price: <span class="price">$12</span></p>
-            <div class="address">
-              <label>Class Location and Address</label>
-              <h5>The Dancing Club</h5>
+            <p class="detail"> <b>Name:</b> <span class="fullname"></span></p>
+            <p class="detail"> <b>Email Address:</b> <span class="email"></span></p>
+            <p class="detail"> <b>Class Date:</b> <span class="date"></span></p>
+            <p class="detail"> <b>Class Time:</b> <span class="time">08:00 PM</span></p>
+            <p class="detail"> <b>Price:</b> <span class="price">$12</span></p>
+            <div class="address detail">
+              <p><b>Class Location and Address:</b></p>
+              <p>The Dancing Club</p>
               <p>
                 D, 5050 Nicholson Ln, Rockville, MD 20852
               </p>
             </div>
-            <a class="edit" href="#">Edit info</a>
-            <input type="checkbox" name="confirm" value=unchecked><span>I confirm my information is correct</span>
+
+            <div class="confirmation-box">
+              <p><input type="checkbox" name="confirm" value=unchecked><span>I confirm my information is correct</span></p>
+
+              <p><a class="edit" href="#">&larr; Edit info</a></p>
+            </div>
           </div>
 
           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_s-xclick">
-            <!--<input type="hidden" name="notify_url" value="/registration/<%= id %>/<%= orderid %>">-->
-            <input type="hidden" name="image_url" value="http://ardientedc.com.s3-website-us-east-1.amazonaws.com/img/favicon.gif">
-            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
             ">
             <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
             <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
           </form>
+
+
         </article>
 
       </section>

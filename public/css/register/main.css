@@ -73,21 +73,61 @@ main h3 {
   font-family: 'M PLUS 1p';
 }
 
-.userform label {
+.userform label, .payment .detail {
   display: block;
   font-family: "Raleway";
+}
+
+.payment .detail {
+  margin-left: .5em;
+}
+
+.userform label {
   margin-bottom: .5em;
+}
+
+.payment .detail {
+  margin-bottom: 1.5em;
 }
 
 .userform input, .userform select {
   margin-bottom: 2.5em;
 }
 
+a.edit {
+  text-decoration: none;
+  color: rgb(13, 2, 56);
+}
+
+a.edit:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.confirmation-box {
+  padding: .5em;
+  font-family: Verdana;
+  height: 3em;
+  margin-bottom: 1em;
+}
+
 .classinfo {
   font-family: "M PLUS 1p";
-  background-color: rgba(225, 222, 237, .45);
   margin-bottom: 1em;
   padding: 8px;
+}
+
+.classinfo, .confirmation-box {
+  background-color: rgba(225, 222, 237, .45);
+}
+
+.confirmation-box p {
+  margin-bottom: 1em;
+  font-family: Arial
+}
+
+.confirmation-box span {
+  margin-left: .5em;
 }
 
 button[name="cancel"] {
