@@ -44,6 +44,11 @@ main h4 {
   text-transform: uppercase;
 }
 
+main h4.date {
+  font-size: 20px;
+  margin-bottom: .25em
+}
+
 main h5 {
   font-family: Helvetica, sans-serif;
   font-weight: bold;
