@@ -58,10 +58,8 @@
           console.log('user form submitted')
           e.preventDefault();
 
-          var faviconS3 = 'http://ardientedc.com.s3-website-us-east-1.amazonaws.com/img/favicon.gif';
           var $selectedDate = $('.userform select[name="date"] option:selected');
           var query = $(this).serialize();
-          $('.payment form').append(`<input type="hidden" name="image_url" value="${faviconS3}">`);
           $('.payment form').append(`<input type="hidden" name="item_name" value="Mambo Thursdays with Ardiente: ${$selectedDate.val()}">`);
           $('.payment form').append(`<input type="hidden" name="return" value="http://ardientedc.com.s3-website-us-east-1.amazonaws.com/classes.html">`);
 
