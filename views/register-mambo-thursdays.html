@@ -63,6 +63,8 @@
           var query = $(this).serialize();
           $('.payment form').append(`<input type="hidden" name="image_url" value="${faviconS3}">`);
           $('.payment form').append(`<input type="hidden" name="item_name" value="Mambo Thursdays with Ardiente: ${$selectedDate.val()}">`);
+          $('.payment form').append(`<input type="hidden" name="return" value="http://ardientedc.com.s3-website-us-east-1.amazonaws.com/classes.html">`);
+
 
           for (field of ['fullname', 'email']) {
             $(`.payment p .${field}`).text($(`.userform .input[name="${field}"]`).val());
@@ -118,7 +120,7 @@
       <h1>Register for:</h1>
       <h2>Mambo on2 Thursday Workshop Series</h2>
       <section class="img-container">
-        <img src="/img/classes/mambo-thursdays.jpg" alt="">
+        <img src="/img/classes-mambo-thursdays.jpg" alt="">
 
       </section>
       <section class="form-container">
