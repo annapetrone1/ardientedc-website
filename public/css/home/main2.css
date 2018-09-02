@@ -1,5 +1,5 @@
 #content section:not(.separator) {
-  padding: 2%;
+  /*padding: 2%;*/
   padding-top: 0;
   height: auto;
   position: relative;
@@ -22,21 +22,50 @@
 }
 
 #about-us-text {
-  background-color: rgba(225, 222, 237, .45);
   z-index: 2;
+  position: relative;
+}
+
+#about-us-text h1 {
+  font-family: 'Raleway', Arial;
+  font-weight: bold;
+}
+
+#about-us-text-left, #about-us-text-right {
+  padding: 2%;
 }
 
 #overlay {
   /*height: 150%;*/
   opacity: .4;
   position: absolute;
-  z-index: 1;
+  z-index: 0;
 }
 
 #honors-night {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+#about-us-text-box {
+  border: 1px solid black;
+  text-align: center;
+  display: block;
+  color: black;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: lighter;
+  margin: 0 auto;
+}
+
+#about-us-text article h2 {
+  font-size: 34px;
+  font-family: "Montserrat", Arial
+}
+
+#about-us-text-box p {
+  margin-top: 1em;
+  font-size: 130%
 }
 
 @media only screen and (max-width: 799px) {
@@ -48,6 +77,28 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  #about-us-text {
+    background-color: rgba(225, 222, 237, .55);
+  }
+  #about-us-text h1 {
+    font-size: 9vh;
+  }
+  #about-us-text-left {
+    padding-top: .5em;
+    margin-bottom: 1vh;
+  }
+  #about-us-text-box {
+    background-color: rgba(239, 239, 245, 0.7);
+    padding: 1em .5em;
+  }
+  #overlay {
+    height: 140%;
+    top: -20%
+  }
+  #honors-night {
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
   }
   #honors-night p.headline {
     font-size: 8vh;
@@ -69,6 +120,9 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+  #about-us-text {
+    background-color: rgba(225, 222, 237, .45);
+  }
   #about-us-text-left, #about-us-text-right {
     display: inline-block;
     align-items: top;
@@ -76,15 +130,27 @@
     overflow: hidden;
   }
   #about-us-text-left {
-    width: 40%;
-    padding-top: 10em;
+    overflow-x: visible !important;
+  }
+  #about-us-text h1 {
+    font-size: 10vw;
+  }
+  #about-us-text-left {
+    width: 45%;
+    padding-top: 30vh;
     height: 100%;
   }
   #about-us-text-right {
-    width: 43%;
+    width: 40%;
     float: right;
-    padding-top: 15em;
+    padding-top: 60vh;
     margin-right: 2% !important;
+  }
+  #about-us-text-box {
+    background-color: rgba(239, 239, 245, 0.7);
+    padding: 2em .5em;
+    max-height: 70vh;
+    overflow-y: scroll;
   }
   #honors-night p.headline {
     font-size: 12vh;
