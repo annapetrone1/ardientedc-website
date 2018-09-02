@@ -21,6 +21,10 @@
   #honors-night {
     min-height: 0 !important;
   }
+  #overlay {
+    height: 140%;
+    top: -20%
+  }
 }
 
 /*
