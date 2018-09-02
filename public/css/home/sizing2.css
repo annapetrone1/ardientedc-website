@@ -19,7 +19,7 @@
 @media only screen and (max-width: 799px) {
   /* mobile */
   #honors-night {
-    min-height: 0 !important;
+    min-height: 60vh !important;
   }
   #overlay {
     height: 140%;
