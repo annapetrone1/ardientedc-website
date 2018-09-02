@@ -1,0 +1,29 @@
+@media only screen and (min-width: 800px) {
+  /* desktop */
+  #video-container, #video-screen {
+    min-height: 98vh;
+  }
+  #about-us, #about-us-text {
+    height: 160vh;
+    overflow: hidden;
+  }
+  #overlay {
+    height: 180vh;
+    top: -20vh
+  }
+  #honors-night {
+    /*height: 60vh !important;*/
+  }
+}
+
+@media only screen and (max-width: 799px) {
+  /* mobile */
+  #honors-night {
+    min-height: 0 !important;
+  }
+}
+
+/*
+#about-us-text {
+  height: 100%;
+}*/

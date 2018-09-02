@@ -4,18 +4,22 @@
   <head>
     <title>Ardiente Dance Company</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/global2.css">
     <link rel="icon" type="image/png" href="http://ardientedance.com.s3-website-us-east-1.amazonaws.com/img/favicon.gif">
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Montserrat:200|M+PLUS+1p:100|Raleway:100" rel="stylesheet">
+    <!-- Alegreya ? -->
+    <link rel="stylesheet" href="/fonts/montserrat_200.css">
+    <link rel="stylesheet" href="/fonts/m_plus_1_100.css">
+    <link rel="stylesheet" href="/fonts/raleway_100.css">
 
     <script src="/js/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="css/home/main.css">
-    <link rel="stylesheet" href="css/home/sizing.css">
+    <link rel="stylesheet" href="css/home/main2.css">
+    <link rel="stylesheet" href="css/home/sizing2.css">
     <link rel="stylesheet" href="css/home/video.css">
-    <link rel="stylesheet" href="css/home/slides.css">
-    <link rel="stylesheet" href="css/home/mobile.css">
-    <link href="https://fonts.googleapis.com/css?family=Lora|Dancing+Script|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="css/home/slides2.css">
 
+    <link rel="stylesheet" href="/fonts/lora.css">
+    <link rel="stylesheet" href="/fonts/dancing_script.css">
+    <link rel="stylesheet" href="/fonts/raleway.css">
 
     <script type="text/javascript">
       $(document).ready(function() {
@@ -69,7 +73,7 @@
       <!-- TODO: the panels should each have a highin vh units, and
           everything inside should have a % height -->
       <div id="video-container" class="top">
-        <video id="video" class="" muted preload="auto" loop="loop" poster="">
+        <video id="video" class="desktop" muted preload="auto" loop="loop" poster="">
          <source id="mp4" src="video/ardiente-capital-congress.mp4" type="video/mp4">
          </video>
         <div id="video-logo" class="fg">
@@ -89,20 +93,23 @@
       <div id="content">
         <section class="separator"></section>
 
-        <section class="parallax" id="about-us" style="background-image: url('/img/about-us.jpg');">
+        <section class="background-img" id="about-us" style="background-image: url('/img/about-us.jpg');">
           <!--<img id="overlay1" src="img/logo-overlay-white.gif">-->
           <div id="about-us-text">
-            <h1 class="cool-black-text"><span>DC's</span> <span>Rising</span> <span>Salsa</span> <span>Company</span></h1>
-            <article id="about-us-text-box">
-              <!--  <div > -->
-              <h2>About Ardiente</h2>
-              <p>The name is Spanish for <b>passionate</b>, but in the DMV, <i>Ardiente</i> has become synonymous with <span class="red">precision</span>, <span class="red">musicality</span>, and <span class="red">style</span>.</p>
-              <p>The team was founded in 2016 by six young, dedicated dancers with over 10 years of experience in creating choreography, performing and teaching Latin dance.</p>
-              <p> Although all Ardiente dancers come from different backgrounds, they are brought together by their passion for dance. The goal of Ardiente Dance Project is to introduce a fresh new perspective to the dance community by expressing everyone's
-                unique and energetic style.</p>
-              <!-- </div> -->
-            </article>
-
+            <div id="about-us-text-left">
+              <h1 class="cool-black-text"><span>DC's</span> <span>Rising</span> <span>Salsa</span> <span>Company</span></h1>
+            </div>
+            <div id="about-us-text-right">
+              <article id="about-us-text-box">
+                <!--  <div > -->
+                <h2>About Ardiente</h2>
+                <p>The name is Spanish for <b>passionate</b>, but in the DMV, <i>Ardiente</i> has become synonymous with <span class="red">precision</span>, <span class="red">musicality</span>, and <span class="red">style</span>.</p>
+                <p>The team was founded in 2016 by six young, dedicated dancers with over 10 years of experience in creating choreography, performing and teaching Latin dance.</p>
+                <p> Although all Ardiente dancers come from different backgrounds, they are brought together by their passion for dance. The goal of Ardiente Dance Project is to introduce a fresh new perspective to the dance community by expressing everyone's
+                  unique and energetic style.</p>
+                <!-- </div> -->
+              </article>
+            </div>
           </div>
           <div id="overlay" class="background-img" style="background-image: url('img/logo-overlay-white.gif');">
           </div>
@@ -111,7 +118,7 @@
 
 
         <section class="separator"></section>
-        <section class="parallax" id="honors-night" style="background-image: url('img/honors-night.jpg')">
+        <section class="background-img" id="honors-night" style="background-image: url('img/honors-night.jpg')">
           <article>
             <p class="headline"><i>WINNER:</i> Team of the Year</p>
             <p class="cursive">DC Latin Honors Night 2017</p>
@@ -120,12 +127,12 @@
         </section>
 
         <section class="separator"></section>
-        <section class="parallax cool-black" id="pro-team">
+        <section class="background-img cool-black" id="pro-team">
           <!--<img id="overlay2" src="img/logo-overlay-black.gif">-->
           <article class="pro-bio">
             <div id="pro-bio-text-box">
               <h1>Professional Choreography</h1>
-              <img src="img/logo-mini-white.gif">
+              <!--<img src="img/logo-mini-white.gif">-->
               <p>Ardiente is run under the direction of David Cuevas, who has been dancing salsa since age 14, and who was named the 2017 <i>Instructor of the Year</i> at the fifth annual DC Latin Honors Night ceremony.
               </p>
               <p>Known for creating intricate and elegant turn patterns, accompanied by sharp stylish footwork, it's no surprise that the team has been turning heads at congresses nationwide, including Houston, Chicago, Washington DC, Tampa, and Charleston.
@@ -153,7 +160,7 @@
           </article>
 
         </section>
-        <section class="parallax" id="student-team" class="cool-black" style="background-image: url('img/student-team.jpg')">
+        <section class="background-img" id="student-team" class="cool-black" style="background-image: url('img/student-team.jpg')">
           <div id="student-screen">
 
           </div>

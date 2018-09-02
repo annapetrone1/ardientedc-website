@@ -44,9 +44,11 @@
   text-align: center;
 }
 
-#video-logo * {
-  display: none;
-  /*hide the logo at first*/
+@media only screen and (min-width: 800px) {
+  #video-logo * {
+    display: none;
+    /*hide the logo at first*/
+  }
 }
 
 #video-logo img {
@@ -60,17 +62,16 @@
   color: white;
 }
 
-#enter {
-  position: absolute;
-  bottom: 5vh;
-  left: 50%;
-  margin: 0 auto;
-}
-
-#enter button {
-  background-color: black;
-  font-family: 'M PLUS 1p', sans-serif;
-  font-size: 32px;
-  text-transform: uppercase;
-  color: white;
+@media only screen and (max-width: 799px) {
+  /* mobile */
+  #video-logo {
+    width: 100%;
+    /*padding-top: 20vh;
+    margin-bottom: 30vh;*/
+  }
+  #video-logo img {
+    margin: 0 auto;
+    width: 95%;
+    height: auto;
+  }
 }
