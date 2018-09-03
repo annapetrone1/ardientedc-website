@@ -1,6 +1,4 @@
 # TODO
-* glitch in slideshow on mobile
-
 * setup paypal `form` onSubmit() action to capture some info about the payment
 * anchor tags on home page
 * AdSense
