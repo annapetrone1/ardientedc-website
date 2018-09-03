@@ -30,6 +30,10 @@ body {
   color: rgba(21, 19, 32, .8);
 }
 
+.red {
+  color: #ed3952
+}
+
 .dc {
   /*Font for "Dance Company"*/
   font-family: 'Alegreya Sans SC'
