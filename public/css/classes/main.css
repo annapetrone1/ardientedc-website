@@ -58,6 +58,9 @@ main {
   .img-container, .title_price {
     margin-right: 2em
   }
+  #lessons ul li .img-container img {
+    height: 100%;
+  }
 }
 
 #cover {
@@ -173,10 +176,6 @@ video {
 #lessons ul li .img-container {
   /*  max-width: 20%;*/
   flex-basis: 20%;
-  height: 100%;
-}
-
-#lessons ul li .img-container img {
   height: 100%;
 }
 
