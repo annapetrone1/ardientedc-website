@@ -38,21 +38,21 @@
           $('#video-logo p').fadeTo(1000, 0.7);
         }, 2000);
 
-        $(`.mySlides[num=0]`).fadeIn(2000);
+        $(`.slide[num=0]`).fadeIn(2000);
         var slideIndex = 0;
-        var nslides = $('.mySlides').length;
+        var nslides = $('.slide').length;
 
         function showSlide(slideIndex = 0) {
-          $(`.mySlides[num!=${slideIndex}]`).fadeOut(2000);
-          $(`.mySlides[num=${slideIndex}]`).fadeIn(2000);
+          $(`.slide[num!=${slideIndex}]`).fadeOut(2000);
+          $(`.slide[num=${slideIndex}]`).fadeIn(2000);
         }
 
         // change the slide every 2 seconds
-        /*var slideshow = setInterval(function() {
+        var slideshow = setInterval(function() {
           // console.log('changing slide');
           slideIndex = (slideIndex + 1) % nslides;
           showSlide(slideIndex);
-        }, 4000);*/
+        }, 4000);
 
 
       })
@@ -141,16 +141,17 @@
             </div>
 
           </article>
-          <article class="slides slideshow-container">
+          <article id="slideshow-container">
+
             <!-- Slideshow container -->
 
-            <div class="mySlides fade" num=0 style="background-image: url('img/slides-david.png')">
+            <div class="slide" num=0 style="background-image: url('img/slides-david.png')">
             </div>
 
-            <div class="mySlides fade" num=1 style="background-image: url('img/slides-ladies.png')">
+            <div class="slide" num=1 style="background-image: url('img/slides-ladies.png')">
             </div>
 
-            <div class="mySlides fade" num=2 style="background-image: url('img/slides-houston.png')">
+            <div class="slide" num=2 style="background-image: url('img/slides-houston.png')">
             </div>
 
 
