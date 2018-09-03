@@ -240,7 +240,28 @@
     background-size: auto 100%;
   }
   #student-team h1 {
-    font-size: 5vw;
+    font-size: 9vw;
+    text-align: left;
+  }
+  #student-team-text {
+    display: flex;
+    min-height: 90vh;
+    justify-content: flex-start;
+    /*space-around;*/
+  }
+  #student-team-text-left {
+    flex-basis: 50%;
+    padding-left: 1vw;
+  }
+  #student-team-text-right {
+    position: relative;
+    flex-basis: 50%;
+  }
+  #student-team-bio {
+    position: absolute;
+    bottom: 5vh;
+    right: 1vw;
+    font-size: 120%;
   }
 }
 
@@ -299,7 +320,6 @@
 
 #student-team h1 {
   font-family: "Montserrat", Verdana;
-  text-align: center;
 }
 
 #student-team-bio {
@@ -315,6 +335,7 @@
 #student-team p {
   font-family: "Raleway", Verdana, sans-serif;
   line-height: 2em;
+  margin-bottom: 1em;
 }
 
 #student-team-text {
