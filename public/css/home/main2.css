@@ -139,6 +139,9 @@
     position: absolute;
     bottom: 0;
   }
+  #student-team h1 {
+    font-size: 12vw;
+  }
 }
 
 @media only screen and (min-width: 800px) {
@@ -236,6 +239,9 @@
     margin: auto;
     background-size: auto 100%;
   }
+  #student-team h1 {
+    font-size: 5vw;
+  }
 }
 
 .cursive {
@@ -284,4 +290,43 @@
 
 #pro-team .slide:first-child {
   display: block;
+}
+
+#student-team {
+  color: white;
+  position: relative;
+}
+
+#student-team h1 {
+  font-family: "Montserrat", Verdana;
+  text-align: center;
+}
+
+#student-team-bio {
+  background-color: rgba(0, 0, 0, .5);
+  border: 1px solid black;
+  padding: 2em;
+}
+
+#student-team-bio a {
+  color: inherit;
+}
+
+#student-team p {
+  font-family: "Raleway", Verdana, sans-serif;
+  line-height: 2em;
+}
+
+#student-team-text {
+  z-index: 2;
+  position: relative;
+}
+
+#student-screen {
+  position: absolute;
+  top: 0;
+  /*  height of a separator */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(57, 53, 77, .4)
 }
