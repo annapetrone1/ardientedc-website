@@ -23,6 +23,7 @@ body {
   /* mobile */
   main {
     width: 95vw;
+    overflow-x: hidden;
   }
   main h1 {
     font-size: 12vw;
@@ -93,6 +94,7 @@ body {
 
 section {
   padding-top: 40px;
+  overflow-x: hidden;
 }
 
 main h1 {

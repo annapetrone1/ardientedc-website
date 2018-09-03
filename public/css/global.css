@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 main {
   overflow-x: hidden;
   padding-top: calc(5vh + 24px);

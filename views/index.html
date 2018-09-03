@@ -42,8 +42,10 @@
         var nslides = $('.slide').length;
 
         function showSlide(slideIndex = 0) {
-          $(`.slide[num!=${slideIndex}]`).fadeOut(2000);
-          $(`.slide[num=${slideIndex}]`).fadeIn(2000);
+          $(`.slide[num!=${slideIndex}]`).fadeOut(1000, function() {
+            $(`.slide[num=${slideIndex}]`).fadeIn(2000);
+          });
+
         }
 
         // change the slide every 2 seconds
