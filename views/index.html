@@ -27,7 +27,7 @@
         var video = document.querySelector('video')
         video.playbackRate = 0.5;
         video.oncanplaythrough = function() {
-          $('#video').fadeIn('slow');
+          $('#video').fadeIn(1000);
           video.play();
         };
         setTimeout(function() {

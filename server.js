@@ -21,19 +21,19 @@ app.get('/test', (req, res) => {
   res.sendFile(__dirname + '/views/test.html');
 });
 
-app.get('/events', (req, res) => {
-  console.log('events');
+app.get('/events.html', (req, res) => {
+  console.log('events.html');
   res.sendFile(__dirname + '/views/events.html');
 });
 
-app.get('/classes', (req, res) => {
-  console.log('classes');
+app.get('/classes.html', (req, res) => {
+  console.log('classes.html');
   // TODO: read from the schedule and make classes a template
   res.sendFile(__dirname + '/views/classes.html');
 });
 
 
-app.get('/register', (req, res) => {
+app.get('/register.html', (req, res) => {
   var p = req.params;
   console.log(`register for class ${p.id}`);
 
@@ -43,7 +43,7 @@ app.get('/register', (req, res) => {
 });
 
 
-app.listen(4000, () => {
+app.listen(4001, () => {
   console.log('Listening on http://localhost:4000');
   // open('http://localhost:' + config.port);
 });

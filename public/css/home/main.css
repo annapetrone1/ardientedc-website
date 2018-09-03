@@ -72,11 +72,6 @@
   #content section:not(.separator) {
     min-height: 90vh;
   }
-  .background-img {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
   #about-us-text {
     background-color: rgba(225, 222, 237, .55);
   }
@@ -158,13 +153,6 @@
   /* desktop  */
   #content section:not(.separator), #about-us-text {
     min-height: 90vh;
-  }
-  /* enable parallax effect only on destop */
-  .background-img {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
   #about-us-text {
     background-color: rgba(225, 222, 237, .45);

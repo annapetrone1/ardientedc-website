@@ -3,6 +3,18 @@
   padding: 0;
 }
 
+main {
+  overflow-x: hidden;
+  padding-top: calc(5vh + 24px);
+  /* to be under the header*/
+}
+
+.background-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 @media only screen and (max-width: 799px) {
   .desktop {
     /* mobile only :not(.mobile)*/
@@ -14,6 +26,10 @@
   /* desktop only */
   .mobile {
     display: none !important;
+  }
+  /* enable parallax effect only on destop */
+  .background-img {
+    background-attachment: fixed;
   }
 }
 
@@ -49,7 +65,7 @@ header {
 
 header, footer {
   width: 100%;
-  z-index: 5;
+  z-index: 100;
 }
 
 nav {
