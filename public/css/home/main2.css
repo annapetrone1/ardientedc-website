@@ -116,7 +116,7 @@
     margin: 0 auto;
   }
   #slideshow-container {
-    height: 90vh;
+    height: 30em;
     position: relative;
   }
   #pro-team .slide {
@@ -127,20 +127,17 @@
     background-size: 105% auto;
     top: 0;
   }
-  #pro-bio-text-box {
-    position: relative;
-  }
-  #pro-bio-text-box p {
+  #pro-team p {
     padding: .5em;
+    font-size: 110%;
   }
-  #pro-bio-text-box p:last-child {
+  #slideshow-container p {
     background-color: rgba(18, 16, 27, .8);
     color: white;
-    position: absolute;
-    top: 90vh;
     z-index: 10;
-    font-size: 110%;
     line-height: 1.5em;
+    position: absolute;
+    bottom: 0;
   }
 }
 
@@ -273,7 +270,7 @@
   margin-bottom: .5em
 }
 
-#pro-bio-text-box p {
+#pro-team p {
   font-family: 'M PLUS 1p', 'Montserrat', Georgia;
   margin-top: 1em;
 }
