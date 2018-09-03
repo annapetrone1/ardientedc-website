@@ -58,13 +58,7 @@
 }
 
 #about-us-text article h2 {
-  font-size: 34px;
   font-family: "Montserrat", Arial
-}
-
-#about-us-text-box p {
-  margin-top: 1em;
-  font-size: 130%
 }
 
 @media only screen and (max-width: 799px) {
@@ -72,19 +66,29 @@
   #content section:not(.separator) {
     min-height: 90vh;
   }
+  #about-us {
+    background-size: cover;
+  }
   #about-us-text {
     background-color: rgba(225, 222, 237, .55);
   }
   #about-us-text h1 {
-    font-size: 9vh;
+    font-size: 20vw;
+  }
+  #about-us-text article h2 {
+    font-size: 8vw;
   }
   #about-us-text-left {
     padding-top: .5em;
-    margin-bottom: 1vh;
+    margin-bottom: 4em;
   }
   #about-us-text-box {
     background-color: rgba(239, 239, 245, 0.7);
     padding: 1em .5em;
+  }
+  #about-us-text-box p {
+    margin-top: 1em;
+    font-size: 90%
   }
   #overlay {
     height: 140%;
@@ -157,6 +161,9 @@
   #about-us-text {
     background-color: rgba(225, 222, 237, .45);
   }
+  #about-us-text article h2 {
+    font-size: 34px;
+  }
   #about-us-text-left, #about-us-text-right {
     display: inline-block;
     align-items: top;
@@ -185,6 +192,10 @@
     padding: 2em .5em;
     max-height: 80vh;
     overflow-y: scroll;
+  }
+  #about-us-text-box p {
+    margin-top: 1em;
+    font-size: 130%
   }
   #honors-night p.headline {
     font-size: 12vh;
