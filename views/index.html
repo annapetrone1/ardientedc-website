@@ -30,12 +30,23 @@
           $('#video').fadeIn(1000);
           video.play();
         };
+        // 0.25 * parseInt($('#about-us-text-left').css('padding-top'))
+        $('#enter a').on('click', function(e) {
+          e.preventDefault();
+          $("html, body").animate({
+            scrollTop: $("#about-us h1").offset().top - .10 * $(window).height()
+          }, 1000);
+        })
         setTimeout(function() {
           $('#video-logo img').fadeTo(2000, 0.75);
         }, 1000);
         setTimeout(function() {
           $('#video-logo p').fadeTo(1000, 0.7);
         }, 2000);
+
+        setTimeout(function() {
+          $('#enter').fadeTo(1000, 0.7);
+        }, 3000);
 
         $(`.slide[num=0]`).fadeIn(2000);
         var slideIndex = 0;
@@ -81,7 +92,12 @@
         <div id="video-logo" class="fg">
           <img src="img/full-logo-white.gif" height=100%></img>
           <p class="dc">Dance Company</p>
+          <div id="enter">
+            <a href="#">ENTER</a>
+          </div>
         </div>
+
+
       </div>
       <div class="empty">
         <!-- empty unpositioned div-->

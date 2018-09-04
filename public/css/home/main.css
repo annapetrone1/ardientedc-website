@@ -82,13 +82,16 @@
     padding-top: .5em;
     margin-bottom: 4em;
   }
+  #about-us-text-right {
+    padding-bottom: 4em;
+  }
   #about-us-text-box {
     background-color: rgba(239, 239, 245, 0.7);
     padding: 1em .5em;
   }
   #about-us-text-box p {
     margin-top: 1em;
-    font-size: 90%
+    font-size: 90%;
   }
   #overlay {
     height: 140%;
