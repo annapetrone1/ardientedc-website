@@ -33,7 +33,7 @@ app.get('/classes.html', (req, res) => {
 });
 
 
-app.get('/register.html', (req, res) => {
+app.get('/register-mambo-thursdays.html', (req, res) => {
   var p = req.params;
   console.log(`register for class ${p.id}`);
 

@@ -6,8 +6,61 @@ body {
   display: none !important
 }
 
+#register-content {
+  position: relative;
+}
+
+@media only screen and (max-width: 799px) {
+  /* mobile */
+  main {
+    width: 95%;
+  }
+  .form-container {
+    bottom: 0;
+  }
+  .img-container img {
+    min-width: 100%;
+  }
+  .form-container {
+    width: 100%;
+    /*min-height: calc(60% - 15%);*/
+    padding: 8px;
+    padding-left: 0;
+    top: 0;
+    background-color: rgba(250, 250, 250, .85);
+  }
+  .classinfo, .confirmation-box {
+    background-color: rgba(225, 222, 237, .75);
+    border: 1px solid gray
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  /* desktop */
+  main {
+    width: 80%;
+  }
+  .img-container img {
+    min-width: 90%;
+  }
+  .form-container {
+    width: 40%;
+    /*min-height: calc(60% - 15%);*/
+    padding: 48px 42px;
+    padding-left: 30px;
+    left: 25%;
+    top: 0em;
+    /* the double scroll is created when the contents of #register-content exceed the heigt of img-container.
+    so dont add any extra space (top or border)*/
+    border: 0px darkgray solid;
+    background-color: rgba(250, 250, 250, .98);
+  }
+  .classinfo, .confirmation-box {
+    background-color: rgba(225, 222, 237, .45);
+  }
+}
+
 main {
-  width: 80%;
   margin: 0 auto;
   margin-top: 16px;
   position: relative;
@@ -39,7 +92,7 @@ main h3 {
 }
 
 .img-container {
-  height: 100%;
+  /*height: 100%;*/
   margin: 0 auto;
   width: auto;
   opacity: .6;
@@ -48,20 +101,13 @@ main h3 {
 }
 
 .img-container img {
-  min-width: 90%;
+  overflow: hidden;
 }
 
 .form-container {
-  width: 40%;
-  min-height: calc(60% - 15%);
-  padding: 48px 42px;
-  padding-left: 30px;
-  background-color: rgba(250, 250, 250, .98);
   margin: 0 auto;
   position: absolute;
-  top: 20%;
-  left: 25%;
-  border: 1px darkgray solid
+  height: auto
 }
 
 .userform input {
@@ -115,10 +161,6 @@ a.edit:hover {
   font-family: "M PLUS 1p";
   margin-bottom: 1em;
   padding: 8px;
-}
-
-.classinfo, .confirmation-box {
-  background-color: rgba(225, 222, 237, .45);
 }
 
 .confirmation-box p {
