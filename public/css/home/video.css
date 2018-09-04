@@ -53,6 +53,10 @@
   #video-container {
     /*height: 100vh;*/
   }
+  #enter {
+    margin-top: 8em;
+    margin-bottom: 4em;
+  }
   #video-logo img {
     margin: 0 auto;
     margin-top: 20%;
@@ -69,6 +73,10 @@
   #video-logo *, #enter {
     display: none;
     /*hide the logo at first*/
+  }
+  #enter {
+    margin-top: 30vh;
+    margin-bottom: 4vh;
   }
   #video-logo {
     top: 18vh;
@@ -87,8 +95,6 @@
 #enter {
   /*  position: absolute;
   bottom: 5%;*/
-  margin-top: 8em;
-  margin-bottom: 4em;
   width: 100%;
   text-align: center;
 }
