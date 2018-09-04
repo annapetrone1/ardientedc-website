@@ -18,6 +18,9 @@ body {
   .form-container {
     bottom: 0;
   }
+  .form-container .input {
+    font-size: 16px;
+  }
   .img-container img {
     min-width: 100%;
   }

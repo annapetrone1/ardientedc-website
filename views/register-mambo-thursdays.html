@@ -74,6 +74,11 @@
           $('.form-container .payment input[type="checkbox"]').get(0).checked = false; // always require them to check it
           $('.form-container .payment .user-confirm').fadeIn()
           /*TODO: copy the info to the jotform and submit*/
+
+          /* scroll to the top of the confirm page */
+          $("html, body").animate({
+            scrollTop: $(".user-confirm h3").offset().top - .10 * $(window).height()
+          }, 500);
         })
 
         $('.cancel').on('click', function(e) {
@@ -91,6 +96,9 @@
           $('.form-container .payment .user-confirm').hide();
           $('.form-container .payment form').hide();
           $('.form-container .userform').fadeIn();
+          $("html, body").animate({
+            scrollTop: $(".userform h3").offset().top - .10 * $(window).height()
+          }, 500);
         });
 
         $('.form-container .payment input[type="checkbox"]').change(function() {
