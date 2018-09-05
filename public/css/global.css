@@ -37,6 +37,10 @@ main {
   }
   nav a {
     margin-right: 2em;
+    font-weight: lighter;
+  }
+  .text {
+    font-weight: lighter;
   }
 }
 

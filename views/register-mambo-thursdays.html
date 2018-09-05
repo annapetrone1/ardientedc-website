@@ -7,7 +7,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/global.css">
     <link rel="icon" type="image/png" href="http://ardientedance.com.s3-website-us-east-1.amazonaws.com/img/favicon.gif">
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Montserrat:200|M+PLUS+1p:300|Raleway:200" rel="stylesheet">
+    <link rel="stylesheet" href="/fonts/montserrat_200.css">
+    <link rel="stylesheet" href="/fonts/m_plus_1_300.css">
+    <link rel="stylesheet" href="/fonts/raleway_200.css">
+    <link rel="stylesheet" href="/fonts/alegreya_sans_sc.css">
 
     <script src="/js/jquery-3.3.1.min.js"></script>
 
@@ -46,6 +49,20 @@
           }
           loopday.setDate(loopday.getDate() + 1);
         }
+        /*$date_select.prepend(`<option name="prompt" value="">==== Choose a Date ====</option>`);
+        $date_select.children("option[name='prompt']").get(0).selected = 'selected';*/
+      }
+
+      function userValid(required = ['fullname', 'date', 'email']) {
+        var missing = $('.form-container form').serialize().split('&').map((keyval) => {
+          return keyval.split('=')
+        }).filter((keyval) => {
+          return required.indexOf(keyval[0]) != -1
+        }).filter((keyval) => {
+          return keyval[1].length == 0
+        });
+
+        return missing.length === 0;
       }
       $(document).ready(function() {
         // console.log('startTimeFmt', '08:00 PM');
@@ -54,6 +71,16 @@
         var dow = 4;
         makeDates(dow, startHour);
 
+        $('.userform input[name="saveinfo"]').on('click', function() {
+          if (!userValid()) {
+            /* scroll to the top of the input page */
+            $("html, body").animate({
+              scrollTop: $(".userform h3").offset().top - .10 * $(window).height()
+            }, 0);
+          }
+          return true;
+
+        })
         $('.userform form').on('submit', function(e) {
           //$('.userform button').on('click', function(e) {
           console.log('user form submitted')
@@ -64,7 +91,6 @@
           $('.payment form').append(`<input type="hidden" name="item_name" value="Mambo Thursdays with Ardiente: ${$selectedDate.val()}">`);
           $('.payment form').append(`<input type="hidden" name="return" value="http://ardientedc.com.s3-website-us-east-1.amazonaws.com/classes.html">`);
 
-
           for (field of ['fullname', 'email']) {
             $(`.payment p .${field}`).text($(`.userform .input[name="${field}"]`).val());
           }
@@ -74,6 +100,7 @@
           $('.form-container .payment input[type="checkbox"]').get(0).checked = false; // always require them to check it
           $('.form-container .payment .user-confirm').fadeIn()
           /*TODO: copy the info to the jotform and submit*/
+
 
           /* scroll to the top of the confirm page */
           $("html, body").animate({
@@ -144,7 +171,7 @@
               <label for="date">Select Date</label>
               <select class="input" name="date" required>
               <!-- TODO: might make these buttons-->
-              <option value="0" disabled >=== Choose a date ===</option>
+              <!--<option disabled selected value>=== Choose a date ===</option>-->
 
               </select>
 
