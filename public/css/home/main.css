@@ -41,7 +41,6 @@
 
 #overlay {
   /*height: 150%;*/
-  opacity: .4;
   position: absolute;
   z-index: 0;
 }
@@ -56,7 +55,6 @@
   border: 1px solid black;
   text-align: center;
   display: block;
-  color: black;
   font-family: 'M Plus 1p', Arial, sans-serif;
   font-weight: lighter;
   margin: 0 auto;
@@ -84,15 +82,17 @@
     font-size: 8vw;
   }
   #about-us-text-left {
-    padding-top: .5em;
-    margin-bottom: 4em;
+    padding-top: 1.5em;
+    margin-bottom: 6em;
   }
   #about-us-text-right {
     padding-bottom: 4em;
   }
   #about-us-text-box {
-    background-color: rgba(239, 239, 245, 0.7);
+    /*background-color: rgba(239, 239, 245, 0.7);*/
+    background-color: rgba(33, 29, 48, .7);
     padding: 1em .5em;
+    color: white;
   }
   #about-us-text-box p {
     margin-top: 1em;
@@ -100,7 +100,8 @@
   }
   #overlay {
     height: 140%;
-    top: -20%
+    top: -20%;
+    opacity: .2;
   }
   #honors-night {
     padding-top: 2em !important;
@@ -165,6 +166,10 @@
   /* desktop  */
   #content section:not(.separator), #about-us-text {
     min-height: 90vh;
+  }
+  #overlay {
+    /*height: 150%;*/
+    opacity: .4;
   }
   #about-us-text {
     background-color: rgba(225, 222, 237, .45);
