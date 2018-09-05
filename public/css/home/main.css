@@ -152,6 +152,9 @@
     padding-left: .2em;
     margin: .25em 0
   }
+  #student-team p {
+    font-weight: 500;
+  }
   #student-screen {
     background-color: rgba(57, 53, 77, .7)
   }
