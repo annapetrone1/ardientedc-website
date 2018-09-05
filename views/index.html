@@ -38,7 +38,8 @@
             scrollTop: $("#about-us h1").offset().top - .10 * $(window).height()
           }, 1000);
         })
-        if ($('.desktop').first().css('display') === 'none') {
+        // $('.desktop').first().css('display') === 'none'
+        if ($(window).width() < 800) {
           $('#video-logo img').show();
           $('#video-logo p').show();
         } else {
