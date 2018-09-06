@@ -119,9 +119,13 @@ main h4 {
   text-transform: uppercase;
 }
 
+main h4.tickets {
+  margin: .5em auto;
+}
+
 main h4.date {
   font-size: 20px;
-  margin-bottom: .25em
+  margin-bottom: .25em;
 }
 
 main h5 {
@@ -256,4 +260,14 @@ a.buy:hover {
 
 .facebook p {
   display: block;
+}
+
+#eventbrite p {
+  font-family: "Raleway", Arial;
+  margin-bottom: 1em;
+}
+
+#eventbrite img {
+  width: 80%;
+  max-width: 220px;
 }
