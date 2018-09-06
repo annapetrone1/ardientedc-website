@@ -52,15 +52,21 @@
   position: relative;
 }
 
-#skylite {
+.attribution {
   font-family: Verdana;
   position: absolute;
   color: white;
   bottom: 0;
-  right: .5em;
+  right: 1em;
 }
 
-#skylite a {
+.attribution.ladies-red {
+  color: rgba(43, 38, 64, .9);
+  font-weight: bold;
+  z-index: 5;
+}
+
+.attribution a {
   color: inherit;
   text-decoration: none;
   font-weight: bold;
@@ -109,6 +115,10 @@
     padding: 1em .5em;
     color: white;
   }
+  #about-us-text-box .red {
+    color: rgb(240, 92, 111) !important;
+    font-weight: bold;
+  }
   #about-us-text-box p {
     margin-top: 1em;
     font-size: 95%;
@@ -128,8 +138,11 @@
   #honors-night p {
     font-size: 6vh
   }
-  #skylite {
+  .attribution {
     font-size: 15px !important;
+  }
+  .attribution.ladies-red {
+    position: relative !important;
   }
   #pro-bio-text-box h1 {
     font-size: 12vw;
@@ -142,7 +155,7 @@
     margin: 0 auto;
   }
   #slideshow-container {
-    height: 30em;
+    height: 34em;
     position: relative;
   }
   #pro-team .slide {
@@ -157,13 +170,21 @@
     padding: .5em;
     font-size: 110%;
   }
-  #slideshow-container p {
+  #slideshow-container p.text {
     background-color: rgba(18, 16, 27, .8);
+    margin-bottom: 1em;
     color: white;
-    z-index: 10;
+    z-index: 5;
     line-height: 1.5em;
+    margin-top: 0;
+  }
+  .slide-caption {
     position: absolute;
     bottom: 0;
+  }
+  .slide-caption .attribution {
+    text-align: right;
+    padding: .25em !important
   }
   #student-team h1 {
     font-size: 12vw;
@@ -237,7 +258,7 @@
   #honors-night p {
     font-size: 10vh
   }
-  #skylite {
+  .attribution {
     font-size: 20px !important;
   }
   #pro-team {
@@ -278,6 +299,9 @@
   #slideshow-container {
     /*flex-basis: 50%;*/
     padding-right: 2em;
+  }
+  .slide .attribution {
+    left: 50%;
   }
   #pro-team .slide {
     width: 70%;
@@ -338,6 +362,10 @@
   text-align: center;
   font-size: 6vh;
   color: white;
+}
+
+#slideshow-container .attribution {
+  display: none;
 }
 
 #pro-team {

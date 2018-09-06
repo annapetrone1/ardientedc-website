@@ -60,18 +60,19 @@
         var nslides = $('.slide').length;
 
         function showSlide(slideIndex = 0) {
-          $(`.slide[num!=${slideIndex}]`).fadeOut(1000, function() {
-            $(`.slide[num=${slideIndex}]`).fadeIn(2000);
+          $(`.slide[num!=${slideIndex}], #slideshow-container .attribution`).fadeOut(1000, function() {
+            $(`.slide[num=${slideIndex}], #slideshow-container .attribution[num=${slideIndex}]`).fadeIn(2000);
           });
 
         }
+        showSlide(1);
 
         // change the slide every 2 seconds
-        var slideshow = setInterval(function() {
+        /*var slideshow = setInterval(function() {
           // console.log('changing slide');
           slideIndex = (slideIndex + 1) % nslides;
           showSlide(slideIndex);
-        }, 4000);
+        }, 4000);*/
 
 
       })
@@ -148,7 +149,7 @@
             <p class="headline"><i>WINNER:</i> Team of the Year</p>
             <p class="cursive">DC Latin Honors Night 2017</p>
           </article>
-          <p id="skylite">&copy;
+          <p class="attribution skylite">&copy;
             <a href="http://skylitedc.com/" target="_blank"> SkyliteDC</a></p>
         </section>
 
@@ -174,12 +175,16 @@
             </div>
 
             <div class="slide" num=1 style="background-image: url('img/slides-ladies.png')">
+              <p class="attribution ladies-red desktop" num=1>&copy; Brandon Grant</p>
             </div>
 
             <div class="slide" num=2 style="background-image: url('img/slides-houston.png')">
             </div>
 
-            <p class="mobile text">Known for creating intricate and elegant turn patterns, accompanied by sharp stylish footwork, it's no surprise that the team has been turning heads at congresses nationwide, including Houston, Chicago, Washington DC, Tampa, and Charleston.
+            <div class="slide-caption mobile">
+              <p class="attribution ladies-red" num=1>&copy; Brandon Grant</p>
+              <p class="mobile text">Known for creating intricate and elegant turn patterns, accompanied by sharp stylish footwork, it's no surprise that the team has been turning heads at congresses nationwide, including Houston, Chicago, Washington DC, Tampa, and Charleston.
+            </div>
             </p>
             <!-- Next and previous buttons -->
             <!--<a class="prev">&#10094;</a>
