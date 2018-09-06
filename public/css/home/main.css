@@ -31,8 +31,9 @@
 }
 
 #about-us-text h1 {
-  font-family: 'Raleway', Arial;
-  font-weight: bold;
+  font-family: 'Josefin Sans', 'Raleway', Arial;
+  font-weight: 200;
+  text-transform: uppercase;
 }
 
 #about-us-text-left, #about-us-text-right {
@@ -102,8 +103,9 @@
     background-color: rgba(225, 222, 237, .55);
   }
   #about-us-text h1 {
-    font-size: 20vw;
-    margin-top: .25em;
+    font-size: 18vw;
+    line-height: 1.5em;
+    margin-top: .2em;
   }
   #about-us-text article h2 {
     font-size: 6vw;
