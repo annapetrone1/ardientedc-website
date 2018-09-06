@@ -72,7 +72,7 @@
   font-weight: bold;
 }
 
-#about-us-text-box {
+.about-us-text-box {
   border: 1px solid black;
   text-align: center;
   display: block;
@@ -85,9 +85,13 @@
   font-family: 'M Plus 1p', Arial
 }
 
+#about-us-mobile {
+  height: auto
+}
+
 @media only screen and (max-width: 799px) {
   /* mobile */
-  #content section:not(.separator) {
+  #content section:not(.separator), #about-us-text {
     min-height: 90vh;
   }
   #about-us {
@@ -98,28 +102,29 @@
   }
   #about-us-text h1 {
     font-size: 20vw;
+    margin-top: .25em;
   }
   #about-us-text article h2 {
     font-size: 6vw;
   }
   #about-us-text-left {
     padding-top: 1.5em;
-    margin-bottom: 6em;
+    margin-bottom: 2em;
   }
   #about-us-text-right {
     padding-bottom: 4em;
   }
-  #about-us-text-box {
+  .about-us-text-box {
     /*background-color: rgba(239, 239, 245, 0.7);*/
     background-color: rgba(33, 29, 48, .7);
     padding: 1em .5em;
     color: white;
   }
-  #about-us-text-box .red {
+  .about-us-text-box .red {
     color: rgb(240, 92, 111) !important;
     font-weight: bold;
   }
-  #about-us-text-box p {
+  .about-us-text-box p {
     margin-top: 1em;
     font-size: 95%;
   }
@@ -242,13 +247,13 @@
     padding-top: 50vh;
     margin-right: 2% !important;
   }
-  #about-us-text-box {
+  .about-us-text-box {
     background-color: rgba(239, 239, 245, 0.7);
     padding: 2em .5em;
     max-height: 80vh;
     overflow-y: scroll;
   }
-  #about-us-text-box p {
+  .about-us-text-box p {
     margin-top: 1em;
     font-size: 130%
   }
