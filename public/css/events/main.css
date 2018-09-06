@@ -14,7 +14,7 @@ main {
 }
 
 body {
-  /*  background-color: rgb(19, 19, 32);  */
+  background-color: rgba(18, 16, 27, .8);
   /*min-height: 150vh*/
   overflow-x: hidden;
 }
