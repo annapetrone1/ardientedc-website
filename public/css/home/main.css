@@ -105,6 +105,7 @@
     font-size: 18vw;
     line-height: 1.5em;
     margin-top: .2em;
+    width: 100%;
   }
   #about-us-text article h2 {
     font-size: 6vw;
@@ -232,7 +233,7 @@
     overflow-x: visible !important;
   }
   #about-us-text h1 {
-    font-size: 9vw;
+    font-size: 8vw;
     line-height: 1.75em;
   }
   #about-us-text-left {
