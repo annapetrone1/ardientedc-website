@@ -19,7 +19,7 @@
 @media only screen and (max-width: 799px) {
   /* mobile */
   #video-container, #video-screen {
-    height: 90vh;
+    min-height: 90vh;
     /*height: auto;*/
   }
   #honors-night {
