@@ -86,7 +86,8 @@
 }
 
 #about-us-mobile {
-  height: auto
+  height: auto;
+  border-top: 2px solid white;
 }
 
 @media only screen and (max-width: 799px) {
@@ -119,10 +120,6 @@
     background-color: rgba(33, 29, 48, .7);
     padding: 1em .5em;
     color: white;
-  }
-  .about-us-text-box .red {
-    color: rgb(240, 92, 111) !important;
-    font-weight: bold;
   }
   .about-us-text-box p {
     margin-top: 1em;
