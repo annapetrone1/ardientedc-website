@@ -97,6 +97,10 @@
     /*opacity: 50%;*/
     /* see the .fadeTo() to set this*/
   }
+  #enter a {
+    background-color: rgba(0, 0, 0, .6);
+    text-decoration: none;
+  }
 }
 
 #enter {
@@ -107,11 +111,9 @@
 }
 
 #enter a {
-  text-decoration: none;
   color: white;
   text-transform: uppercase;
   font-family: "Raleway", Arial;
-  background-color: rgba(0, 0, 0, .6);
   padding: .5em 1em;
   font-size: 130%
 }
