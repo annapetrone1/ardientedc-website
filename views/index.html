@@ -38,21 +38,22 @@
             scrollTop: $("#about-us h1").offset().top - .10 * $(window).height()
           }, 1000);
         })
-        /*if ($(window).width() < 800) {
-          $('#video-logo img').show();
-          $('#video-logo p').show();
-        } else {*/
-        setTimeout(function() {
-          $('#video-logo img').fadeTo(2000, 0.7);
-        }, 1000);
+        var dcfadeIn = 2000; // offset to fade in the "Dance Company" caption
+        if ($('#video-logo img').css('display') === 'none') {
+          setTimeout(function() {
+            $('#video-logo img').fadeTo(2000, 0.7);
+          }, 1000);
+        } else {
+          dcfadeIn = 500;
+        }
+        console.log('dcfadeIn', dcfadeIn);
         setTimeout(function() {
           $('#video-logo p').fadeTo(1000, 0.7);
-        }, 2000);
-        /*}*/
+        }, dcfadeIn);
 
         setTimeout(function() {
           $('#enter, #enter a').fadeTo(1000, 0.7);
-        }, 3000);
+        }, dcfadeIn + 500);
 
         $(`.slide[num=0]`).fadeIn(2000);
         var slideIndex = 0;
