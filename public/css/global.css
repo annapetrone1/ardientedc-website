@@ -71,7 +71,7 @@ body {
 
 .dc {
   /*Font for "Dance Company"*/
-  font-family: 'Alegreya Sans SC'
+  font-family: 'Alegreya Sans SC', Verdana
 }
 
 header {
@@ -95,7 +95,7 @@ nav {
 }
 
 nav a {
-  font-family: 'M PLUS 1p', sans-serif;
+  font-family: 'M PLUS 1p', Verdana, sans-serif;
   text-transform: uppercase;
   color: white;
   text-decoration: none;

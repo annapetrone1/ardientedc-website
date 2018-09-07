@@ -77,7 +77,7 @@ main {
 
 main h1, main h2 {
   color: black;
-  font-family: "Raleway";
+  font-family: "Raleway", Arial;
   text-align: center;
 }
 
@@ -93,7 +93,7 @@ main h2 {
 }
 
 main h3 {
-  font-family: "M PLUS 1p";
+  font-family: "M PLUS 1p", Verdana;
   font-size: 28px;
   margin-bottom: .5em;
 }
@@ -123,12 +123,12 @@ main h3 {
 }
 
 .userform select {
-  font-family: 'M PLUS 1p';
+  font-family: 'M PLUS 1p', Georgia;
 }
 
 .userform label, .payment .detail {
   display: block;
-  font-family: "Raleway";
+  font-family: "Raleway", Arial;
 }
 
 .payment .detail {
@@ -165,7 +165,7 @@ a.edit:hover {
 }
 
 .classinfo {
-  font-family: "M PLUS 1p";
+  font-family: "M PLUS 1p", Georgia;
   margin-bottom: 1em;
   padding: 8px;
 }
@@ -188,7 +188,7 @@ input[type="submit"] {
   font-size: 120%;
   background-color: rgba(64, 120, 165, .8);
   padding: 12px 8px;
-  font-family: "Raleway";
+  font-family: "Raleway", Arial;
   color: white;
   margin-top: 1em;
   margin-bottom: .5em;
