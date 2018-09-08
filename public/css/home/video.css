@@ -1,74 +1,123 @@
-  #video-container {
-    /*position: fixed;
+#video-container {
+  /*position: fixed;
   right: 0;
   top: 0;*/
-    /*  display: flex;
+  /*  display: flex;
   align-items: center;
   justify-content: center;
   font-size: 48px;*/
-    overflow: hidden;
-  }
+  overflow: hidden;
+  color: white;
+}
 
-  #video, #video-screen {
-    position: fixed;
-    /*right: 0;*/
-    top: 0;
-    right: -5vh;
-    min-width: 110%;
-    overflow: hidden;
-    /* this height doesnt really matter, what matters is the offset of #content*/
-  }
+#video, #video-screen {
+  position: fixed;
+  /*right: 0;*/
+  top: 0;
+  right: -5vh;
+  min-width: 110%;
+  overflow: hidden;
+  /* this height doesnt really matter, what matters is the offset of #content*/
+}
 
-  #video {
-    z-index: -1;
-    min-height: 100%;
-  }
+#video {
+  z-index: -1;
+  min-height: 100%;
+  display: none;
+  /* hide at first */
+}
 
-  #video-screen {
-    background-color: black;
-    opacity: .4;
-    z-index: -1;
-    height: 100vh;
-  }
+#video-screen {
+  background-color: black;
+  opacity: .4;
+  z-index: -1;
+  height: 100vh;
+}
 
-  #video-logo {
-    position: relative;
-    top: 20vh;
-    height: 78vh;
-    /* top + height should add to 98*/
-    max-width: 50vw;
+#video-logo {
+  /*position: relative;*/
+  /* top + height should add to 98*/
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media only screen and (max-width: 799px) {
+  /* mobile */
+  #video-logo .dc, #enter {
+    display: none;
+    /*hide the capition and enter button at first*/
+  }
+  #video-logo img {
+    /* show the img right away because it sometimes lags when loading */
     display: block;
-    margin: 0 auto;
-    text-align: center;
   }
+  #video-logo {
+    /*  height: calc(95vh - 20vh + 10vh); */
+    height: auto;
+    width: 100%;
+    top: 15%;
+    margin-bottom: 32px;
+  }
+  #video-container {
+    /*height: 100vh;*/
+  }
+  #enter {
+    margin-top: 8em;
+  }
+  #video-logo img {
+    margin: 0 auto;
+    margin-top: 20%;
+    width: 95%;
+    height: auto;
+  }
+  #video-logo p {
+    font-size: 10vw;
+  }
+}
 
-  #video-logo * {
+@media only screen and (min-width: 800px) {
+  /* desktop */
+  #video-logo img, #video-logo .dc, #enter {
     display: none;
     /*hide the logo at first*/
   }
-
+  #enter {
+    margin-top: 20vh;
+    margin-bottom: 4vh;
+  }
+  #video-logo {
+    padding-top: 10vh;
+    max-width: 50vw;
+  }
+  #video-logo p {
+    font-size: 4vw;
+  }
   #video-logo img {
     height: 40vh;
     /*opacity: 50%;*/
     /* see the .fadeTo() to set this*/
   }
-
-  #video-logo p {
-    font-size: 40px;
-    color: white;
+  #enter a {
+    background-color: rgba(0, 0, 0, .6);
+    text-decoration: none;
   }
+}
 
-  #enter {
-    position: absolute;
-    bottom: 5vh;
-    left: 50%;
-    margin: 0 auto;
-  }
+#enter {
+  /*  position: absolute;
+  bottom: 5%;*/
+  width: 100%;
+  text-align: center;
+}
 
-  #enter button {
-    background-color: black;
-    font-family: 'M PLUS 1p', sans-serif;
-    font-size: 32px;
-    text-transform: uppercase;
-    color: white;
-  }
+#enter a {
+  color: white;
+  text-transform: uppercase;
+  font-family: "Raleway", Arial;
+  padding: .5em 1em;
+  font-size: 130%
+}
+
+#video-logo p {
+  color: white;
+}

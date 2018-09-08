@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Ardiente Dance Company</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="icon" type="image/png" href="http://ardientedance.com.s3-website-us-east-1.amazonaws.com/img/favicon.gif">
+    <!-- Alegreya ? -->
+    <link rel="stylesheet" href="/fonts/montserrat_200.css">
+    <link rel="stylesheet" href="/fonts/m_plus_1_300.css">
+    <link rel="stylesheet" href="/fonts/raleway_200.css">
+    <link rel="stylesheet" href="/fonts/alegreya_sans_sc.css">
+
+    <link rel="stylesheet" href="/fonts/lora.css">
+    <link rel="stylesheet" href="/fonts/dancing_script.css">
+    <link rel="stylesheet" href="/fonts/josefin_200.css">
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="css/home/main.css">
+    <link rel="stylesheet" href="css/home/sizing.css">
+    <link rel="stylesheet" href="css/home/video.css">
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        console.log('DOM loaded');
+        var video = document.querySelector('video')
+        video.playbackRate = 0.5;
+        video.oncanplaythrough = function() {
+          $('#video').fadeIn(1000);
+          video.play();
+        };
+        // 0.25 * parseInt($('#about-us-text-left').css('padding-top'))
+        $('#enter a').on('click', function(e) {
+          e.preventDefault();
+          $("html, body").animate({
+            scrollTop: $("#about-us h1").offset().top - .10 * $(window).height()
+          }, 1000);
+        })
+        var dcfadeIn = 2000; // offset to fade in the "Dance Company" caption
+        var opacity = 0.7;
+        if ($('#video-logo img').css('display') === 'none') {
+          setTimeout(function() {
+            $('#video-logo img').fadeTo(2000, opacity);
+          }, 1000);
+        } else {
+          dcfadeIn = 500;
+          opacity = 0.9;
+        }
+        console.log('dcfadeIn', dcfadeIn);
+        setTimeout(function() {
+          // this can be .7 on both desktop and mobile
+          $('#video-logo p').fadeTo(1000, .7);
+        }, dcfadeIn);
+
+        setTimeout(function() {
+          $('#enter, #enter a').fadeTo(1000, opacity);
+        }, dcfadeIn + 500);
+
+        $(`.slide[num=0]`).fadeIn(2000);
+        var slideIndex = 0;
+        var nslides = $('.slide').length;
+
+        function showSlide(slideIndex = 0) {
+          $(`.slide[num!=${slideIndex}], #slideshow-container .attribution`).fadeOut(1000, function() {
+            $(`.slide[num=${slideIndex}], #slideshow-container .attribution[num=${slideIndex}]`).fadeIn(2000);
+          });
+
+        }
+
+        // change the slide every 2 seconds
+        var slideshow = setInterval(function() {
+          // console.log('changing slide');
+          slideIndex = (slideIndex + 1) % nslides;
+          showSlide(slideIndex);
+        }, 4000);
+
+
+      })
+    </script>
+  </head>
+
+  <body class="purple-black">
+    <header class="purple-black">
+      <nav>
+        <a href="/">Home</a> |
+        <a href="/events.html">Events</a> |
+        <a href="/classes.html">Classes</a>
+      </nav>
+    </header>
+    <main>
+      <div class="empty">
+        <!-- empty unpositioned div-->
+      </div>
+      <!-- TODO: the panels should each have a highin vh units, and
+          everything inside should have a % height -->
+      <div id="video-container" class="top">
+        <video id="video" class="desktop" muted preload="auto" loop="loop" poster="">
+         <source id="mp4" src="video/ardiente-capital-congress.mp4" type="video/mp4">
+         </video>
+        <div id="video-logo" class="fg">
+          <img src="img/full-logo-white.gif" height=100%></img>
+          <p class="dc">Dance Company</p>
+          <div id="enter">
+            <a href="#">ENTER</a>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="empty">
+        <!-- empty unpositioned div-->
+      </div>
+      <div id="video-screen">
+
+      </div>
+
+
+
+      <div id="content">
+        <section class="separator"></section>
+
+        <section class="background-img" id="about-us" style="background-image: url('/img/about-us.jpg');">
+          <!--<img id="overlay1" src="img/logo-overlay-white.gif">-->
+          <div id="about-us-text">
+            <div id="about-us-text-left">
+              <h1 class="purple-black-text">DC'S RISING SALSA COMPANY</h1>
+            </div>
+            <div id="about-us-text-right" class="desktop">
+              <article class="about-us-text-box text">
+                <!--  <div > -->
+                <h2>About Ardiente</h2>
+                <p>The name is Spanish for <span class="red">passionate</span>, but in the DMV, <i>Ardiente</i> has become synonymous with <span class="red">precision</span>, <span class="red">musicality</span>, and <span class="red">style</span>.</p>
+                <p>The team was founded in 2016 by six young, dedicated dancers with over 10 years of experience in creating choreography, performing and teaching Latin dance.</p>
+                <p> <span class="desktop">Although all Ardiente dancers come from different backgrounds, they are brought together by their passion for dance.</span> The goal of Ardiente Dance Project is to introduce a fresh new perspective to the dance community
+                  by expressing everyone's unique and energetic style.</p>
+                <!-- </div> -->
+              </article>
+            </div>
+          </div>
+          <div id="overlay" class="background-img" style="background-image: url('img/logo-overlay-white.gif');">
+          </div>
+        </section>
+
+        <div class="mobile purple-black" id="about-us-mobile">
+          <article id="about-us-text-box-mobile" class="about-us-text-box text">
+            <!--  <div > -->
+            <h2>About Ardiente</h2>
+            <p>The name is Spanish for <span class="red">passionate</span>, but in the DMV, <i>Ardiente</i> has become synonymous with <span class="red">precision</span>, <span class="red">musicality</span>, and <span class="red">style</span>.</p>
+            <p>The team was founded in 2016 by six young, dedicated dancers with over 10 years of experience in creating choreography, performing and teaching Latin dance.</p>
+            <p> <span class="desktop">Although all Ardiente dancers come from different backgrounds, they are brought together by their passion for dance.</span> The goal of Ardiente Dance Project is to introduce a fresh new perspective to the dance community
+              by expressing everyone's unique and energetic style.</p>
+            <!-- </div> -->
+          </article>
+        </div>
+
+
+        <section class="separator"></section>
+        <section class="background-img" id="honors-night" style="background-image: url('img/honors-night.jpg')">
+          <article>
+            <p class="headline"><i>WINNER:</i> Team of the Year</p>
+            <p class="cursive">DC Latin Honors Night 2017</p>
+          </article>
+          <p class="attribution skylite">&copy;
+            <a href="http://skylitedc.com/" target="_blank"> SkyliteDC</a></p>
+        </section>
+
+        <section class="separator"></section>
+        <section class="background-img purple-black" id="pro-team">
+          <!--<img id="overlay2" src="img/logo-overlay-black.gif">-->
+          <article class="pro-bio">
+            <div id="pro-bio-text-box">
+              <h1>Professional Choreography</h1>
+              <img class="desktop" src="img/logo-mini-white.gif">
+              <p class="text">Ardiente is run under the direction of David Cuevas, who has been dancing salsa since age 14, and who was named the 2017 <i>Instructor of the Year</i> at the fifth annual DC Latin Honors Night ceremony.
+              </p>
+              <p class="desktop text">Known for creating intricate and elegant turn patterns, accompanied by sharp stylish footwork, it's no surprise that the team has been turning heads at congresses nationwide, including Houston, Chicago, Washington DC, Tampa, and Charleston.
+              </p>
+            </div>
+
+          </article>
+          <article id="slideshow-container">
+
+            <!-- Slideshow container -->
+
+            <div class="slide" num=0 style="background-image: url('img/slides-david.png')">
+            </div>
+
+            <div class="slide" num=1 style="background-image: url('img/slides-ladies.png')">
+              <p class="attribution ladies-red desktop" num=1>&copy; Brandon Grant</p>
+            </div>
+
+            <div class="slide" num=2 style="background-image: url('img/slides-houston.png')">
+            </div>
+
+            <div class="slide-caption mobile">
+              <p class="attribution ladies-red" num=1>&copy; Brandon Grant</p>
+              <p class="mobile text">Known for creating intricate and elegant turn patterns, accompanied by sharp stylish footwork, it's no surprise that the team has been turning heads at congresses nationwide, including Houston, Chicago, Washington DC, Tampa, and Charleston.
+            </div>
+            </p>
+            <!-- Next and previous buttons -->
+            <!--<a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>-->
+          </article>
+
+        </section>
+        <section class="background-img" id="student-team" class="purple-black" style="background-image: url('img/student-team.jpg')">
+          <div id="student-screen">
+
+          </div>
+          <div id="student-team-text">
+            <div id="student-team-text-left">
+              <h1>Ardiente Student Team</h1>
+            </div>
+            <div id="student-team-text-right">
+              <div id="student-team-bio" class="text">
+                <p>The Ardiente Student Team offers intensive training for passionate dancers ready to take their technique and performance skills to the next level.</p>
+                <p>Members train and practice alongside the pro team, and have the opportunity perform at congresses, socials, and salsa clubs in the DC area. </p>
+                <p>Contact <a href="mailto:ardientedc@gmail.com">ardientedc@gmail.com</a> if you are interested in auditioning.</p>
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+        </section>
+      </div>
+
+    </main>
+    <footer class="purple-black">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:ardientedc@gmail.com" target="_blank">ardientedc@gmail.com</a></li>
+        <li>
+          <a class="desktop" href="http://facebook.com/ardientedc/" target="_blank"> <img src="/img/facebook-icon.png" alt="Facebook"> </a>
+          <a class="mobile" href="http://m.facebook.com/ardientedc/" target="_blank"> <img src="/img/facebook-icon.png" alt="Facebook"> </a>
+          <a href="http://instagram.com/ardiente.dc/" target="_blank"> <img src="/img/instagram-icon.png" alt="Instagram"> </a>
+        </li>
+      </ul>
+
+    </footer>
+
+  </body>
+
+</html>

@@ -6,8 +6,68 @@ body {
   display: none !important
 }
 
+#register-content {
+  position: relative;
+}
+
+.input[name="date"] {
+  font-size: 105%;
+}
+
+@media only screen and (max-width: 799px) {
+  /* mobile */
+  main {
+    width: 95%;
+  }
+  .form-container {
+    bottom: 0;
+  }
+  .form-container .input {
+    font-size: 16px;
+  }
+  .img-container img {
+    min-width: 100%;
+  }
+  .form-container {
+    width: 100%;
+    /*min-height: calc(60% - 15%);*/
+    padding: 8px;
+    padding-left: 0;
+    top: 0;
+    background-color: rgba(250, 250, 250, .85);
+  }
+  .classinfo, .confirmation-box {
+    background-color: rgba(225, 222, 237, .75);
+    border: 1px solid gray
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  /* desktop */
+  main {
+    width: 80%;
+  }
+  .img-container img {
+    min-width: 90%;
+  }
+  .form-container {
+    width: 40%;
+    /*min-height: calc(60% - 15%);*/
+    padding: 48px 42px;
+    padding-left: 30px;
+    left: 25%;
+    top: 0em;
+    /* the double scroll is created when the contents of #register-content exceed the heigt of img-container.
+    so dont add any extra space (top or border)*/
+    border: 0px darkgray solid;
+    background-color: rgba(250, 250, 250, .98);
+  }
+  .classinfo, .confirmation-box {
+    background-color: rgba(225, 222, 237, .45);
+  }
+}
+
 main {
-  width: 80%;
   margin: 0 auto;
   margin-top: 16px;
   position: relative;
@@ -17,7 +77,7 @@ main {
 
 main h1, main h2 {
   color: black;
-  font-family: "Raleway";
+  font-family: "Raleway", Arial;
   text-align: center;
 }
 
@@ -33,13 +93,13 @@ main h2 {
 }
 
 main h3 {
-  font-family: "M PLUS 1p";
+  font-family: "M PLUS 1p", Verdana;
   font-size: 28px;
   margin-bottom: .5em;
 }
 
 .img-container {
-  height: 100%;
+  /*height: 100%;*/
   margin: 0 auto;
   width: auto;
   opacity: .6;
@@ -48,20 +108,13 @@ main h3 {
 }
 
 .img-container img {
-  min-width: 90%;
+  overflow: hidden;
 }
 
 .form-container {
-  width: 40%;
-  min-height: calc(60% - 15%);
-  padding: 48px 42px;
-  padding-left: 30px;
-  background-color: rgba(250, 250, 250, .98);
   margin: 0 auto;
   position: absolute;
-  top: 20%;
-  left: 25%;
-  border: 1px darkgray solid
+  height: auto
 }
 
 .userform input {
@@ -70,24 +123,60 @@ main h3 {
 }
 
 .userform select {
-  font-family: 'M PLUS 1p';
+  font-family: 'M PLUS 1p', Georgia;
+}
+
+.userform label, .payment .detail {
+  display: block;
+  font-family: "Raleway", Arial;
+}
+
+.payment .detail {
+  margin-left: .5em;
 }
 
 .userform label {
-  display: block;
-  font-family: "Raleway";
   margin-bottom: .5em;
+}
+
+.payment .detail {
+  margin-bottom: 1.5em;
 }
 
 .userform input, .userform select {
   margin-bottom: 2.5em;
 }
 
+a.edit {
+  text-decoration: none;
+  color: rgb(13, 2, 56);
+}
+
+a.edit:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.confirmation-box {
+  padding: .5em;
+  font-family: Verdana;
+  height: 3em;
+  margin-bottom: 1em;
+}
+
 .classinfo {
-  font-family: "M PLUS 1p";
-  background-color: rgba(225, 222, 237, .45);
+  font-family: "M PLUS 1p", Georgia;
   margin-bottom: 1em;
   padding: 8px;
+}
+
+.confirmation-box p {
+  margin-bottom: 1em;
+  font-family: Arial
+}
+
+.confirmation-box span {
+  margin-left: .5em;
 }
 
 button[name="cancel"] {
@@ -99,7 +188,7 @@ input[type="submit"] {
   font-size: 120%;
   background-color: rgba(64, 120, 165, .8);
   padding: 12px 8px;
-  font-family: "Raleway";
+  font-family: "Raleway", Arial;
   color: white;
   margin-top: 1em;
   margin-bottom: .5em;

@@ -1,33 +1,38 @@
-body {
-  height: 450vh;
-  /*  height: 190vh;*/
-  overflow-x: hidden;
+@media only screen and (min-width: 800px) {
+  /* desktop */
+  #video-container, #video-screen {
+    min-height: 98vh;
+  }
+  #about-us, #about-us-text {
+    height: 160vh;
+    overflow: hidden;
+  }
+  #overlay {
+    height: 180vh;
+    top: -20vh
+  }
+  #honors-night {
+    /*height: 60vh !important;*/
+  }
 }
 
-footer {
-  margin-top: 0 !important
+@media only screen and (max-width: 799px) {
+  /* mobile */
+  #video-container, #video-screen {
+    min-height: 90vh;
+    /*height: auto;*/
+  }
+  #honors-night {
+    min-height: 60vh !important;
+  }
+  #about-us, #about-us-text {
+    overflow: hidden;
+    /*  min-height: 80vh !important;*/
+  }
+  #about-us-text {}
 }
 
-#content {}
-
-#video-container, #video-screen {
-  min-height: 98vh;
-}
-
-#about-us, #about-us-text, #overlay {
-  height: 160vh;
-  overflow: hidden;
-}
-
-#honors-night {
-  height: 80vh;
-  color: white;
-}
-
-#pro-team, #student-team {
-  height: 95vh;
-}
-
-#student-team {
-  padding: 0
-}
+/*
+#about-us-text {
+  height: 100%;
+}*/
