@@ -21,8 +21,12 @@ main {
 
 @media only screen and (max-width: 799px) {
   .desktop {
-    /* mobile only :not(.mobile)*/
+    /* mobile only */
     display: none !important;
+  }
+  .text .red {
+    color: rgb(240, 92, 111) !important;
+    font-weight: bold;
   }
 }
 
@@ -41,6 +45,10 @@ main {
   }
   .text {
     font-weight: lighter;
+  }
+  .text .red {
+    color: #d2142d;
+    font-weight: bold;
   }
 }
 
@@ -63,7 +71,7 @@ body {
 
 .dc {
   /*Font for "Dance Company"*/
-  font-family: 'Alegreya Sans SC'
+  font-family: 'Alegreya Sans SC', Verdana
 }
 
 header {
@@ -87,7 +95,7 @@ nav {
 }
 
 nav a {
-  font-family: 'M PLUS 1p', sans-serif;
+  font-family: 'M PLUS 1p', Verdana, sans-serif;
   text-transform: uppercase;
   color: white;
   text-decoration: none;

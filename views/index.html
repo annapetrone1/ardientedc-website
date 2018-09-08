@@ -4,7 +4,7 @@
   <head>
     <title>Ardiente Dance Company</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel="stylesheet" href="css/global.css">
     <link rel="icon" type="image/png" href="http://ardientedance.com.s3-website-us-east-1.amazonaws.com/img/favicon.gif">
     <!-- Alegreya ? -->
@@ -15,12 +15,12 @@
 
     <link rel="stylesheet" href="/fonts/lora.css">
     <link rel="stylesheet" href="/fonts/dancing_script.css">
+    <link rel="stylesheet" href="/fonts/josefin_200.css">
 
     <script src="/js/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="css/home/main.css">
     <link rel="stylesheet" href="css/home/sizing.css">
     <link rel="stylesheet" href="css/home/video.css">
-
 
     <script type="text/javascript">
       $(document).ready(function() {
@@ -38,22 +38,25 @@
             scrollTop: $("#about-us h1").offset().top - .10 * $(window).height()
           }, 1000);
         })
-        // $('.desktop').first().css('display') === 'none'
-        if ($(window).width() < 800) {
-          $('#video-logo img').show();
-          $('#video-logo p').show();
-        } else {
+        var dcfadeIn = 2000; // offset to fade in the "Dance Company" caption
+        var opacity = 0.7;
+        if ($('#video-logo img').css('display') === 'none') {
           setTimeout(function() {
-            $('#video-logo img').fadeTo(2000, 0.75);
+            $('#video-logo img').fadeTo(2000, opacity);
           }, 1000);
-          setTimeout(function() {
-            $('#video-logo p').fadeTo(1000, 0.7);
-          }, 2000);
+        } else {
+          dcfadeIn = 500;
+          opacity = 0.9;
         }
+        console.log('dcfadeIn', dcfadeIn);
+        setTimeout(function() {
+          // this can be .7 on both desktop and mobile
+          $('#video-logo p').fadeTo(1000, .7);
+        }, dcfadeIn);
 
         setTimeout(function() {
-          $('#enter, #enter a').fadeTo(1000, 0.7);
-        }, 3000);
+          $('#enter, #enter a').fadeTo(1000, opacity);
+        }, dcfadeIn + 500);
 
         $(`.slide[num=0]`).fadeIn(2000);
         var slideIndex = 0;
@@ -122,10 +125,10 @@
           <!--<img id="overlay1" src="img/logo-overlay-white.gif">-->
           <div id="about-us-text">
             <div id="about-us-text-left">
-              <h1 class="purple-black-text"><span>DC's</span> <span>Rising</span> <span>Salsa</span> <span>Company</span></h1>
+              <h1 class="purple-black-text">DC'S RISING SALSA COMPANY</h1>
             </div>
-            <div id="about-us-text-right">
-              <article id="about-us-text-box" class="text">
+            <div id="about-us-text-right" class="desktop">
+              <article class="about-us-text-box text">
                 <!--  <div > -->
                 <h2>About Ardiente</h2>
                 <p>The name is Spanish for <span class="red">passionate</span>, but in the DMV, <i>Ardiente</i> has become synonymous with <span class="red">precision</span>, <span class="red">musicality</span>, and <span class="red">style</span>.</p>
@@ -140,6 +143,17 @@
           </div>
         </section>
 
+        <div class="mobile purple-black" id="about-us-mobile">
+          <article id="about-us-text-box-mobile" class="about-us-text-box text">
+            <!--  <div > -->
+            <h2>About Ardiente</h2>
+            <p>The name is Spanish for <span class="red">passionate</span>, but in the DMV, <i>Ardiente</i> has become synonymous with <span class="red">precision</span>, <span class="red">musicality</span>, and <span class="red">style</span>.</p>
+            <p>The team was founded in 2016 by six young, dedicated dancers with over 10 years of experience in creating choreography, performing and teaching Latin dance.</p>
+            <p> <span class="desktop">Although all Ardiente dancers come from different backgrounds, they are brought together by their passion for dance.</span> The goal of Ardiente Dance Project is to introduce a fresh new perspective to the dance community
+              by expressing everyone's unique and energetic style.</p>
+            <!-- </div> -->
+          </article>
+        </div>
 
 
         <section class="separator"></section>
