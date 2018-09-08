@@ -96,6 +96,7 @@ nav {
 
 nav a {
   font-family: 'M PLUS 1p', Verdana, sans-serif;
+  font-size: '3vh';
   text-transform: uppercase;
   color: white;
   text-decoration: none;
