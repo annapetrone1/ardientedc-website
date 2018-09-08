@@ -24,6 +24,7 @@ main {
   }
   #lessons img {
     max-width: 100%;
+    max-height: 60vh;
     margin: 0 auto;
   }
   #lessons ul li .description {
@@ -83,14 +84,17 @@ p.dow {
 
 h1 {
   color: white;
-  font-family: "Montserrat", Verdana;
-  font-size: 60px;
+  line-height: 1em;
+  font-family: "Josefin Sans", Times;
+  font-size: 10vh;
   text-align: center;
   font-weight: lighter;
+  text-transform: uppercase;
   color: black;
   /*background-color: rgba(19, 19, 32, .9);*/
   color: rgba(19, 19, 32, 1);
   padding: .25em 0;
+  padding-top: .5em;
 }
 
 video {

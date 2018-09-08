@@ -40,7 +40,6 @@ main {
     background-attachment: fixed;
   }
   nav a {
-    margin-right: 2em;
     font-weight: lighter;
   }
   .text {
@@ -89,14 +88,15 @@ header, footer {
 
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 0 auto;
-  color: rgba(0, 0, 0, 0)
+  color: rgba(0, 0, 0, 0)/* this hides the vertical bars between the buttons */
 }
 
 nav a {
   font-family: 'M PLUS 1p', Verdana, sans-serif;
   font-size: 2.5vh;
+  height: 4.5vh;
   text-transform: uppercase;
   color: white;
   text-decoration: none;
