@@ -16,7 +16,7 @@ function getClassInfo(classId){
       price_units: 'per class',
       instructor: 'David Cuevas',
       img:'classes-mambo-thursdays.jpg',
-      paypal_id: 'mambo-thursdays',
+      paypal_key: 'mambo-thursdays',
       description: `<p>Catch us at <i>The Dancing Club</i> every Thursday from 8-9pm, with instructor David Cuevas teaching Mambo, ChaCha, Fusion and much more! Classes will vary so make sure you follow us to stay updated. </p>
       <p>We will cover: Basic Fundamentals, Footwork, Timing, Styling, Lead & Follow technique, Spins, and much more! This is an open level class so everyone is welcomed!</p>`
     },
@@ -35,8 +35,9 @@ function getClassInfo(classId){
       price: '$90 for one package, or $165 for two packages.',
       instructor: 'David Cuevas',
       img:'classes-salsa-progressive.jpg',
-      paypal_id: 'salsa-progressive',
-      description: 'TODO: needs description'
+      paypal_key: 'salsa-progressive',
+      description: 'TODO: needs description',
+      special_note: 'One package includes _ classes, which can be used for any combination of level 1 or 2 classes.'
     },
 
     'salsa-progressive-2': {
@@ -53,8 +54,9 @@ function getClassInfo(classId){
       price: '$90 for one package, or $165 for two packages.',
       instructor: 'David Cuevas',
       img:'classes-salsa-progressive.jpg',
-      paypal_id: 'salsa-progressive',
-      description: 'TODO: needs description'
+      paypal_key: 'salsa-progressive',
+      description: 'TODO: needs description',
+      special_note: 'One package includes _ classes, which can be used for any combination of level 1 or 2 classes.'
     }
   };
 
@@ -88,7 +90,9 @@ function getClassInfo(classId){
   `
   };
 
+
   var finalInfo = classInfo[classId];
-  finalInfo['paypal_form'] = classPaypal[classInfo[classId]['paypal_key']];
+  var paypal_key = finalInfo.paypal_key;
+  finalInfo['paypal_form'] = classPaypal[paypal_key];
   return finalInfo;
 }

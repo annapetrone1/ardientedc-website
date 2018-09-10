@@ -108,6 +108,16 @@ nav a:hover {
   border-bottom: solid 1px #ed3952
 }
 
+a.gmap {
+  text-decoration-style: dashed;
+  color: rgb(20, 20, 20);
+  font-size: 90%
+}
+
+a.gmap:hover {
+  color: steelblue
+}
+
 @media only screen and (max-width: 799px) {
   /* mobile nav */
   nav {

@@ -48,8 +48,11 @@
               <a href="" class="expand"><span>Class Description</span></a>
               <article class="description">
               ${classInfo.description}
+              <p class="viewflyer">View flyer in a separate window:
+               <a href="/img/${classInfo.img}" target="_blank">${classInfo.full_name}</a></p>
                 </article>
-              <a class="mobile register" href="/register.html${classId}"><button class="register" name="button">Register Here</button></a>
+
+              <a class="mobile register" href="/register.html?class=${classId}"><button class="register" name="button">Register Here</button></a>
 
             </li>`
           )

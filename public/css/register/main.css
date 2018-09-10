@@ -25,6 +25,9 @@ body {
   .form-container .input {
     font-size: 16px;
   }
+  .img-container {
+    opacity: .6;
+  }
   .img-container img {
     min-width: 100%;
   }
@@ -36,7 +39,7 @@ body {
     top: 0;
     background-color: rgba(250, 250, 250, .85);
   }
-  .classinfo, .confirmation-box {
+  .infoblock, .confirmation-box {
     background-color: rgba(225, 222, 237, .75);
     border: 1px solid gray
   }
@@ -46,6 +49,9 @@ body {
   /* desktop */
   main {
     width: 80%;
+  }
+  .img-container {
+    opacity: .4;
   }
   .img-container img {
     min-width: 90%;
@@ -58,11 +64,12 @@ body {
     left: 25%;
     top: 0em;
     /* the double scroll is created when the contents of #register-content exceed the heigt of img-container.
-    so dont add any extra space (top or border)*/
+    so dont add any extra space (top or border).
+     */
     border: 0px darkgray solid;
     background-color: rgba(250, 250, 250, .98);
   }
-  .classinfo, .confirmation-box {
+  .infoblock, .confirmation-box {
     background-color: rgba(225, 222, 237, .45);
   }
 }
@@ -82,13 +89,13 @@ main h1, main h2 {
 }
 
 main h1 {
-  font-size: 40px;
+  font-size: 5vh;
   margin-bottom: .25em;
   margin-top: .25em;
 }
 
 main h2 {
-  font-size: 36px;
+  font-size: 7vh;
   margin-bottom: 1em;
 }
 
@@ -102,7 +109,6 @@ main h3 {
   /*height: 100%;*/
   margin: 0 auto;
   width: auto;
-  opacity: .6;
   overflow: hidden;
   text-align: center;
 }
@@ -114,6 +120,7 @@ main h3 {
 .form-container {
   margin: 0 auto;
   position: absolute;
+  min-height: 80vh;
   height: auto
 }
 
@@ -145,6 +152,7 @@ main h3 {
 
 .userform input, .userform select {
   margin-bottom: 2.5em;
+  padding-right: 1em;
 }
 
 a.edit {
@@ -164,7 +172,7 @@ a.edit:hover {
   margin-bottom: 1em;
 }
 
-.classinfo {
+.infoblock {
   font-family: "M PLUS 1p", Georgia;
   margin-bottom: 1em;
   padding: 8px;

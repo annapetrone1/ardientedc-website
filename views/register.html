@@ -32,7 +32,7 @@
         if (classId.length > 0) {
           return classId[0].split('=')[1];
         } else {
-          window.location.href = './classes.html';
+          //  window.location.href = './classes.html';
         }
       }
       var classId = parseUrl();
@@ -58,11 +58,22 @@
         return `${date.getFullYear()}-${zero_pad(date.getMonth()+1)}-${zero_pad(date.getDate())}`;
       }
 
-      function makeDates(dow, startHour) {
+      function makeTime(hour, minute) {
+        var am = 'AM';
+        if (hour > 12) {
+          hour -= 12;
+          am = 'PM';
+        }
+        return `${zero_pad(hour)}:${zero_pad(minute)} ${am}`;
+      }
+
+      function makeDates(dow, startHour, startMinute) {
         var $date_select = $('select[name="date"]');
         var loopday = new Date(); // get the next 4 weeks of classes
 
-        if (loopday.getDay() == dow && loopday.getHours() >= startHour) {
+        var now_minutes = loopday.getHours() * 100 + loopday.getMinutes();
+        var class_minutes = startHour * 100 + startMinute;
+        if (loopday.getDay() == dow && now_minutes >= class_minutes) {
           // class is today and already started
           loopday.setDate(date.getDate() + 1);
         }
@@ -91,13 +102,23 @@
 
         // set up the page based on the classId in the url
         // this must go in the doc ready function!
+        console.log('classInfo', classInfo.full_name);
         $('.img-container img').attr('src', `/img/${classInfo.img}`);
 
-
-        var startHour = classInfo.start_hour;
-        var dow = classInfo.dow;
+        classInfo.start_time_fmt = makeTime(classInfo.start_hour, classInfo.start_minute);
         if (classInfo.select_date) {
-          makeDates(dow, startHour);
+          classInfo.start_time = classInfo.start_time_fmt;
+        } else {
+          classInfo.start_time = classInfo.when;
+        }
+        for (let attr of ['full_name', 'price', 'start_time', 'location_name', 'location_address']) {
+          $(`.classInfo.${attr}`).text(classInfo[attr]);
+        }
+        $('a.classInfo.location_address').attr('href', classInfo.location_google_maps);
+        $('input[name="time"]').val(classInfo.start_time_fmt);
+
+        if (classInfo.select_date) {
+          makeDates(classInfo.dow, classInfo.start_hour);
         } else {
           $('select[name="date"]').attr('required', false);
           $('select[name="date"]').hide();
@@ -105,6 +126,13 @@
           $('.user-confirm .detail:has(span.date)').hide();
         }
 
+        if (classInfo.special_note) {
+          $('.classInfo.special_info').text(classInfo.special_note);
+        } else {
+          //hide
+          $('.infoblock:has(".special_info")').hide();
+          $('.detail:has(".special_info")').hide();
+        }
         $('.payment').append(classInfo.paypal_form);
 
         $('.userform input[name="saveinfo"]').on('click', function() {
@@ -124,7 +152,14 @@
 
           var $selectedDate = $('.userform select[name="date"] option:selected');
           var query = $(this).serialize();
-          $('.payment form').append(`<input type="hidden" name="item_name" value="Mambo Thursdays with Ardiente: ${$selectedDate.val()}">`);
+
+          // set the paypal item_name (shows in the reciept)
+          if (classInfo.select_date) {
+            $('.payment form').append(`<input type="hidden" name="item_name" value="${classInfo.full_name} with Ardiente: ${$selectedDate.val()}">`);
+          } else {
+            $('.payment form').append(`<input type="hidden" name="item_name" value="${classInfo.full_name} with Ardiente">`);
+          }
+
           $('.payment form').append(`<input type="hidden" name="return" value="http://ardientedc.com.s3-website-us-east-1.amazonaws.com/classes.html">`);
 
           for (field of ['fullname', 'email']) {
@@ -136,7 +171,6 @@
           $('.form-container .payment input[type="checkbox"]').get(0).checked = false; // always require them to check it
           $('.form-container .payment .user-confirm').fadeIn()
           /*TODO: copy the info to the jotform and submit*/
-
 
           /* scroll to the top of the confirm page */
           $("html, body").animate({
@@ -188,7 +222,7 @@
     </header>
     <main>
       <h1>Register for:</h1>
-      <h2 class="classInfo full_name">$full_name</h2>
+      <h2 class="classInfo full_name"></h2>
       <section id="register-content">
 
         <section class="img-container">
@@ -208,40 +242,32 @@
 
               </select>
 
-
-              <input class="input" type="hidden" name="time" value="08:00 PM" readonly>
+              <input class="input" type="hidden" name="time" value="" readonly>
 
               <label for="email">Email address</label>
               <input class="input" type="email" name="email" value="" required>
 
-              <!-- later support buying more than 1 pass -->
-              <input class="input" type="hidden" name="quantity" value="1">
-
-              <!-- info to set to jotform -->
-              <input class="input" type="hidden" name="instructor" value="David Cuevas">
-
-              <div class="classinfo">
+              <div class="infoblock">
                 <label for="time">Class Time</label>
-                <p class="classInfo start_time">
-                  $start_time
-                </p>
+                <p class="classInfo start_time"> </p>
               </div>
-              <div class="address classinfo">
+              <div class="infoblock">
                 <label for="locationName">Location and Address</label>
                 <h5 class="classInfo location_name">The Dancing Club</h5>
-                <p class="classInfo location_address">
-                  $location_address
+                <p>
+                  <a class="classInfo location_address gmap" href="" target="_blank">
+                  </a>
                 </p>
-                <input class="input" type="hidden" name="locationName" value="">
-                <input class="input" type="hidden" name="locationAddress" value="">
               </div>
-              <div class="price classinfo">
+              <div class="infoblock">
                 <label for="price">Price</label>
-                <p class="classInfo price">$price
-                </p>
-                <input class="input" type="hidden" name="price" value="12">
+                <p class="classInfo price"></p>
               </div>
 
+              <div class="infoblock">
+                <label for="special_info">Special Info</label>
+                <p class="classInfo special_info"></p>
+              </div>
 
               <input type="submit" name="saveinfo" value="Save info and pay">
               <a class="cancel" href="/classes.html"><button type="button" name="cancel">Cancel registration</button></a>
@@ -259,14 +285,17 @@
               <p class="detail"> <b>Name:</b> <span class="fullname"></span></p>
               <p class="detail"> <b>Email Address:</b> <span class="email"></span></p>
               <p class="detail"> <b>Class Date:</b> <span class="date"></span></p>
-              <p class="detail"> <b>Class Time:</b> <span class="time"></span></p>
-              <p class="detail"> <b>Price:</b> <span class="price"></span></p>
+              <p class="detail"> <b>Class Time:</b> <span class="classInfo start_time"></span></p>
+              <p class="detail"> <b>Price:</b> <span class="classInfo price"></span></p>
               <div class="address detail">
                 <p><b>Class Location and Address:</b></p>
-                <p class="classInfo location_name">The Dancing Club</p>
+                <p class="classInfo location_name"> </p>
                 <p class="classInfo location_address">
-                  $location_address
                 </p>
+              </div>
+              <div class="detail">
+                <p><b>Special Info:</b></p>
+                <p class="classInfo special_info"> </p>
               </div>
 
               <div class="confirmation-box">
@@ -276,13 +305,10 @@
               </div>
             </div>
 
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_s-xclick">
-              <input type="hidden" name="encrypted" value="">
-              <!-- might need to end with carrige return -->
-              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-              <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-            </form>
+            <div class="paypal-container">
+
+            </div>
+
 
           </article>
 
