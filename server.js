@@ -43,6 +43,15 @@ app.get('/register-mambo-thursdays.html', (req, res) => {
 });
 
 
+app.get('/register.html', (req, res) => {
+  var p = req.params;
+  console.log(`register for class ${p.id}`);
+
+
+  res.sendFile(__dirname + '/views/register.html');
+  // res.json(config);
+});
+
 app.listen(4000, () => {
   console.log('Listening on http://localhost:4000');
   // open('http://localhost:' + config.port);

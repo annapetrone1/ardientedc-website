@@ -5,23 +5,55 @@
     <title>Ardiente | Classes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/global.css">
     <link rel="icon" type="image/png" href="http://ardientedance.com.s3-website-us-east-1.amazonaws.com/img/favicon.gif">
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/classes.js"></script>
+
     <link rel="stylesheet" href="/fonts/montserrat_200.css">
     <link rel="stylesheet" href="/fonts/m_plus_1_300.css">
     <link rel="stylesheet" href="/fonts/raleway_200.css">
     <link rel="stylesheet" href="/fonts/alegreya_sans_sc.css">
     <link rel="stylesheet" href="/fonts/josefin_200.css">
 
-    <script src="/js/jquery-3.3.1.min.js"></script>
-
+    <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="css/classes/main.css">
 
     <script type="text/javascript">
       $(document).ready(function() {
         console.log('DOM loaded');
+        var classes = getClassInfo();
+        for (let classId in classes) {
+          let classInfo = classes[classId];
+          $('#lessons ul').append(
+            `<li>
+              <article class="info">
+                <div class="img-container">
+                  <img src="/img/${classInfo.img}" alt="Mambo Thursdays class">
+                </div>
 
+                <div class="title_price">
+                  <h3>${classInfo.full_name}</h3>
+                  <div class="mini-info">
+                    <p>Price: ${classInfo.price}</p>
+                    <p class="when">When: ${classInfo.when}</p>
+                    <p class="location_name">Where: ${classInfo.location_name} </p>
+                    <p class="location_address"><a href="${classInfo.location_google_maps}" target="_blank">
+                     ${classInfo.location_address}</a></p>
+                  </div>
 
+                </div>
+                <a class="desktop" href="/register.html?class=${classId}"><button class="register" name="button">Register Here</button></a>
+
+              </article>
+              <a href="" class="expand"><span>Class Description</span></a>
+              <article class="description">
+              ${classInfo.description}
+                </article>
+              <a class="mobile register" href="/register.html${classId}"><button class="register" name="button">Register Here</button></a>
+
+            </li>`
+          )
+        };
         $('a.expand').on('click', function(e) {
           e.preventDefault();
           $desc = $(this).siblings('.description');
@@ -65,29 +97,7 @@
 
       <section id="lessons">
         <ul>
-          <li>
-            <article class="info">
-              <!-- TODO: this div sizing is trash -->
-              <div class="img-container">
-                <img src="/img/classes-mambo-thursdays.jpg" alt="Mambo Thursdays class">
-              </div>
 
-              <div class="title_price">
-                <h3>Mambo on2 Thursday Workshop Series</h3>
-                <h4>Price: $12</h4>
-              </div>
-              <a class="desktop" href="/register-mambo-thursdays.html"><button class="register" name="button">Register Here</button></a>
-
-            </article>
-            <a href="" class="expand"><span>Class Description</span></a>
-            <article class="description">
-              <p>Catch us at <i>The Dancing Club</i> every Thursday from 8-9pm, with instructor David Cuevas teaching Mambo, ChaCha, Fusion and much more! Classes will vary so make sure you follow us to stay updated. </p>
-
-              <p>We will cover: Basic Fundamentals, Footwork, Timing, Styling, Lead & Follow technique, Spins, and much more! This is an open level class so everyone is welcomed!</p>
-            </article>
-            <a class="mobile register" href="/register-mambo-thursdays.html"><button class="register" name="button">Register Here</button></a>
-
-          </li>
 
         </ul>
 

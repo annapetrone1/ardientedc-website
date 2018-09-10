@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Ardiente | Class Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="icon" type="image/png" href="http://ardientedance.com.s3-website-us-east-1.amazonaws.com/img/favicon.gif">
+    <link rel="stylesheet" href="/fonts/montserrat_200.css">
+    <link rel="stylesheet" href="/fonts/m_plus_1_300.css">
+    <link rel="stylesheet" href="/fonts/raleway_200.css">
+    <link rel="stylesheet" href="/fonts/alegreya_sans_sc.css">
+
+    <link rel="stylesheet" href="/css/register/main.css">
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/classes.js"></script>
+
+    <script type="text/javascript">
+      function parseUrl() {
+        var search = window.location.search;
+        if (search == "") {
+          console.log('no class id given');
+          // no class id specified, redirect to classes
+          window.location.href = './classes.html';
+        }
+        var params = search.substr(1).split('&');
+        var classId = params.filter((keyval) => {
+          return keyval.split('=')[0] === 'class'
+        });
+        if (classId.length > 0) {
+          return classId[0].split('=')[1];
+        } else {
+          window.location.href = './classes.html';
+        }
+      }
+      var classId = parseUrl();
+      var classInfo = getClassInfo(classId);
+    </script>
+
+    <script type="text/javascript">
+      function longDate(date) {
+        var options = {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        };
+        return date.toLocaleDateString("en-US", options);
+      }
+
+      function zero_pad(num) {
+        return (num < 10 ? '0' : '') + num;
+      }
+
+      function shortDate(date) {
+        return `${date.getFullYear()}-${zero_pad(date.getMonth()+1)}-${zero_pad(date.getDate())}`;
+      }
+
+      function makeDates(dow, startHour) {
+        var $date_select = $('select[name="date"]');
+        var loopday = new Date(); // get the next 4 weeks of classes
+
+        if (loopday.getDay() == dow && loopday.getHours() >= startHour) {
+          // class is today and already started
+          loopday.setDate(date.getDate() + 1);
+        }
+        for (let i = 0; i <= 28; i += 1) {
+          if (loopday.getDay() == dow) {
+            $date_select.append(`<option value="${shortDate(loopday)}">${longDate(loopday)}</option>`);
+          }
+          loopday.setDate(loopday.getDate() + 1);
+        }
+        /*$date_select.prepend(`<option name="prompt" value="">==== Choose a Date ====</option>`);
+        $date_select.children("option[name='prompt']").get(0).selected = 'selected';*/
+      }
+
+      function userValid(required = ['fullname', 'date', 'email']) {
+        var missing = $('.form-container form').serialize().split('&').map((keyval) => {
+          return keyval.split('=')
+        }).filter((keyval) => {
+          return required.indexOf(keyval[0]) != -1
+        }).filter((keyval) => {
+          return keyval[1].length == 0
+        });
+
+        return missing.length === 0;
+      }
+      $(document).ready(function() {
+
+        // set up the page based on the classId in the url
+        // this must go in the doc ready function!
+        $('.img-container img').attr('src', `/img/${classInfo.img}`);
+
+
+        var startHour = classInfo.start_hour;
+        var dow = classInfo.dow;
+        if (classInfo.select_date) {
+          makeDates(dow, startHour);
+        } else {
+          $('select[name="date"]').attr('required', false);
+          $('select[name="date"]').hide();
+          $('label[for="date"]').hide();
+          $('.user-confirm .detail:has(span.date)').hide();
+        }
+
+        $('.payment').append(classInfo.paypal_form);
+
+        $('.userform input[name="saveinfo"]').on('click', function() {
+          if (!userValid()) {
+            /* scroll to the top of the input page */
+            $("html, body").animate({
+              scrollTop: $(".userform h3").offset().top - .10 * $(window).height()
+            }, 0);
+          }
+          return true;
+
+        })
+        $('.userform form').on('submit', function(e) {
+          //$('.userform button').on('click', function(e) {
+          console.log('user form submitted')
+          e.preventDefault();
+
+          var $selectedDate = $('.userform select[name="date"] option:selected');
+          var query = $(this).serialize();
+          $('.payment form').append(`<input type="hidden" name="item_name" value="Mambo Thursdays with Ardiente: ${$selectedDate.val()}">`);
+          $('.payment form').append(`<input type="hidden" name="return" value="http://ardientedc.com.s3-website-us-east-1.amazonaws.com/classes.html">`);
+
+          for (field of ['fullname', 'email']) {
+            $(`.payment p .${field}`).text($(`.userform .input[name="${field}"]`).val());
+          }
+          $(`.payment p .date`).text($selectedDate.text());
+
+          $('.form-container .userform').hide();
+          $('.form-container .payment input[type="checkbox"]').get(0).checked = false; // always require them to check it
+          $('.form-container .payment .user-confirm').fadeIn()
+          /*TODO: copy the info to the jotform and submit*/
+
+
+          /* scroll to the top of the confirm page */
+          $("html, body").animate({
+            scrollTop: $(".user-confirm h3").offset().top - .10 * $(window).height()
+          }, 500);
+        })
+
+        $('.cancel').on('click', function(e) {
+          var ok = confirm("Are you sure you want to cancel your registration?");
+          if (ok == true) {
+            // leave registration and go back to main class page
+            return true
+          } else {
+            // stay on page
+            e.preventDefault();
+          }
+        })
+        $('.edit').on('click', function(e) {
+          e.preventDefault();
+          $('.form-container .payment .user-confirm').hide();
+          $('.form-container .payment form').hide();
+          $('.form-container .userform').fadeIn();
+          $("html, body").animate({
+            scrollTop: $(".userform h3").offset().top - .10 * $(window).height()
+          }, 500);
+        });
+
+        $('.form-container .payment input[type="checkbox"]').change(function() {
+          if ($(this).is(':checked')) {
+            // show the paypal button and hide the edit link
+            $('.form-container .payment form').fadeIn();
+            $('.form-container .edit').css('display', 'none');
+          } else {
+            $('.form-container .payment form').hide();
+            $('.form-container .edit').css('display', 'block');
+          }
+        });
+      })
+    </script>
+  </head>
+
+  <body>
+    <header class="purple-black">
+      <nav>
+        <a href="/">Home</a> |
+        <a href="/events.html">Events</a> |
+        <a href="/classes.html">Classes</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Register for:</h1>
+      <h2 class="classInfo full_name">$full_name</h2>
+      <section id="register-content">
+
+        <section class="img-container">
+          <img src="$img" alt="">
+
+        </section>
+        <section class="form-container">
+          <article class="userform">
+            <h3>Sign up here</h3>
+
+            <form action="" method="post">
+              <label for="name">Your name</label>
+              <input class="input" type="text" name="fullname" value="" required>
+
+              <label for="date">Select Date</label>
+              <select class="input" name="date" required>
+
+              </select>
+
+
+              <input class="input" type="hidden" name="time" value="08:00 PM" readonly>
+
+              <label for="email">Email address</label>
+              <input class="input" type="email" name="email" value="" required>
+
+              <!-- later support buying more than 1 pass -->
+              <input class="input" type="hidden" name="quantity" value="1">
+
+              <!-- info to set to jotform -->
+              <input class="input" type="hidden" name="instructor" value="David Cuevas">
+
+              <div class="classinfo">
+                <label for="time">Class Time</label>
+                <p class="classInfo start_time">
+                  $start_time
+                </p>
+              </div>
+              <div class="address classinfo">
+                <label for="locationName">Location and Address</label>
+                <h5 class="classInfo location_name">The Dancing Club</h5>
+                <p class="classInfo location_address">
+                  $location_address
+                </p>
+                <input class="input" type="hidden" name="locationName" value="">
+                <input class="input" type="hidden" name="locationAddress" value="">
+              </div>
+              <div class="price classinfo">
+                <label for="price">Price</label>
+                <p class="classInfo price">$price
+                </p>
+                <input class="input" type="hidden" name="price" value="12">
+              </div>
+
+
+              <input type="submit" name="saveinfo" value="Save info and pay">
+              <a class="cancel" href="/classes.html"><button type="button" name="cancel">Cancel registration</button></a>
+
+            </form>
+
+
+          </article>
+
+
+          <article class="payment">
+
+            <div class="user-confirm">
+              <h3>Confirm your registration, and submit payment</h3>
+              <p class="detail"> <b>Name:</b> <span class="fullname"></span></p>
+              <p class="detail"> <b>Email Address:</b> <span class="email"></span></p>
+              <p class="detail"> <b>Class Date:</b> <span class="date"></span></p>
+              <p class="detail"> <b>Class Time:</b> <span class="time"></span></p>
+              <p class="detail"> <b>Price:</b> <span class="price"></span></p>
+              <div class="address detail">
+                <p><b>Class Location and Address:</b></p>
+                <p class="classInfo location_name">The Dancing Club</p>
+                <p class="classInfo location_address">
+                  $location_address
+                </p>
+              </div>
+
+              <div class="confirmation-box">
+                <p><input type="checkbox" name="confirm" value=unchecked><span>I confirm my information is correct</span></p>
+
+                <p><a class="edit" href="#">&larr; Edit info</a></p>
+              </div>
+            </div>
+
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="encrypted" value="">
+              <!-- might need to end with carrige return -->
+              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+              <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+
+          </article>
+
+        </section>
+
+      </section>
+
+    </main>
+
+
+
+    <footer class="purple-black">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:ardientedc@gmail.com" target="_blank">ardientedc@gmail.com</a></li>
+        <li>
+          <a class="desktop" href="http://facebook.com/ardientedc/" target="_blank"> <img src="/img/facebook-icon.png" alt="Facebook"> </a>
+          <a class="mobile" href="http://m.facebook.com/ardientedc/" target="_blank"> <img src="/img/facebook-icon.png" alt="Facebook"> </a>
+          <a href="http://instagram.com/ardiente.dc/" target="_blank"> <img src="/img/instagram-icon.png" alt="Instagram"> </a>
+
+        </li>
+      </ul>
+    </footer>
+  </body>
+
+</html>
