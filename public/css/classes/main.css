@@ -17,7 +17,7 @@ main {
 @media only screen and (max-width: 799px) {
   /* mobile */
   #cover {
-    min-height: 75vh;
+    min-height: 40em;
   }
   #lessons ul li {
     padding: 8px;
@@ -92,7 +92,7 @@ h1 {
   color: white;
   line-height: 1em;
   font-family: "Josefin Sans", Times;
-  font-size: 10vh;
+  font-size: 3em;
   text-align: center;
   font-weight: lighter;
   text-transform: uppercase;

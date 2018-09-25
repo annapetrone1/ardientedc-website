@@ -33,13 +33,7 @@
 
                 <div class="title_price">
                   <h3>${classInfo.full_name}</h3>
-                  <div class="mini-info">
-                    <p>Price: ${classInfo.price}</p>
-                    <p class="when">When: ${classInfo.when}</p>
-                    <p class="location_name">Where: ${classInfo.location_name} </p>
-                    <p class="location_address"><a href="${classInfo.location_google_maps}" target="_blank">
-                     ${classInfo.location_address}</a></p>
-                  </div>
+
 
                 </div>
                 <a class="desktop" href="/register.html?class=${classId}"><button class="register" name="button">Register Here</button></a>
@@ -47,7 +41,15 @@
               </article>
               <a href="" class="expand"><span>Class Description</span></a>
               <article class="description">
+
               ${classInfo.description}
+              <div class="mini-info">
+                <p class="when">When: ${classInfo.when}</p>
+                <p>Price: ${classInfo.price}</p>
+                <p class="location_name">Where: ${classInfo.location_name} </p>
+                <p class="location_address"><a href="${classInfo.location_google_maps}" target="_blank">
+                 ${classInfo.location_address}</a></p>
+              </div>
               <p class="viewflyer">View flyer in a separate window:
                <a href="/img/${classInfo.img}" target="_blank">${classInfo.full_name}</a></p>
                 </article>
