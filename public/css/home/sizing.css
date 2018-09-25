@@ -19,11 +19,11 @@
 @media only screen and (max-width: 799px) {
   /* mobile */
   #video-container, #video-screen {
-    min-height: 90vh;
+    min-height: 43em;
     /*height: auto;*/
   }
   #honors-night {
-    min-height: 60vh !important;
+    min-height: 25em !important;
   }
   #about-us, #about-us-text {
     overflow: hidden;
