@@ -75,12 +75,13 @@
   }
 }
 
+#video-logo img, #video-logo .dc, #enter {
+  display: none;
+  /*hide the logo at first*/
+}
+
 @media only screen and (min-width: 800px) {
   /* desktop */
-  #video-logo img, #video-logo .dc, #enter {
-    display: none;
-    /*hide the logo at first*/
-  }
   #enter {
     margin-top: 20vh;
     margin-bottom: 4vh;

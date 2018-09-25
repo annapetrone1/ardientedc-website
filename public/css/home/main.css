@@ -314,11 +314,11 @@
     left: 50%;
   }
   #pro-team .slide {
-    width: 70%;
+    width: 60%;
     height: 90%;
     position: absolute;
     top: 2em;
-    right: -5em;
+    right: -3em;
     margin: auto;
     background-size: auto 100%;
   }
