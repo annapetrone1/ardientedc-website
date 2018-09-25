@@ -27,21 +27,6 @@
       $(document).ready(function() {
         var ismobile = $('#video-logo img').css('display') !== 'none';
 
-        if (ismobile) {
-          // hack to handl;e mobile url bar resizing
-          // https://developers.google.com/web/updates/2016/12/url-bar-resizing
-          function calcVH() {
-            var sections = $('section');
-            for (let i = 0; i < sections.length; i++) {
-              let $section = $(sections.get(i));
-              $section.innerHeight($section.innerHeight());
-            }
-          }
-          $(window).on('resize', function() {
-            calcVH();
-          });
-        }
-
         var video = document.querySelector('video')
         video.playbackRate = 0.5;
         video.oncanplaythrough = function() {
