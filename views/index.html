@@ -25,7 +25,8 @@
 
     <script type="text/javascript">
       $(document).ready(function() {
-        console.log('DOM loaded');
+        var ismobile = $('#video-logo img').css('display') !== 'none';
+
         var video = document.querySelector('video')
         video.playbackRate = 0.5;
         video.oncanplaythrough = function() {
@@ -41,7 +42,7 @@
         })
         var dcfadeIn = 2000; // offset to fade in the "Dance Company" caption
         var opacity = 0.7;
-        if ($('#video-logo img').css('display') === 'none') {
+        if (!ismobile) {
           setTimeout(function() {
             $('#video-logo img').fadeTo(2000, opacity);
           }, 1000);

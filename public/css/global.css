@@ -76,7 +76,6 @@ body {
 header {
   position: fixed;
   top: 0;
-  min-height: 5vh;
   padding: 12px;
   text-align: center;
 }
@@ -95,8 +94,6 @@ nav {
 
 nav a {
   font-family: 'M PLUS 1p', Verdana, sans-serif;
-  font-size: 2.5vh;
-  height: 4.5vh;
   text-transform: uppercase;
   color: white;
   text-decoration: none;
@@ -123,12 +120,20 @@ a.gmap:hover {
   nav {
     width: 60%;
   }
+  nav a {
+    font-size: 1em;
+    height: 1.25em;
+  }
 }
 
 @media only screen and (min-width: 800px) {
   /* desktop nav */
   nav {
     width: 35%;
+  }
+  nav a {
+    font-size: 2.5vh;
+    height: 4.5vh;
   }
 }
 

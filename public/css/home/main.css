@@ -97,7 +97,7 @@
 @media only screen and (max-width: 799px) {
   /* mobile */
   #content section:not(.separator), #about-us-text {
-    min-height: 90vh;
+    min-height: 40em;
   }
   #about-us {
     background-size: cover;
@@ -111,8 +111,8 @@
     margin-top: .2em;
     width: 100%;
   }
-  #about-us-text article h2 {
-    font-size: 6vw;
+  #about-us-text-box-mobile h2 {
+    font-size: 8vw;
   }
   #about-us-text-left {
     padding-top: 1.5em;
@@ -130,9 +130,10 @@
   .about-us-text-box p {
     margin-top: 1em;
     font-size: 95%;
+    line-height: 2em;
   }
   #overlay {
-    height: 140%;
+    height: 55em;
     top: -20%;
     opacity: .2;
   }
