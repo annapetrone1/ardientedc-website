@@ -149,7 +149,7 @@
   .attribution {
     font-size: 15px !important;
   }
-  .attribution.ladies-red {
+  .slide-caption .attribution {
     position: relative !important;
   }
   #pro-bio-text-box h1 {
@@ -299,6 +299,7 @@
   }
   #pro-bio-text-box p {
     font-size: 120%;
+    line-height: 5vh;
   }
   #pro-team article.pro-bio {
     width: 40%;
@@ -400,8 +401,8 @@
   background-repeat: no-repeat;
 }
 
-#pro-team .slide:first-child {
-  display: block;
+#pro-team .slide[num="0"], #pro-team .attribution[num="0"] {
+  display: block
 }
 
 #student-team {
@@ -410,7 +411,7 @@
 }
 
 #student-team h1 {
-  font-family: "Montserrat", Verdana;
+  font-family: "Raleway", Verdana;
 }
 
 #student-team-bio a {

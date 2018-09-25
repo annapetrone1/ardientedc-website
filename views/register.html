@@ -12,9 +12,32 @@
     <link rel="stylesheet" href="/fonts/raleway_200.css">
     <link rel="stylesheet" href="/fonts/alegreya_sans_sc.css">
 
-    <script src="/js/jquery-3.3.1.min.js"></script>
-
     <link rel="stylesheet" href="/css/register/main.css">
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/classes.js"></script>
+
+    <script type="text/javascript">
+      function parseUrl() {
+        var search = window.location.search;
+        if (search == "") {
+          console.log('no class id given');
+          // no class id specified, redirect to classes
+          window.location.href = './classes.html';
+        }
+        var params = search.substr(1).split('&');
+        var classId = params.filter((keyval) => {
+          return keyval.split('=')[0] === 'class'
+        });
+        if (classId.length > 0) {
+          return classId[0].split('=')[1];
+        } else {
+          //  window.location.href = './classes.html';
+        }
+      }
+      var classId = parseUrl();
+      var classInfo = getClassInfo(classId);
+    </script>
 
     <script type="text/javascript">
       function longDate(date) {
@@ -35,11 +58,22 @@
         return `${date.getFullYear()}-${zero_pad(date.getMonth()+1)}-${zero_pad(date.getDate())}`;
       }
 
-      function makeDates(dow, startHour) {
+      function makeTime(hour, minute) {
+        var am = 'AM';
+        if (hour > 12) {
+          hour -= 12;
+          am = 'PM';
+        }
+        return `${zero_pad(hour)}:${zero_pad(minute)} ${am}`;
+      }
+
+      function makeDates(dow, startHour, startMinute) {
         var $date_select = $('select[name="date"]');
         var loopday = new Date(); // get the next 4 weeks of classes
 
-        if (loopday.getDay() == dow && loopday.getHours() >= startHour) {
+        var now_minutes = loopday.getHours() * 100 + loopday.getMinutes();
+        var class_minutes = startHour * 100 + startMinute;
+        if (loopday.getDay() == dow && now_minutes >= class_minutes) {
           // class is today and already started
           loopday.setDate(date.getDate() + 1);
         }
@@ -65,11 +99,41 @@
         return missing.length === 0;
       }
       $(document).ready(function() {
-        // console.log('startTimeFmt', '08:00 PM');
 
-        var startHour = 20;
-        var dow = 4;
-        makeDates(dow, startHour);
+        // set up the page based on the classId in the url
+        // this must go in the doc ready function!
+        console.log('classInfo', classInfo.full_name);
+        $('.img-container img').attr('src', `/img/${classInfo.img}`);
+
+        classInfo.start_time_fmt = makeTime(classInfo.start_hour, classInfo.start_minute);
+        if (classInfo.select_date) {
+          classInfo.start_time = classInfo.start_time_fmt;
+        } else {
+          classInfo.start_time = classInfo.when;
+        }
+        for (let attr of ['full_name', 'price', 'start_time', 'location_name', 'location_address']) {
+          $(`.classInfo.${attr}`).text(classInfo[attr]);
+        }
+        $('a.classInfo.location_address').attr('href', classInfo.location_google_maps);
+        $('input[name="time"]').val(classInfo.start_time_fmt);
+
+        if (classInfo.select_date) {
+          makeDates(classInfo.dow, classInfo.start_hour);
+        } else {
+          $('select[name="date"]').attr('required', false);
+          $('select[name="date"]').hide();
+          $('label[for="date"]').hide();
+          $('.user-confirm .detail:has(span.date)').hide();
+        }
+
+        if (classInfo.special_note) {
+          $('.classInfo.special_info').text(classInfo.special_note);
+        } else {
+          //hide
+          $('.infoblock:has(".special_info")').hide();
+          $('.detail:has(".special_info")').hide();
+        }
+        $('.payment').append(classInfo.paypal_form);
 
         $('.userform input[name="saveinfo"]').on('click', function() {
           if (!userValid()) {
@@ -88,7 +152,14 @@
 
           var $selectedDate = $('.userform select[name="date"] option:selected');
           var query = $(this).serialize();
-          $('.payment form').append(`<input type="hidden" name="item_name" value="Mambo Thursdays with Ardiente: ${$selectedDate.val()}">`);
+
+          // set the paypal item_name (shows in the reciept)
+          if (classInfo.select_date) {
+            $('.payment form').append(`<input type="hidden" name="item_name" value="${classInfo.shopping_cart_name}: ${$selectedDate.val()}">`);
+          } else {
+            $('.payment form').append(`<input type="hidden" name="item_name" value="${classInfo.shopping_cart_name}">`);
+          }
+
           $('.payment form').append(`<input type="hidden" name="return" value="http://ardientedc.com.s3-website-us-east-1.amazonaws.com/classes.html">`);
 
           for (field of ['fullname', 'email']) {
@@ -100,7 +171,6 @@
           $('.form-container .payment input[type="checkbox"]').get(0).checked = false; // always require them to check it
           $('.form-container .payment .user-confirm').fadeIn()
           /*TODO: copy the info to the jotform and submit*/
-
 
           /* scroll to the top of the confirm page */
           $("html, body").animate({
@@ -152,11 +222,11 @@
     </header>
     <main>
       <h1>Register for:</h1>
-      <h2>Mambo on2 Thursday Workshop Series</h2>
+      <h2 class="classInfo full_name"></h2>
       <section id="register-content">
 
         <section class="img-container">
-          <img src="/img/classes-mambo-thursdays.jpg" alt="">
+          <img src="$img" alt="">
 
         </section>
         <section class="form-container">
@@ -164,51 +234,40 @@
             <h3>Sign up here</h3>
 
             <form action="" method="post">
-              <!-- TODO: add check when form submitted that input is valid -->
               <label for="name">Your name</label>
               <input class="input" type="text" name="fullname" value="" required>
 
               <label for="date">Select Date</label>
               <select class="input" name="date" required>
-              <!-- TODO: might make these buttons-->
-              <!--<option disabled selected value>=== Choose a date ===</option>-->
 
               </select>
 
-
-              <input class="input" type="hidden" name="time" value="08:00 PM" readonly>
+              <input class="input" type="hidden" name="time" value="" readonly>
 
               <label for="email">Email address</label>
               <input class="input" type="email" name="email" value="" required>
 
-              <!-- later support buying more than 1 pass -->
-              <input class="input" type="hidden" name="quantity" value="1">
-
-              <!-- info to set to jotform -->
-              <input class="input" type="hidden" name="instructor" value="David Cuevas">
-
-              <div class="classinfo">
+              <div class="infoblock">
                 <label for="time">Class Time</label>
-                <p>
-                  08:00 PM
-                </p>
+                <p class="classInfo start_time"> </p>
               </div>
-              <div class="address classinfo">
+              <div class="infoblock">
                 <label for="locationName">Location and Address</label>
-                <h5>The Dancing Club</h5>
+                <h5 class="classInfo location_name">The Dancing Club</h5>
                 <p>
-                  D, 5050 Nicholson Ln, Rockville, MD 20852
+                  <a class="classInfo location_address gmap" href="" target="_blank">
+                  </a>
                 </p>
-                <input class="input" type="hidden" name="locationName" value="The Dancing Club">
-                <input class="input" type="hidden" name="locationAddress" value="D, 5050 Nicholson Ln, Rockville, MD 20852">
               </div>
-              <div class="price classinfo">
+              <div class="infoblock">
                 <label for="price">Price</label>
-                <p>$12
-                </p>
-                <input class="input" type="hidden" name="price" value="12">
+                <p class="classInfo price"></p>
               </div>
 
+              <div class="infoblock">
+                <label for="special_info">Special Info</label>
+                <p class="classInfo special_info"></p>
+              </div>
 
               <input type="submit" name="saveinfo" value="Save info and pay">
               <a class="cancel" href="/classes.html"><button type="button" name="cancel">Cancel registration</button></a>
@@ -226,14 +285,17 @@
               <p class="detail"> <b>Name:</b> <span class="fullname"></span></p>
               <p class="detail"> <b>Email Address:</b> <span class="email"></span></p>
               <p class="detail"> <b>Class Date:</b> <span class="date"></span></p>
-              <p class="detail"> <b>Class Time:</b> <span class="time">08:00 PM</span></p>
-              <p class="detail"> <b>Price:</b> <span class="price">$12</span></p>
+              <p class="detail"> <b>Class Time:</b> <span class="classInfo start_time"></span></p>
+              <p class="detail"> <b>Price:</b> <span class="classInfo price"></span></p>
               <div class="address detail">
                 <p><b>Class Location and Address:</b></p>
-                <p>The Dancing Club</p>
-                <p>
-                  D, 5050 Nicholson Ln, Rockville, MD 20852
+                <p class="classInfo location_name"> </p>
+                <p class="classInfo location_address">
                 </p>
+              </div>
+              <div class="detail">
+                <p><b>Special Info:</b></p>
+                <p class="classInfo special_info"> </p>
               </div>
 
               <div class="confirmation-box">
@@ -243,13 +305,10 @@
               </div>
             </div>
 
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_s-xclick">
-              <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-">
-              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-              <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-            </form>
+            <div class="paypal-container">
+
+            </div>
+
 
           </article>
 
