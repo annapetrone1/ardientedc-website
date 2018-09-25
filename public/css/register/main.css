@@ -59,6 +59,7 @@ body {
   .form-container {
     width: 40%;
     /*min-height: calc(60% - 15%);*/
+    margin-top: 2em;
     padding: 48px 42px;
     padding-left: 30px;
     left: 25%;

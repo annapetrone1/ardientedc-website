@@ -155,9 +155,9 @@
 
           // set the paypal item_name (shows in the reciept)
           if (classInfo.select_date) {
-            $('.payment form').append(`<input type="hidden" name="item_name" value="${classInfo.full_name} with Ardiente: ${$selectedDate.val()}">`);
+            $('.payment form').append(`<input type="hidden" name="item_name" value="${classInfo.shopping_cart_name}: ${$selectedDate.val()}">`);
           } else {
-            $('.payment form').append(`<input type="hidden" name="item_name" value="${classInfo.full_name} with Ardiente">`);
+            $('.payment form').append(`<input type="hidden" name="item_name" value="${classInfo.shopping_cart_name}">`);
           }
 
           $('.payment form').append(`<input type="hidden" name="return" value="http://ardientedc.com.s3-website-us-east-1.amazonaws.com/classes.html">`);

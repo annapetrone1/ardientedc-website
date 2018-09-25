@@ -3,6 +3,7 @@ function getClassInfo(classId){
   var classInfo = {
     'mambo-thursdays': {
       full_name: 'Mambo on2 Thursday Workshop Series',
+      shopping_cart_name: 'Mambo on2 Thursday Workshop Series with Ardiente',
       dow: 4,
       start_hour: 20,
       start_minute: 0,
@@ -23,6 +24,7 @@ function getClassInfo(classId){
 
     'salsa-progressive-1': {
       full_name: 'Salsa Dance Progressive Classes - Level 1',
+      shopping_cart_name: 'Salsa Dance Progressive Classes with David Cuevas',
       dow: 3,
       start_hour: 20,
       start_minute: 30,
@@ -36,12 +38,13 @@ function getClassInfo(classId){
       instructor: 'David Cuevas',
       img:'classes-salsa-progressive.jpg',
       paypal_key: 'salsa-progressive',
-      description: 'TODO: needs description',
-      special_note: 'One package includes _ classes, which can be used for any combination of level 1 or 2 classes.'
+      description: '',
+      special_note: 'One package includes 8 classes, which you can use for any of the level 1 or level 2 classes.'
     },
 
     'salsa-progressive-2': {
       full_name: 'Salsa Dance Progressive Classes - Level 2',
+      shopping_cart_name: 'Salsa Dance Progressive Classes with David Cuevas',
       dow: 3,
       start_hour: 19,
       start_minute: 30,
@@ -55,8 +58,8 @@ function getClassInfo(classId){
       instructor: 'David Cuevas',
       img:'classes-salsa-progressive.jpg',
       paypal_key: 'salsa-progressive',
-      description: 'TODO: needs description',
-      special_note: 'One package includes _ classes, which can be used for any combination of level 1 or 2 classes.'
+      description: '',
+      special_note: 'One package includes 8 classes, which you can use for any of the level 1 or level 2 classes.'
     }
   };
 
