@@ -65,7 +65,7 @@ main {
     margin-right: 2em
   }
   #lessons ul li .img-container img {
-    min-height: 25vh;
+    max-height: 25vh;
     max-width: 100%;
   }
 }
