@@ -24,15 +24,20 @@
     <link rel="stylesheet" href="css/home/video.css">
 
     <script type="text/javascript">
+      function videoIsPlaying() {
+        return $('video').get(0).currentTime > 0;
+      }
       $(document).ready(function() {
         var ismobile = $('#video-logo img').css('display') !== 'none';
 
         var video = document.querySelector('video')
         video.playbackRate = 0.5;
-        video.oncanplaythrough = function() {
+        setTimeout(function() {
           $('#video').fadeIn(1000);
-          video.play();
-        };
+          if (!videoIsPlaying()) {
+            video.play();
+          }
+        }, 1000);
         // 0.25 * parseInt($('#about-us-text-left').css('padding-top'))
         $('#enter a').on('click', function(e) {
           e.preventDefault();
@@ -95,7 +100,7 @@
       <!-- TODO: the panels should each have a highin vh units, and
           everything inside should have a % height -->
       <div id="video-container" class="top">
-        <video id="video" class="desktop" muted preload="auto" loop="loop" poster="">
+        <video id="video" class="desktop" muted controls="true" preload="auto" loop="loop" poster="">
          <source id="mp4" src="video/ardiente-capital-congress.mp4" type="video/mp4">
          </video>
         <div id="video-logo" class="fg">
