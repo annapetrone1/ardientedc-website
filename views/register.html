@@ -21,22 +21,35 @@
       function parseUrl() {
         var search = window.location.search;
         if (search == "") {
-          console.log('no class id given');
-          // no class id specified, redirect to classes
-          window.location.href = './classes.html';
+          //onsole.log('no class id given');
+          // no class id specified
+          return
         }
         var params = search.substr(1).split('&');
+
         var classId = params.filter((keyval) => {
           return keyval.split('=')[0] === 'class'
         });
+        console.log('classId', classId);
         if (classId.length > 0) {
           return classId[0].split('=')[1];
         } else {
-          //  window.location.href = './classes.html';
+          // no class found with this id
+          return
         }
       }
       var classId = parseUrl();
+      console.log('classId', classId);
+      if (!classId) {
+        console.log('invalid class id');
+        window.location.href = './classes.html';
+      }
       var classInfo = getClassInfo(classId);
+      if (!classInfo || !classInfo.paypal_form) {
+        // class exists but dont register through us
+        console.log('online registration not available')
+        window.location.href = './classes.html';
+      }
     </script>
 
     <script type="text/javascript">
@@ -216,8 +229,8 @@
     <header class="purple-black">
       <nav>
         <a href="/">Home</a> |
-        <a href="/events.html">Events</a> |
-        <a href="/classes.html">Classes</a>
+        <a href="/classes.html">Classes</a> |
+        <a href="/events.html">Events</a>
       </nav>
     </header>
     <main>

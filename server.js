@@ -34,8 +34,8 @@ app.get('/classes.html', (req, res) => {
 
 
 app.get('/register.html', (req, res) => {
-  var p = req.params;
-  console.log(`register for class ${p.id}`);
+  var q = req.query;
+  console.log(`register for class ${q.class}`);
 
   res.sendFile(__dirname + '/views/register.html');
   // res.json(config);

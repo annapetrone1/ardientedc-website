@@ -216,6 +216,14 @@ video {
   text-decoration: none;
 }
 
+#lessons a.noOnlineReg {
+  display: none;
+}
+
+#lessons p.special_note {
+  padding-top: 1em;
+}
+
 #lessons button.register:hover {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
