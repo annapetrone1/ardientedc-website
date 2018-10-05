@@ -21,6 +21,24 @@ function getClassInfo(classId) {
       <p>We will cover: Basic Fundamentals, Footwork, Timing, Styling, Lead & Follow technique, Spins, and much more! This is an open level class so everyone is welcomed!</p>`
     },
 
+    'dcssa-tuesday': {
+      full_name: 'Salsa on2 Levels 1-4 at DCSSA',
+      shopping_cart_name: '',
+      dow: 2,
+      start_hour: 20,
+      start_minute: 30,
+      select_date: false,
+      when: 'Tuesdays, 8:30 - 10:30 PM',
+      location_name: 'DC Style Salsa Academy',
+      location_address: '7014 West Moreland Ave, Takoma Park, MD 20912',
+      location_google_maps: ' ',
+      location_website: 'https://www.dcstylesalsa.com/',
+      price: 'Pricing levels vary by membership type. Registration available on the DC Style Salsa Academy website.',
+      instructor: 'David Cuevas',
+      img:'classes-dcssa-popup.jpg',
+      description: ''
+    },
+
     'salsa-progressive-1': {
       full_name: 'Salsa Dance Progressive Classes - Level 1',
       shopping_cart_name: 'Salsa Dance Progressive Classes with David Cuevas',
