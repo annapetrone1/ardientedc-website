@@ -1,6 +1,6 @@
 # DC Hack && Tell 10/16/18
 
-
+:wave: https://github.com/1littlevictory/ardientedc-website
 
 ## Background
 
@@ -40,16 +40,20 @@ http://ardientedance.com
   - http://ardientedance.com.s3-website-us-east-1.amazonaws.com/
 - Had to copy/paste the nav and footer (instead of templating)... but it's 4 pages
 - Did some clever hacking to make the class registration look like a GET request
+  - https://github.com/1littlevictory/ardientedc-website/blob/master/public/js/classes.js
 - s3 sync lets you sync a local directory to s3
   - https://s3.console.aws.amazon.com/s3/buckets/ardientedance.com/?region=us-east-1&tab=overview
 
 - Actually had to learn css media queries
+  - Desktop, giant desktop
+  - mobile, sideways mobile
+  - ipad but there's a bug
 - Chrome on mobile scrolling issue: https://developers.google.com/web/updates/2016/12/url-bar-resizing
   - an absurd hack: https://stackoverflow.com/questions/24944925/background-image-jumps-when-address-bar-hides-ios-android-mobile-chrome
 
-
-
-
+- Pay pal buttons are great!
+  - to get started: https://www.paypal.com/merchant/tools 
+  - to inject custom information into the form: https://developer.paypal.com/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/#
 
 
 
