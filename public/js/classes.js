@@ -17,8 +17,8 @@ function getClassInfo(classId) {
       instructor: 'David Cuevas',
       img: 'classes-mambo-thursdays.jpg',
       paypal_key: 'mambo-thursdays',
-      description: `<p>Catch us at <i>The Dancing Club</i> every Thursday from 8-9pm, with instructor David Cuevas teaching Mambo, ChaCha, Fusion and much more! Classes will vary so make sure you follow us to stay updated. </p>
-      <p>We will cover: Basic Fundamentals, Footwork, Timing, Styling, Lead & Follow technique, Spins, and much more! This is an open level class so everyone is welcomed!</p>`
+      description: `Catch us at The Dancing Club every Thursday from 8-9pm, with instructor David Cuevas teaching Mambo, ChaCha, Fusion and much more! Classes will vary so make sure you follow us to stay updated.
+      <br>We will cover: Basic Fundamentals, Footwork, Timing, Styling, Lead & Follow technique, Spins, and much more! This is an open level class so everyone is welcomed!`
     },
 
     'dcssa-tuesday': {
@@ -33,48 +33,29 @@ function getClassInfo(classId) {
       location_address: '7014 West Moreland Ave, Takoma Park, MD 20912',
       location_google_maps: ' ',
       location_website: 'https://www.dcstylesalsa.com/',
-      price: 'Pricing levels vary by membership type. Registration available on the DC Style Salsa Academy website.',
+      price: 'Pricing levels vary by membership type. Signle drop in class price is $25.',
+      special_note: 'Registration available on the <a href="https://www.dcstylesalsa.com/registration" target="_blank">DC Style Salsa Academy</a> website.',
       instructor: 'David Cuevas',
-      img:'classes-dcssa-popup.jpg',
-      description: ''
+      img:'classes-dcssa.jpg'
     },
 
-    'salsa-progressive-1': {
-      full_name: 'Salsa Dance Progressive Classes - Level 1',
+    'salsa-progressives': {
+      full_name: 'Salsa Dance Progressive Classes - Levels 1 and 2',
       shopping_cart_name: 'Salsa Dance Progressive Classes with David Cuevas',
       dow: 3,
       start_hour: 20,
       start_minute: 30,
       select_date: false,
-      when: 'Wednesdays, 8:30 PM',
+      when: 'Wednesdays, Level 2 at 7:30 PM, Level 1 at 8:30 PM',
       location_name: 'Rendezvous Social Dance & Fitness Club',
       location_address: '11910 Parklawn Dr, Rockville, MD 20852',
       location_google_maps: 'https://goo.gl/maps/YFdMnHzhp582',
       location_website: 'http://www.dance911.com/',
-      price: '$90 for one package, or $165 for two packages.',
+      price: '$90 for one package, or $165 for two packages. One package includes 8 classes, which you can use for any of the level 1 or level 2 classes.',
       instructor: 'David Cuevas',
       img: 'classes-salsa-progressive.jpg',
       description: '',
-      special_note: 'One package includes 8 classes, which you can use for any of the level 1 or level 2 classes. Contact Rendezvous to purchase packages.'
-    },
-
-    'salsa-progressive-2': {
-      full_name: 'Salsa Dance Progressive Classes - Level 2',
-      shopping_cart_name: 'Salsa Dance Progressive Classes with David Cuevas',
-      dow: 3,
-      start_hour: 19,
-      start_minute: 30,
-      select_date: false,
-      when: 'Wednesdays, 7:30 PM',
-      location_name: 'Rendezvous Social Dance & Fitness Club',
-      location_address: '11910 Parklawn Dr, Rockville, MD 20852',
-      location_google_maps: 'https://goo.gl/maps/YFdMnHzhp582',
-      location_website: 'http://www.dance911.com/',
-      price: '$90 for one package, or $165 for two packages.',
-      instructor: 'David Cuevas',
-      img: 'classes-salsa-progressive.jpg',
-      description: '',
-      special_note: 'One package includes 8 classes, which you can use for any of the level 1 or level 2 classes. Contact Rendezvous to purchase packages.'
+      special_note: 'Contact <a href="http://www.dance911.com/" target="_blank">Rendezvous</a> to purchase class packages.'
     }
   };
 

@@ -35,15 +35,14 @@
 
                 <div class="title_price">
                   <h3>${classInfo.full_name}</h3>
+                  <p>${classInfo.description || ""}</p>
                   <p class="special_note">${classInfo.special_note || ""}</p>
                 </div>
-                <a class="desktop ${onlineReg}" href="/register.html?class=${classId}"><button class="register" name="button">Register Here</button></a>
+                <a class="desktop ${onlineReg} button" href="/register.html?class=${classId}"><button class="register" name="button">Register Here</button></a>
 
               </article>
-              <a href="" class="expand"><span>Class Description</span></a>
+              <a href="" class="expand"><span>More info</span></a>
               <article class="description">
-
-              ${classInfo.description}
               <div class="mini-info">
                 <p class="when">When: ${classInfo.when}</p>
                 <p>Price: ${classInfo.price}</p>
@@ -65,10 +64,10 @@
           $desc = $(this).siblings('.description');
           if ($desc.css('display') == "none") {
             $desc.slideDown();
-            $(this).children('span').text('Hide Description');
+            $(this).children('span').text('Hide info');
           } else {
             $desc.slideUp();
-            $(this).children('span').text('Class Description');
+            $(this).children('span').text('More info');
           }
 
           return false;
