@@ -1,7 +1,6 @@
 # TODO
-* setup paypal `form` onSubmit() action to capture some info about the payment
-* anchor tags on home page
-* AdSense
+* add dcssa class
+* add more contrast to registration on mobile
 * Logging https://docs.aws.amazon.com/AmazonS3/latest/dev/LoggingWebsiteTraffic.html
-* download fonts
-* double check all fallback fonts 
+* videos page .. eventually
+* set up google search
