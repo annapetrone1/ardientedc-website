@@ -61,8 +61,25 @@ main {
   #lessons ul li .description {
     padding: 8px 32px;
   }
-  .img-container, .title_price {
-    margin-right: 2em
+  /*.img-container, .title_price {
+    margin-right: 2em;
+  }*/
+  /*.info a.button {
+    flex-basis: 25%;
+  }*/
+  .info .img-container {
+    flex-basis: 25%;
+    text-align: center;
+  }
+  .title_price {
+    flex-basis: 65%
+  }
+  .title_price h3 {
+    margin-bottom: 1em;
+  }
+  .title_price br {
+    display: block;
+    margin: 10px 0;
   }
   #lessons ul li .img-container img {
     max-height: 25vh;
@@ -148,11 +165,11 @@ video {
 }
 
 #lessons .title_price {
-  flex-grow: 2;
+  /*flex-basis;*/
 }
 
 #lessons .title_price * {
-  display: block;
+  /*display: block;*/
   /*margin-bottom: 1em*/
 }
 
@@ -194,7 +211,7 @@ video {
 
 #lessons ul li .img-container {
   /*  max-width: 20%;*/
-  flex-basis: 20%;
+  /*flex-basis: 20%;*/
   height: 100%;
 }
 
