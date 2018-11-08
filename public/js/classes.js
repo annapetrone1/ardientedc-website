@@ -15,7 +15,7 @@ function getClassInfo(classId) {
       location_website: 'https://www.facebook.com/pages/The-Dancing-Club/1050924848338732',
       price: '$20',
       instructor: 'David Cuevas',
-      img: 'classes-mambo-thursdays.jpg',
+      img: 'logo-color-medium.gif',
       description: 'Instructor David Cuevas teaches footwork and partnerwork technique to improve your dancing. This class is part of Ardiente intensive training. All intermediate level dancers are welcome to attend for the first hour, 8 - 9 PM on Thursdays.'
     },
 
@@ -33,7 +33,7 @@ function getClassInfo(classId) {
       location_website: 'https://www.facebook.com/pages/The-Dancing-Club/1050924848338732',
       price: '$55',
       instructor: 'David Cuevas',
-      img: 'classes-mambo-thursdays.jpg',
+      img: 'logo-color-medium.gif',
       description: 'Intensive training by Ardiente. One package includes four classes, Thursdays from 8 - 9:30 PM.'
     },
 

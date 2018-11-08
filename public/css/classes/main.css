@@ -42,6 +42,10 @@ main {
     margin: 0 auto;
     margin-top: 1em;
   }
+  .img-container {
+    max-width: 70%;
+    margin: 0 auto
+  }
 }
 
 @media only screen and (min-width: 800px) {
@@ -69,8 +73,9 @@ main {
     flex-basis: 25%;
   }*/
   .info .img-container {
-    flex-basis: 25%;
+    flex-basis: 15%;
     text-align: center;
+    margin-right: 3em;
   }
   .title_price {
     flex-basis: 65%
