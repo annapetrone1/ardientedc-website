@@ -63,7 +63,7 @@
                 <p class="location_address"><a href="${classInfo.location_google_maps}" target="_blank">
                  ${classInfo.location_address}</a></p>
               </div>
-              <p class="viewflyer">View flyer in a separate window:
+              <p class="viewflyer ${classInfo.img.startsWith('logo') ? "hide" : ""}">View flyer in a separate window:
                <a href="/img/${classInfo.img}" target="_blank">${classInfo.full_name}</a></p>
                 </article>
 
