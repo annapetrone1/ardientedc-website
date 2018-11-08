@@ -12,6 +12,7 @@ main {
 .viewflyer, .viewflyer a {
   color: rgb(100, 100, 100);
   font-weight: lighter;
+  font-size: 90%
 }
 
 @media only screen and (max-width: 799px) {
