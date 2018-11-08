@@ -103,7 +103,7 @@
           // class is today and already started
           loopday.setDate(date.getDate() + 1);
         }
-        for (let i = 0; i <= 28; i += 1) {
+        for (let i = 0; i <= 52; i += 1) {
           if (loopday.getDay() == dow) {
             $date_select.append(`<option value="${shortDate(loopday)}">${longDate(loopday)}</option>`);
           }
@@ -159,7 +159,7 @@
           $('.infoblock:has(".special_info")').hide();
           $('.detail:has(".special_info")').hide();
         }
-        $('.payment').append(classInfo.paypal_form);
+        $('.paypal-container').append(classInfo.paypal_form);
 
         $('.userform input[name="saveinfo"]').on('click', function() {
           if (!userValid()) {
@@ -180,10 +180,11 @@
           var query = $(this).serialize();
 
           // set the paypal item_name (shows in the reciept)
+          var full_name = classInfo.shopping_cart_name || classInfo.full_name;
           if (classInfo.select_date) {
-            $('.payment form').append(`<input type="hidden" name="item_name" value="${classInfo.shopping_cart_name}: ${$selectedDate.val()}">`);
+            $('.payment form').append(`<input type="hidden" name="item_name" value="${full_name}: ${$selectedDate.val()}">`);
           } else {
-            $('.payment form').append(`<input type="hidden" name="item_name" value="${classInfo.shopping_cart_name}">`);
+            $('.payment form').append(`<input type="hidden" name="item_name" value="${full_name}">`);
           }
 
           $('.payment form').append(`<input type="hidden" name="return" value="http://ardientedc.com.s3-website-us-east-1.amazonaws.com/classes.html">`);
@@ -329,11 +330,14 @@
 
                 <p><a class="edit" href="#">&larr; Edit info</a></p>
               </div>
+
+              <div class="paypal-container">
+
+              </div>
+              <a class="cancel" href="/classes.html"><button type="button" name="cancel">Cancel registration</button></a>
+
             </div>
 
-            <div class="paypal-container">
-
-            </div>
 
 
           </article>
@@ -343,7 +347,6 @@
       </section>
 
     </main>
-
 
 
     <footer class="purple-black">
