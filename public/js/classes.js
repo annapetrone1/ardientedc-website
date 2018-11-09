@@ -21,7 +21,7 @@ function getClassInfo(classId) {
 
     'thursday-workshop-intensive': {
       paypal_key: 'thursday-workshop-intensive',
-      full_name: 'Ardiente Intensive Training Course (Monthy Pass)',
+      full_name: 'Ardiente Intensive Training Course (Monthly Pass)',
       dow: 4,
       start_hour: 20,
       start_minute: 0,
