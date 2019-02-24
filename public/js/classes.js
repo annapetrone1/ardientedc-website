@@ -108,3 +108,12 @@ function getClassInfo(classId) {
 }
 
 // console.log(Object.keys(getClassInfo('mambo-thursdays')));
+/*
+function cancelledDates(){
+  var cancelled = [];
+  for(let dt = new Date(2018,12,24); dt <= new Date(2019, 1, 3))
+  return [
+
+  ];
+}
+*/

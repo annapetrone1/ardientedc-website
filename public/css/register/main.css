@@ -8,6 +8,7 @@ body {
 
 #register-content {
   position: relative;
+  margin-bottom: 3em;
 }
 
 .input[name="date"] {
@@ -16,6 +17,10 @@ body {
 
 .paypal-container {
   margin-bottom: 1em
+}
+
+.userform {
+  padding: 1em;
 }
 
 @media only screen and (max-width: 799px) {
@@ -124,14 +129,13 @@ main h3 {
 
 .form-container {
   margin: 0 auto;
-  position: absolute;
+  /*position: absolute;*/
   min-height: 80vh;
   height: auto
 }
 
 .userform input {
   width: 85%;
-  padding: .5em;
 }
 
 .userform select {
@@ -153,6 +157,10 @@ main h3 {
 
 .payment .detail {
   margin-bottom: 1.5em;
+}
+
+.userform input {
+  padding: .25em;
 }
 
 .userform input, .userform select {
@@ -195,6 +203,7 @@ a.edit:hover {
 button[name="cancel"] {
   font-size: 90%;
   padding: .25em;
+  font-family: "Raleway", Arial;
 }
 
 input[type="submit"] {
