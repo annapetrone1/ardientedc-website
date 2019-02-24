@@ -129,7 +129,7 @@
         // set up the page based on the classId in the url
         // this must go in the doc ready function!
         console.log('classInfo', classInfo.full_name);
-        $('.img-container img').attr('src', `/img/${classInfo.img}`);
+        // $('.img-container img').attr('src', `/img/${classInfo.img}`);
 
         classInfo.start_time_fmt = makeTime(classInfo.start_hour, classInfo.start_minute);
         if (classInfo.select_date) {
