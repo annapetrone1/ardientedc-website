@@ -1,4 +1,4 @@
-function paypal(num_people, num_classes){
+function get_price_info(num_people, num_classes){
 
   var one_person_one_class = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
   <input type="hidden" name="cmd" value="_xclick">
@@ -225,11 +225,22 @@ function paypal(num_people, num_classes){
   </form>
   `;
 
-  lookup = [
+  lookup_html = [
     [one_person_one_class, one_person_two_classes, one_person_three_classes, one_person_four_classes, one_person_full_pass],
     [two_people_one_class, two_people_two_classes, two_people_three_classes, two_people_four_classes, two_people_full_pass],
     [three_people_one_class, three_people_two_classes, three_people_three_classes, three_people_four_classes, three_people_full_pass]
   ];
 
-  return lookup[num_people - 1][num_classes - 1];
+  lookup_unit_price = [15, 12, 10];
+  lookup_fullpass_price = [60, 55, 50];
+
+  unit_price = num_classes == 5 ? lookup_fullpass_price[num_people - 1] : lookup_unit_price[num_people - 1];
+  price_description = num_classes == 5 ? `$${unit_price} / full pass` : `$${unit_price} / individual class`;
+  price_total = num_classes == 5 ? unit_price * num_people : unit_price * num_people * num_classes;
+
+  return {
+    button_html: lookup_html[num_people - 1][num_classes - 1],
+    price_description: price_description,
+    price_total: `$${price_total}`
+  };
 }

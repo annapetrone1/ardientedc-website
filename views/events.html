@@ -21,6 +21,7 @@
     <link rel="icon" type="image/png" href="http://ardientedance.com.s3-website-us-east-1.amazonaws.com/img/favicon.gif">
 
     <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/april28-paypal.js"></script>
 
     <link rel="stylesheet" href="/fonts/alegreya_sans_sc.css">
     <link rel="stylesheet" href="/fonts/montserrat_200.css">
@@ -46,7 +47,30 @@
           return false;
         })
 
+        function update_button(){
+          var num_people = parseInt($("select[name='num_people']").val());
+          var num_classes = parseInt($("select[name='num_classes']").val());
+          var price_info = get_price_info(num_people, num_classes);
+          $('#april28-paypal').html(price_info.button_html);
+          $("#april-28-unitprice").text(price_info.price_description);
+          $("#april-28-totalprice").text(price_info.price_total);
+        }
+        update_button()
+        $("select[name='num_people']").change(function(){
+          var num_people = parseInt(this.value);
+          if (num_people > 1){
+            $('#you').text("you each")
+          }else{
+            $('#you').text("you")
+          }
+          update_button()
+        })
+        $("select[name='num_people']").change();
 
+        $("select[name='num_classes']").change(function(){
+          update_button()
+        })
+        $("select[name='num_classes']").change();
 
       })
     </script>
@@ -153,21 +177,13 @@
 
 
               </form>
-              <script type="text/javascript">
-                $("select[name='num_people']").change(function(){
-                  num_people = parseInt(this.value);
-                  if (num_people > 1){
-                    $('#you').text("you each")
-                  }else{
-                    $('#you').text("you")
-                  }
+              <br>
 
-                })
-                $("select[name='num_people']").change();
-              </script>
-              <div id="april28-paypal">
+            </div>
+            <p class="bold">Price: <span id="april-28-unitprice"></span></p>
+            <p class="bold">Total: <span id="april-28-totalprice"></span> </p>
+            <div id="april28-paypal">
 
-              </div>
             </div>
 
           </div>

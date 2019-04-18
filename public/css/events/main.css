@@ -190,8 +190,9 @@ a.buy:hover {
   background-color: rgba(250, 250, 250, 0);
 }
 
-.text-box .bold {
+.bold {
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .text-box .accent {
