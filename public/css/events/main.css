@@ -280,3 +280,11 @@ a.buy:hover {
     width: 35%
   }
 }
+
+
+.minihr{
+    width: 30%;
+    height: 0px;
+    border: black solid .5px;
+    margin: 1em auto
+}
