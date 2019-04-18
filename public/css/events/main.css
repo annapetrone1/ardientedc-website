@@ -262,12 +262,17 @@ a.buy:hover {
   display: block;
 }
 
-#eventbrite p {
+.payment p {
   font-family: "Raleway", Arial;
   margin-bottom: 1em;
 }
 
-#eventbrite img {
-  width: 80%;
+.payment img {
   max-width: 220px;
+  max-height: 80px;
+}
+
+.payment .form-panel {
+  display: inline-block;
+  width: 35%
 }

@@ -45,6 +45,9 @@
 
           return false;
         })
+
+
+
       })
     </script>
   </head>
@@ -63,6 +66,120 @@
 
     <main>
       <section id="events">
+        <h1>Upcoming Events</h1>
+
+        <article class="event">
+          <h4 class="date">Sunday, April 28, 2019</h4>
+          <h3>SHINE & Support - DMV Sunday Training</h3>
+          <div class="event-contents">
+
+            <div class="panel event-pic">
+              <img src="img/shine-and-support.png" alt="SHINE & Support - DMV Sunday Training">
+
+
+            </div>
+            <div class="panel event-info">
+
+              <div class="text-box">
+                <h5>Description</h5>
+                <p>
+                  <a href="https://www.facebook.com/ardientedc/" target="_blank">Ardiente Dance Company</a>
+                is excited to host a day full of shines, technique, and fun!
+              </p>
+
+              <p>With the help of a few of the DMV’s finest instructors, we will be offering Bachata, Salsa, Cha-Cha and more! </p>
+              <p>This is an opportunity to learn from your local instructors and to support the local dance scene! We welcome everyone of all levels and all ages.</p>
+
+              <br>
+              <h5>Schedule</h5>
+                <p>The following instructors are scheduled for the following times/styles:
+
+
+                <p><span class="bold">BACHATA FUSION: TRADITIONAL & SENSUAL</span>
+                  <br> 1:00-1:50 - Brandon Bachata (Sentimiento) & Linda Saenz (Classé)
+                </p>
+
+
+                <p><span class="bold">MAMBO ON2 TURN PATTERNS</span>
+                  <br> 2:00-2:50 - DC Style Salsa Academy
+                </p>
+
+                <p><span class="bold">CHA-CHA SHINES</span>
+                  <br> 3:00-3:50 - Irene & Shaka (Clavekazi)
+                </p>
+
+
+                <p><span class="bold">LATIN JAZZ</span>
+                  <br> 4:00-4:50 - Brandon Grant (Latin Vintage)
+                </p>
+
+                <p><span class="bold">MAMBO ON2 SHINES</span>
+                  <br> 5:00-5:50 - David Cuevas (Ardiente Dance Company)
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="spacer">
+
+          </div>
+
+          <h4 class="tickets">Tickets</h4>
+          <div class="payment">
+            <p>Please note, we have special pricing for bringing one or more friends! </p>
+            <p>If you are coming with a group of 4 or more, please contact us. Otherwise, you may purchase your passes below. </p>
+            <div id="april28-form">
+              <form action="" method="post">
+                  <div class="form-panel">
+                    <h6>How many people are you purchasing for?</h6>
+                    <select name="num_people">
+                      <option value="1">Just Me</option>
+                      <option value="2">Me plus a buddy</option>
+                      <option value="3">Me plus 2 buddies</option>
+                    </select>
+                  </div>
+
+                  <div class="form-panel">
+                    <h6>How many class are <span id="you">you</span> attending?</h6>
+                    <select name="num_classes">
+                      <option value="5">Full pass (5 classes)</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                  </div>
+
+
+              </form>
+              <script type="text/javascript">
+                $("select[name='num_people']").change(function(){
+                  num_people = parseInt(this.value);
+                  if (num_people > 1){
+                    $('#you').text("you each")
+                  }else{
+                    $('#you').text("you")
+                  }
+
+                })
+                $("select[name='num_people']").change();
+              </script>
+              <div id="april28-paypal">
+
+              </div>
+            </div>
+
+          </div>
+
+
+
+        </article>
+
+
+
+
+
         <h1>Previous Events</h1>
 
         <article class="event">
@@ -107,10 +224,10 @@
           </div>
 
           <h4 class="tickets">Tickets</h4>
-          <div id="eventbrite">
+          <div class="payment">
             <p>Follow this link to purchase tickets on Eventbrite</p>
             <a target="_blank" href="https://www.eventbrite.com/e/ardiente-dance-company-pres-ernesto-denisse-iroko-from-nyc-tickets-49139411302">
-                <img src="img/eventbrite-icon.png" alt="Eventbrite">
+                <img src="img/eventbrite-icon.png" alt="Paypal">
               </a>
           </div>
 
