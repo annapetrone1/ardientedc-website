@@ -1,6 +1,6 @@
 function get_price_info(num_people, num_classes){
 
-  var one_person_one_class = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  var one_person_one_class = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <input type="hidden" name="cmd" value="_xclick">
   <input type="hidden" name="business" value="ardientedc@gmail.com">
   <input type="hidden" name="lc" value="US">
@@ -16,7 +16,7 @@ function get_price_info(num_people, num_classes){
   `;
 
 
-  var one_person_two_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  var one_person_two_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <input type="hidden" name="cmd" value="_xclick">
   <input type="hidden" name="business" value="ardientedc@gmail.com">
   <input type="hidden" name="lc" value="US">
@@ -31,7 +31,7 @@ function get_price_info(num_people, num_classes){
   </form>
   `;
 
-  var one_person_three_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  var one_person_three_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <input type="hidden" name="cmd" value="_xclick">
   <input type="hidden" name="business" value="ardientedc@gmail.com">
   <input type="hidden" name="lc" value="US">
@@ -46,7 +46,7 @@ function get_price_info(num_people, num_classes){
   </form>
   `;
 
-  var one_person_four_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  var one_person_four_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <input type="hidden" name="cmd" value="_xclick">
   <input type="hidden" name="business" value="ardientedc@gmail.com">
   <input type="hidden" name="lc" value="US">
@@ -61,7 +61,7 @@ function get_price_info(num_people, num_classes){
   </form>
   `;
 
-  var one_person_full_pass = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  var one_person_full_pass = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <input type="hidden" name="cmd" value="_xclick">
   <input type="hidden" name="business" value="ardientedc@gmail.com">
   <input type="hidden" name="lc" value="US">
@@ -76,7 +76,7 @@ function get_price_info(num_people, num_classes){
   </form>
   `;
 
-  two_people_one_class = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  two_people_one_class = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <input type="hidden" name="cmd" value="_xclick">
   <input type="hidden" name="business" value="ardientedc@gmail.com">
   <input type="hidden" name="lc" value="US">
@@ -91,7 +91,7 @@ function get_price_info(num_people, num_classes){
   </form>
   `;
 
-  two_people_two_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  two_people_two_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <input type="hidden" name="cmd" value="_xclick">
   <input type="hidden" name="business" value="ardientedc@gmail.com">
   <input type="hidden" name="lc" value="US">
@@ -106,7 +106,7 @@ function get_price_info(num_people, num_classes){
   </form>
   `;
 
-  two_people_three_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  two_people_three_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <input type="hidden" name="cmd" value="_xclick">
   <input type="hidden" name="business" value="ardientedc@gmail.com">
   <input type="hidden" name="lc" value="US">
@@ -121,7 +121,7 @@ function get_price_info(num_people, num_classes){
   </form>
   `;
 
-  two_people_four_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  two_people_four_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <input type="hidden" name="cmd" value="_xclick">
   <input type="hidden" name="business" value="ardientedc@gmail.com">
   <input type="hidden" name="lc" value="US">
@@ -136,7 +136,7 @@ function get_price_info(num_people, num_classes){
   </form>
   `;
 
-  two_people_full_pass = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  two_people_full_pass = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <input type="hidden" name="cmd" value="_xclick">
   <input type="hidden" name="business" value="ardientedc@gmail.com">
   <input type="hidden" name="lc" value="US">
@@ -151,7 +151,7 @@ function get_price_info(num_people, num_classes){
   </form>
   `;
 
-  three_people_one_class = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  three_people_one_class = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <input type="hidden" name="cmd" value="_xclick">
   <input type="hidden" name="business" value="ardientedc@gmail.com">
   <input type="hidden" name="lc" value="US">
@@ -165,7 +165,7 @@ function get_price_info(num_people, num_classes){
   <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
   </form>
   `;
-  three_people_two_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  three_people_two_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <input type="hidden" name="cmd" value="_xclick">
   <input type="hidden" name="business" value="ardientedc@gmail.com">
   <input type="hidden" name="lc" value="US">
@@ -180,7 +180,7 @@ function get_price_info(num_people, num_classes){
   </form>
   `;
 
-  three_people_three_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  three_people_three_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <input type="hidden" name="cmd" value="_xclick">
   <input type="hidden" name="business" value="ardientedc@gmail.com">
   <input type="hidden" name="lc" value="US">
@@ -195,7 +195,7 @@ function get_price_info(num_people, num_classes){
   </form>
   `;
 
-  three_people_four_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  three_people_four_classes = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <input type="hidden" name="cmd" value="_xclick">
   <input type="hidden" name="business" value="ardientedc@gmail.com">
   <input type="hidden" name="lc" value="US">
@@ -210,7 +210,7 @@ function get_price_info(num_people, num_classes){
   </form>
   `;
 
-  three_people_full_pass = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  three_people_full_pass = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <input type="hidden" name="cmd" value="_xclick">
   <input type="hidden" name="business" value="ardientedc@gmail.com">
   <input type="hidden" name="lc" value="US">

@@ -273,7 +273,10 @@ a.buy:hover {
   max-height: 80px;
 }
 
-.payment .form-panel {
-  display: inline-block;
-  width: 35%
+@media only screen and (min-width: 800px) {
+  /* desktop  only */
+  .payment .form-panel {
+    display: inline-block;
+    width: 35%
+  }
 }
