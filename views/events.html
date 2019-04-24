@@ -34,19 +34,7 @@
 
     <script type="text/javascript">
       $(document).ready(function() {
-        $('.form-container form').append(`<input type="hidden" name="item_name" value="Ardiente Social with Irôko}">`);
-        $('.form-container form').append(`<input type="hidden" name="return" value="http://ardientedc.com.s3-website-us-east-1.amazonaws.com/events.html">`);
 
-        $('a.buy').on('click', function(e) {
-          e.preventDefault();
-          if ($('.buttons').css('display') == 'none') {
-            $('.buttons').slideDown();
-          } else {
-            $('.buttons').slideUp();
-          }
-
-          return false;
-        })
 
         function update_button(){
           var num_people = parseInt($("select[name='num_people']").val());
@@ -75,6 +63,7 @@
 
         $("#anniv19-paypal-night").html(anniv19_night_passes)
         $("#anniv19-paypal-bootcamp").html(anniv19_bootcamp)
+
       })
     </script>
   </head>
@@ -95,6 +84,7 @@
       <section id="events">
         <h1>Upcoming Events</h1>
 
+        <a class="anchor" id="adc-anniversary-june15"></a>
         <article class="event">
           <h4 class="date">Saturday, June 15th, 2019</h4>
           <h3>Ardiente Dance Company 3rd Year Anniversary Party</h3>
@@ -159,26 +149,24 @@
           <div class="payment">
 
             <div id="anniv19-form">
-              <form action="" method="post">
-                  <div class="form-panel">
-                    <h6>Night Passes (Workshops and Social)</h6>
-                    <p>Workshop 9pm - 10pm, Social 10pm - 3am</p>
-                    <div id="anniv19-paypal-night">
+                <div class="form-panel">
+                  <h6>Night Passes (Workshops and Social)</h6>
+                  <p>Workshop 9pm - 10pm, Social 10pm - 3am</p>
+                  <div id="anniv19-paypal-night">
 
-                    </div>
                   </div>
+                </div>
 
-                  <div class="form-panel">
-                    <h6>Michelle Morales Ladies Styling Bootcamp</h6>
-                    <p>1-4pm at Ferocity Dance Studio</p>
-                    <div id="anniv19-paypal-bootcamp">
-
-                    </div>
+                <div class="form-panel">
+                  <h6>Michelle Morales Ladies Styling Bootcamp</h6>
+                  <p>1-4pm at Ferocity Dance Studio</p>
+                  <div id="anniv19-paypal-bootcamp">
 
                   </div>
 
+                </div>
 
-              </form>
+
 
             </div>
 
@@ -189,6 +177,7 @@
 
         </article>
 
+        <a class="anchor" id="shine-and-support-april28"></a>
         <article class="event">
           <h4 class="date">Sunday, April 28, 2019</h4>
           <h3>SHINE & Support - DMV Sunday Training</h3>
@@ -294,6 +283,8 @@
 
         <h1>Previous Events</h1>
 
+
+        <a class="anchor" id="adc-iroko-social-sept14"></a>
         <article class="event">
           <h4 class="date">Friday, September 14, 2018</h4>
           <h3>Ardiente Dance Company Pres. Ernesto & Denisse - <span class="uppercase">IR&Ocirc;KO</span> from NYC!</h3>
