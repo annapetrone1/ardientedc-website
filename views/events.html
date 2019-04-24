@@ -22,6 +22,7 @@
 
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/april28-paypal.js"></script>
+    <script src="/js/anniversary-2019.js"></script>
 
     <link rel="stylesheet" href="/fonts/alegreya_sans_sc.css">
     <link rel="stylesheet" href="/fonts/montserrat_200.css">
@@ -72,6 +73,8 @@
         })
         $("select[name='num_classes']").change();
 
+        $("#anniv19-paypal-night").html(anniv19_night_passes)
+        $("#anniv19-paypal-bootcamp").html(anniv19_bootcamp)
       })
     </script>
   </head>
@@ -91,6 +94,100 @@
     <main>
       <section id="events">
         <h1>Upcoming Events</h1>
+
+        <article class="event">
+          <h4 class="date">Saturday, June 15th, 2019</h4>
+          <h3>Ardiente Dance Company 3rd Year Anniversary Party</h3>
+          <div class="event-contents">
+
+            <div class="panel event-pic">
+              <img src="img/logo-name-color.gif" alt="Ardiente Dance Company Anniversary Party">
+
+
+            </div>
+            <div class="panel event-info">
+
+              <div class="text-box">
+                <h5>Description</h5>
+
+
+                <p>Ardiente Dance Company is proud to announce that we have been going strong for 3 years! Performing, teaching, traveling, learning, social dancing, networking, costume designing, fundraising...you name it, we've done it!</p>
+
+                <p>Come celebrate with us as we enter our 3rd year as a dance company in the DMV area.</p>
+
+                <p>We have the honor of bringing to you great quality artists to the DC area for both workshops and shows. This is your opportunity to take advantage of learning from these great dancers. We will have WORKSHOPS and a BOOTCAMP.</p>
+              </div>
+
+
+
+            </div>
+            <div class="text-box wide">
+              <h6>Workshops</h6>
+              <span class="bold">BENNY & BRANDON AYALA - MAMBO SHINES ON2</span>
+              <p>Learn from this young, talented, high-energy duo and be sure to enjoy their fun-filled class. Currently one of the top ranked dancers in MAMBO. They showcase a fresh style to their dancing with a powerful presence. Come check them out!</p>
+
+              <h6>Bootcamp</h6>
+              <span>MICHELLE MORALES LADIES STYLING BOOTCAMP</span>
+              <p>Geared for the ladies, but open to both men and women! Spend time learning choreography from this top-notch Salsera! Showcasing her strong dance technique in both authentic flavor and elegance. This is your opportunity to both learn and perform alongside one of the hottest Salseras in the game!</p>
+
+              <p>Bootcamp training location: <a href="https://goo.gl/maps/61USaB5KJ2Fdig5a9">Ferocity Dance Company Studio</a></p>
+
+              <h6>Prices</h6>
+              <ul>
+                <li>Social: $20</li>
+                <li>Social & Workshop: $25</li>
+                <li>Bootcamp: $60</li>
+              </ul>
+
+
+              <h6>Schedule</h6>
+              <ul>
+                <li>BOOTCAMP: 1:00pm-4:00pm</li>
+                <li>WORKSHOP: 9:00-10:00pm</li>
+                <li>SOCIAL: 10:00pm-3:00am</li>
+              </ul>
+
+
+            </div>
+
+          </div>
+          <div class="spacer">
+
+          </div>
+
+          <h4 class="tickets">Tickets</h4>
+          <div class="payment">
+
+            <div id="anniv19-form">
+              <form action="" method="post">
+                  <div class="form-panel">
+                    <h6>Night Passes (Workshops and Social)</h6>
+                    <p>Workshop 9pm - 10pm, Social 10pm - 3am</p>
+                    <div id="anniv19-paypal-night">
+
+                    </div>
+                  </div>
+
+                  <div class="form-panel">
+                    <h6>Michelle Morales Ladies Styling Bootcamp</h6>
+                    <p>1-4pm at Ferocity Dance Studio</p>
+                    <div id="anniv19-paypal-bootcamp">
+
+                    </div>
+
+                  </div>
+
+
+              </form>
+
+            </div>
+
+
+          </div>
+
+
+
+        </article>
 
         <article class="event">
           <h4 class="date">Sunday, April 28, 2019</h4>
@@ -192,8 +289,6 @@
 
 
         </article>
-
-
 
 
 
