@@ -22,6 +22,7 @@
 
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/april28-paypal.js"></script>
+    <script src="/js/anniversary-2019.js"></script>
 
     <link rel="stylesheet" href="/fonts/alegreya_sans_sc.css">
     <link rel="stylesheet" href="/fonts/montserrat_200.css">
@@ -33,19 +34,7 @@
 
     <script type="text/javascript">
       $(document).ready(function() {
-        $('.form-container form').append(`<input type="hidden" name="item_name" value="Ardiente Social with Irôko}">`);
-        $('.form-container form').append(`<input type="hidden" name="return" value="http://ardientedc.com.s3-website-us-east-1.amazonaws.com/events.html">`);
 
-        $('a.buy').on('click', function(e) {
-          e.preventDefault();
-          if ($('.buttons').css('display') == 'none') {
-            $('.buttons').slideDown();
-          } else {
-            $('.buttons').slideUp();
-          }
-
-          return false;
-        })
 
         function update_button(){
           var num_people = parseInt($("select[name='num_people']").val());
@@ -72,6 +61,9 @@
         })
         $("select[name='num_classes']").change();
 
+        $("#anniv19-paypal-night").html(anniv19_night_passes)
+        $("#anniv19-paypal-bootcamp").html(anniv19_bootcamp)
+        $("#anniv19-paypal-fullpass").html(anniv19_fullpass)
       })
     </script>
   </head>
@@ -92,6 +84,110 @@
       <section id="events">
         <h1>Upcoming Events</h1>
 
+        <a class="anchor" id="adc-anniversary-june15"></a>
+        <article class="event">
+          <h4 class="date">Saturday, June 15th, 2019</h4>
+          <h3>Ardiente Dance Company 3rd Year Anniversary Party</h3>
+          <div class="event-contents">
+
+            <div class="panel event-pic">
+              <img src="img/adc-3rd-anniversary.jpg" alt="Ardiente Dance Company Anniversary Party">
+
+
+            </div>
+            <div class="panel event-info">
+
+              <div class="text-box">
+                <h5>Description</h5>
+
+
+                <p>Ardiente Dance Company is proud to announce that we have been going strong for 3 years! Performing, teaching, traveling, learning, social dancing, networking, costume designing, fundraising...you name it, we've done it!</p>
+
+                <p>Come celebrate with us as we enter our 3rd year as a dance company in the DMV area.</p>
+
+                <p>We have the honor of bringing to you great quality artists to the DC area for both workshops and shows. This is your opportunity to take advantage of learning from these great dancers. We will have WORKSHOPS and a BOOTCAMP.</p>
+              </div>
+
+
+
+            </div>
+            <div class="text-box wide">
+              <h6>Workshop</h6>
+              <span class="bold">BENNY & BRANDON AYALA - MAMBO SHINES ON2</span>
+              <p>Learn from this young, talented, high-energy duo and be sure to enjoy their fun-filled class. Currently one of the top ranked dancers in MAMBO. They showcase a fresh style to their dancing with a powerful presence. Come check them out!</p>
+
+              <h6>Bootcamp</h6>
+              <span>MICHELLE MORALES LADIES STYLING BOOTCAMP</span>
+              <p>Geared for the ladies, but open to both men and women! Spend time learning choreography from this top-notch Salsera! Showcasing her strong dance technique in both authentic flavor and elegance. This is your opportunity to both learn and perform alongside one of the hottest Salseras in the game!</p>
+
+              <p>Bootcamp training location: <a href="https://goo.gl/maps/61USaB5KJ2Fdig5a9">Ferocity Dance Company Studio</a></p>
+
+              <h6>Prices</h6>
+              <ul>
+                <li>Social: $20</li>
+                <li>Social & Workshop: $25</li>
+                <li>Bootcamp: $60</li>
+                <li>Full pass (Bootcamp + Workshop + Social): $75</li>
+              </ul>
+
+
+              <h6>Schedule</h6>
+              <ul>
+                <li>BOOTCAMP: 1:00pm-4:00pm</li>
+                <li>WORKSHOP: 9:00-10:00pm</li>
+                <li>SOCIAL: 10:00pm-3:00am</li>
+              </ul>
+
+
+            </div>
+
+          </div>
+          <div class="spacer">
+
+          </div>
+
+          <h4 class="tickets">Tickets</h4>
+          <div class="payment">
+
+            <div id="anniv19-form">
+                <div class="form-panel">
+                  <h6>Night Passes: $20-25</h6>
+                  <p>Workshop 9pm - 10pm, Social 10pm - 3am</p>
+                  <div id="anniv19-paypal-night">
+
+                  </div>
+                </div>
+
+                <div class="form-panel">
+                  <h6>Michelle Morales Bootcamp: $60</h6>
+                  <p>1-4pm at Ferocity Dance Studio + performance at the social</p>
+                  <div id="anniv19-paypal-bootcamp">
+
+                  </div>
+
+                </div>
+
+                <div class="form-panel">
+                  <h6>Full Pass: $75 </h6>
+                  <p>Michelle Morales Bootcamp + Workshop + Social</p>
+                  <div id="anniv19-paypal-fullpass">
+
+                  </div>
+
+                </div>
+
+
+            </div>
+
+
+          </div>
+
+
+
+        </article>
+
+        <a class="anchor" id="shine-and-support-april28"></a>
+        <a class="anchor" id="shine"></a>
         <article class="event">
           <h4 class="date">Sunday, April 28, 2019</h4>
           <h3>SHINE & Support - DMV Sunday Training</h3>
@@ -195,10 +291,10 @@
 
 
 
-
-
         <h1>Previous Events</h1>
 
+
+        <a class="anchor" id="adc-iroko-social-sept14"></a>
         <article class="event">
           <h4 class="date">Friday, September 14, 2018</h4>
           <h3>Ardiente Dance Company Pres. Ernesto & Denisse - <span class="uppercase">IR&Ocirc;KO</span> from NYC!</h3>
