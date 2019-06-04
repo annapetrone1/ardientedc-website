@@ -36,7 +36,7 @@
       $(document).ready(function() {
 
 
-        function update_button(){
+        function april28_update_button(){
           var num_people = parseInt($("select[name='num_people']").val());
           var num_classes = parseInt($("select[name='num_classes']").val());
           var price_info = get_price_info(num_people, num_classes);
@@ -44,7 +44,7 @@
           $("#april-28-unitprice").text(price_info.price_description);
           $("#april-28-totalprice").text(price_info.price_total);
         }
-        update_button()
+        april28_update_button()
         $("select[name='num_people']").change(function(){
           var num_people = parseInt(this.value);
           if (num_people > 1){
@@ -52,12 +52,12 @@
           }else{
             $('#you').text("you")
           }
-          update_button()
+          april28_update_button()
         })
         $("select[name='num_people']").change();
 
         $("select[name='num_classes']").change(function(){
-          update_button()
+          april28_update_button()
         })
         $("select[name='num_classes']").change();
 
