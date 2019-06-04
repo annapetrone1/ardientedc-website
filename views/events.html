@@ -61,9 +61,18 @@
         })
         $("select[name='num_classes']").change();
 
-        $("#anniv19-paypal-night").html(anniv19_night_passes)
-        $("#anniv19-paypal-bootcamp").html(anniv19_bootcamp)
-        $("#anniv19-paypal-fullpass").html(anniv19_fullpass)
+        function get_anniv19_promo(){
+          return undefined
+        }
+        function anniv19_fill_forms(){
+          promo  = get_anniv19_promo();
+          forms = get_anniv19_forms(promo)
+          $("#anniv19-paypal-night").html(forms.anniv19_night_passes)
+          $("#anniv19-paypal-bootcamp").html(forms.anniv19_bootcamp)
+          $("#anniv19-paypal-fullpass").html(forms.anniv19_fullpass)
+        }
+        anniv19_fill_forms()
+
       })
     </script>
   </head>
