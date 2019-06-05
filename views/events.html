@@ -33,8 +33,16 @@
     <link rel="stylesheet" href="css/events/main.css">
 
     <script type="text/javascript">
+      function get_anniv19_promo(){
+        return $("#anniv19-promo").val()
+      }
+      function anniv19_fill_forms(promo){
+        forms = get_anniv19_forms(promo)
+        $("#anniv19-paypal-night").html(forms.anniv19_night_passes)
+        $("#anniv19-paypal-bootcamp").html(forms.anniv19_bootcamp)
+        $("#anniv19-paypal-fullpass").html(forms.anniv19_fullpass)
+      }
       $(document).ready(function() {
-
 
         function april28_update_button(){
           var num_people = parseInt($("select[name='num_people']").val());
@@ -61,18 +69,15 @@
         })
         $("select[name='num_classes']").change();
 
-        function get_anniv19_promo(){
-          return undefined
-        }
-        function anniv19_fill_forms(){
-          promo  = get_anniv19_promo();
-          forms = get_anniv19_forms(promo)
-          $("#anniv19-paypal-night").html(forms.anniv19_night_passes)
-          $("#anniv19-paypal-bootcamp").html(forms.anniv19_bootcamp)
-          $("#anniv19-paypal-fullpass").html(forms.anniv19_fullpass)
-        }
-        anniv19_fill_forms()
+        $("#anniv19-promo").val(""); // clear the promo field on refresh
+        anniv19_fill_forms();
 
+        $("#anniv19-promo").on("input",function(){
+          var promo = get_anniv19_promo()
+          if(promo){
+            anniv19_fill_forms(promo)
+          }
+        })
       })
     </script>
   </head>
@@ -157,6 +162,9 @@
 
           <h4 class="tickets">Tickets</h4>
           <div class="payment">
+
+            <p>Have a promo code? Enter it here: </p>
+            <input type="text" name="promo" id="anniv19-promo" value="">
 
             <div id="anniv19-form">
                 <div class="form-panel">
