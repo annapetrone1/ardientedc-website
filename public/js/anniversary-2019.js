@@ -52,8 +52,7 @@ function get_anniv19_forms(promo){
   FULLPASS_15PCT.prices = ['$20-25', '$60', '$63.75'];
 
   promo_hash_lookup = {
-    '30181d65686d00b3328c1b51114bb255': FULLPASS_15PCT,
-    '1b23ef6383005d2914522f757b7a4b8d': FULLPASS_15PCT
+    '30181d65686d00b3328c1b51114bb255': FULLPASS_15PCT
   };
 
 
