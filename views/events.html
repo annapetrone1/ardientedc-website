@@ -23,6 +23,7 @@
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/april28-paypal.js"></script>
     <script src="/js/anniversary-2019.js"></script>
+    <script src="/js/md5.min.js"></script>
 
     <link rel="stylesheet" href="/fonts/alegreya_sans_sc.css">
     <link rel="stylesheet" href="/fonts/montserrat_200.css">
@@ -34,7 +35,7 @@
 
     <script type="text/javascript">
       function get_anniv19_promo(){
-        return $("#anniv19-promo").val()
+        return $("#anniv19-promo").val().toUpperCase()
       }
       function anniv19_fill_forms(promo){
         forms = get_anniv19_forms(promo)
@@ -138,10 +139,10 @@
 
               <h6>Prices</h6>
               <ul>
-                <li>Social: $20</li>
-                <li>Social & Workshop: $25</li>
-                <li>Bootcamp: $60</li>
-                <li>Full pass (Bootcamp + Workshop + Social): $75</li>
+                <li>Social: <span id="anniv19_social">$20</span></li>
+                <li>Social & Workshop: <span id="anniv19_night_pass">$25</span></li>
+                <li>Bootcamp: <span id="anniv19_bootcamp">$60</span></li>
+                <li>Full pass (Bootcamp + Workshop + Social): <span id="anniv19_fullpass">$75</span></li>
               </ul>
 
 
