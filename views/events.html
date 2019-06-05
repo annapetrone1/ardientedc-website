@@ -58,7 +58,7 @@
 
         if(promo && promo_applied){
           $(`#anniv19-promo-msg`).css({'color': '#4fbc3c', 'font-weight': 'bold'});
-          $(`#anniv19-promo-msg`).text("Promo code applied!")
+          $(`#anniv19-promo-msg`).text(`Promo code applied! ${forms.description}`)
         }else if(promo){
           $(`#anniv19-promo-msg`).css({'color': '#bf3524', 'font-weight': 'bold'});
           $(`#anniv19-promo-msg`).text("Invalid promo code")
@@ -99,11 +99,7 @@
         $("button[name='promo_button']").on("click",function(){
           console.log("clicked")
           var promo = get_anniv19_promo()
-          if(promo){
-            anniv19_fill_forms(promo)
-          }else{
-            $(`#anniv19-promo-msg`).text("")
-          }
+          anniv19_fill_forms(promo)
         })
       })
     </script>
