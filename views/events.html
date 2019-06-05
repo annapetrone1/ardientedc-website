@@ -38,10 +38,10 @@
         return $("#anniv19-promo").val().toUpperCase()
       }
       function anniv19_fill_forms(promo){
-        forms = get_anniv19_forms(promo)
-        $("#anniv19-paypal-night").html(forms.anniv19_night_passes)
-        $("#anniv19-paypal-bootcamp").html(forms.anniv19_bootcamp)
-        $("#anniv19-paypal-fullpass").html(forms.anniv19_fullpass)
+        var forms = get_anniv19_forms(promo)
+        $("#anniv19-paypal-night").html(forms.night_passes)
+        $("#anniv19-paypal-bootcamp").html(forms.bootcamp)
+        $("#anniv19-paypal-fullpass").html(forms.fullpass)
         price_names = ["night-passes", "bootcamp", "fullpass"]
         base_prices  = get_anniv19_forms().prices
         promo_prices = get_anniv19_forms(get_anniv19_promo()).prices
