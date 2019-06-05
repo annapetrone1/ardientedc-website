@@ -302,3 +302,7 @@ a.buy:hover {
     border: black solid .5px;
     margin: 1em auto
 }
+
+#anniv19-promo{
+  text-transform: uppercase;
+}
