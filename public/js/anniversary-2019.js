@@ -30,7 +30,7 @@ function get_anniv19_forms(promo){
 				</form>
 				`,
 
-    prices: [20, 25, 60, 75]
+    prices: ['$20-25', '$60', '$75']
   };
 
   if (!promo){
@@ -48,7 +48,7 @@ function get_anniv19_forms(promo){
 	<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 	</form>
 	`;
-  FULLPASS_15PCT.prices = [20, 25, 60, 63.75];
+  FULLPASS_15PCT.prices = ['$20-25', '$60', '$63.75'];
 
   promo_hash_lookup = {
     '30181d65686d00b3328c1b51114bb255': FULLPASS_15PCT,
@@ -58,6 +58,7 @@ function get_anniv19_forms(promo){
 
   promo_hash = md5(promo);
   if (promo_hash in promo_hash_lookup){
+    console.log('valid promo code', promo);
     return promo_hash_lookup[promo_hash];
   } else {
     // they typed something but it wasn't a promo code

@@ -42,6 +42,18 @@
         $("#anniv19-paypal-night").html(forms.anniv19_night_passes)
         $("#anniv19-paypal-bootcamp").html(forms.anniv19_bootcamp)
         $("#anniv19-paypal-fullpass").html(forms.anniv19_fullpass)
+        price_names = ["night-passes", "bootcamp", "fullpass"]
+        base_prices  = get_anniv19_forms().prices
+        promo_prices = get_anniv19_forms(get_anniv19_promo()).prices
+        console.log(promo_prices)
+        for(i in price_names){
+          $price_text = $(`#anniv19-${price_names[i]}`);
+          if (base_prices[i] != promo_prices[i]){
+            $price_text.html(`<span style="text-decoration: line-through">${base_prices[i]}</span> ${promo_prices[i]}`)
+          }else{
+            $price_text.html(`${base_prices[i]}`)
+          }
+        }
       }
       $(document).ready(function() {
 
@@ -139,10 +151,10 @@
 
               <h6>Prices</h6>
               <ul>
-                <li>Social: <span id="anniv19_social">$20</span></li>
-                <li>Social & Workshop: <span id="anniv19_night_pass">$25</span></li>
-                <li>Bootcamp: <span id="anniv19_bootcamp">$60</span></li>
-                <li>Full pass (Bootcamp + Workshop + Social): <span id="anniv19_fullpass">$75</span></li>
+                <li>Social: $20</li>
+                <li>Social & Workshop: $25</li>
+                <li>Bootcamp: $60</li>
+                <li>Full pass (Bootcamp + Workshop + Social): $75</li>
               </ul>
 
 
@@ -169,7 +181,7 @@
 
             <div id="anniv19-form">
                 <div class="form-panel">
-                  <h6>Night Passes: $20-25</h6>
+                  <h6>Night Passes: <span id="anniv19-night-passes">$20-25</span></h6>
                   <p>Workshop 9pm - 10pm, Social 10pm - 3am</p>
                   <div id="anniv19-paypal-night">
 
@@ -177,7 +189,7 @@
                 </div>
 
                 <div class="form-panel">
-                  <h6>Michelle Morales Bootcamp: $60</h6>
+                  <h6>Michelle Morales Bootcamp: <span id="anniv19-bootcamp">$60</span></h6>
                   <p>1-4pm at Ferocity Dance Studio + performance at the social</p>
                   <div id="anniv19-paypal-bootcamp">
 
@@ -186,7 +198,7 @@
                 </div>
 
                 <div class="form-panel">
-                  <h6>Full Pass: $75 </h6>
+                  <h6>Full Pass: <span id="anniv19-fullpass">$75</span> </h6>
                   <p>Michelle Morales Bootcamp + Workshop + Social</p>
                   <div id="anniv19-paypal-fullpass">
 
