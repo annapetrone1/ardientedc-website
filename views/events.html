@@ -45,14 +45,25 @@
         price_names = ["night-passes", "bootcamp", "fullpass"]
         base_prices  = get_anniv19_forms().prices
         promo_prices = get_anniv19_forms(get_anniv19_promo()).prices
-        console.log(promo_prices)
+        promo_applied = false;
         for(i in price_names){
           $price_text = $(`#anniv19-${price_names[i]}`);
           if (base_prices[i] != promo_prices[i]){
+            promo_applied = true;
             $price_text.html(`<span style="text-decoration: line-through">${base_prices[i]}</span> ${promo_prices[i]}`)
           }else{
             $price_text.html(`${base_prices[i]}`)
           }
+        }
+
+        if(promo && promo_applied){
+          $(`#anniv19-promo-msg`).css({'color': '#4fbc3c', 'font-weight': 'bold'});
+          $(`#anniv19-promo-msg`).text("Promo code applied!")
+        }else if(promo){
+          $(`#anniv19-promo-msg`).css({'color': '#bf3524', 'font-weight': 'bold'});
+          $(`#anniv19-promo-msg`).text("Invalid promo code")
+        }else{
+          $(`#anniv19-promo-msg`).text("")
         }
       }
       $(document).ready(function() {
@@ -85,10 +96,13 @@
         $("#anniv19-promo").val(""); // clear the promo field on refresh
         anniv19_fill_forms();
 
-        $("#anniv19-promo").on("input",function(){
+        $("button[name='promo_button']").on("click",function(){
+          console.log("clicked")
           var promo = get_anniv19_promo()
           if(promo){
             anniv19_fill_forms(promo)
+          }else{
+            $(`#anniv19-promo-msg`).text("")
           }
         })
       })
@@ -177,7 +191,8 @@
           <div class="payment">
 
             <p>Have a promo code? Enter it here: </p>
-            <input type="text" name="promo" id="anniv19-promo" value="">
+            <p><input type="text" name="promo" id="anniv19-promo" value=""> <button type="button" name="promo_button">Apply</button> </p>
+            <p id="anniv19-promo-msg"></p>
 
             <div id="anniv19-form">
                 <div class="form-panel">
