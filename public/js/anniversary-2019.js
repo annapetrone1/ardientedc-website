@@ -38,6 +38,27 @@ function get_anniv19_forms(promo){
     return NO_PROMO;
   }
 
+  HS = {
+    bootcamp: NO_PROMO.bootcamp,
+    fullpass: NO_PROMO.fullpass,
+    prices: ['$18', '$60', '$75'],
+    description: 'MCPS Night Pass Discount'
+  };
+
+  HS['night_passes'] = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_xclick">
+    <input type="hidden" name="business" value="ardientedc@gmail.com">
+    <input type="hidden" name="lc" value="US">
+    <input type="hidden" name="item_name" value="Ardiente 3rd Anniversary: Workshop + Social MCPS discount">
+    <input type="hidden" name="amount" value="18.00">
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="button_subtype" value="services">
+    <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+    `;
+
   FULLPASS_15PCT = {
     night_passes: NO_PROMO.night_passes,
     bootcamp: NO_PROMO.bootcamp
@@ -91,7 +112,8 @@ function get_anniv19_forms(promo){
   promo_hash_lookup = {
     '30181d65686d00b3328c1b51114bb255': FULLPASS_15PCT,
     'b1f0f373433e08d06edacbe0b6eb9caf': FIVE_OFF,
-    '1b23ef6383005d2914522f757b7a4b8d': FIVE_OFF
+    '1b23ef6383005d2914522f757b7a4b8d': FIVE_OFF,
+    '5b2b9907666dbe75069f6743cd0ed43a': HS
   };
 
 
