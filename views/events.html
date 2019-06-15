@@ -35,10 +35,15 @@
 
     <script type="text/javascript">
       function get_anniv19_promo(){
+        $(`#anniv19-promo-msg`).css({'color': '#bf3524', 'font-weight': 'bold'});
+        $(`#anniv19-promo-msg`).text(`Sorry, Promo expired.`)
         return $("#anniv19-promo").val().toUpperCase()
       }
       function anniv19_fill_forms(promo){
         var forms = get_anniv19_forms(promo)
+        if (!forms){
+          return
+        }
         $("#anniv19-paypal-night").html(forms.night_passes)
         $("#anniv19-paypal-bootcamp").html(forms.bootcamp)
         $("#anniv19-paypal-fullpass").html(forms.fullpass)
@@ -59,9 +64,9 @@
         if(promo && promo_applied){
           $(`#anniv19-promo-msg`).css({'color': '#4fbc3c', 'font-weight': 'bold'});
           $(`#anniv19-promo-msg`).text(`Promo code applied! ${forms.description}`)
-        }else if(promo){
+        } else if(promo){
           $(`#anniv19-promo-msg`).css({'color': '#bf3524', 'font-weight': 'bold'});
-          $(`#anniv19-promo-msg`).text("Invalid promo code")
+          $(`#anniv19-promo-msg`).text(`Invalid Promo.`)
         }else{
           $(`#anniv19-promo-msg`).text("")
         }

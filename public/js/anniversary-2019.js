@@ -110,10 +110,10 @@ function get_anniv19_forms(promo){
 
 
   promo_hash_lookup = {
-    '30181d65686d00b3328c1b51114bb255': FULLPASS_15PCT,
-    'b1f0f373433e08d06edacbe0b6eb9caf': FIVE_OFF,
-    '1b23ef6383005d2914522f757b7a4b8d': FIVE_OFF,
-    '5b2b9907666dbe75069f6743cd0ed43a': HS
+    '30181d65686d00b3328c1b51114bb255': {},
+    'b1f0f373433e08d06edacbe0b6eb9caf': {},
+    '1b23ef6383005d2914522f757b7a4b8d': {},
+    '5b2b9907666dbe75069f6743cd0ed43a': {}
   };
 
 
