@@ -93,12 +93,12 @@ body {
   }
 }
 
-#events {
+.event-list {
   background-color: none;
 }
 
-section {
-  padding-top: 40px;
+.event-list section {
+  padding-top: 20px;
   overflow-x: hidden;
 }
 
@@ -124,7 +124,7 @@ main h4 {
   text-transform: uppercase;
 }
 
-main h4.tickets {
+main .tickets h4 {
   margin: .5em auto;
 }
 
@@ -274,11 +274,14 @@ a.buy:hover {
   display: block;
 }
 
-.payment p {
+.payment p, p.payment, .tickets p {
   font-family: "Raleway", Arial;
   margin-bottom: 1em;
 }
 
+#previous-events .tickets *:not(h4){
+  display: none
+}
 .payment img {
   max-width: 220px;
   max-height: 80px;
