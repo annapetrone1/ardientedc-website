@@ -56,7 +56,7 @@ main {
   #lessons ul {
     margin: 0 auto;
   }
-  #lessons ul li {
+  #classlist li.class {
     padding: 32px;
   }
   #lessons ul li .info {
@@ -144,7 +144,7 @@ video {
   margin: 0 auto;
 }
 
-#lessons ul li {
+#classlist li.class {
   list-style-type: none;
   border: 1px solid black;
   border-left: none;
@@ -155,7 +155,7 @@ video {
   font-family: Verdana
 }
 
-#lessons ul li .info {
+#classlist li.class .info {
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: lighter;
   display: flex;
@@ -164,10 +164,14 @@ video {
   align-items: top
 }
 
+#classlist li.class .info p{
+  margin-bottom: .5em
+}
+
 #lessons ul li .info * {}
 
 #lessons ul li:hover {
-  background-color: rgba(225, 222, 237, .45);
+  background-color: rgba(225, 225, 225, .45);
 }
 
 #lessons .title_price {

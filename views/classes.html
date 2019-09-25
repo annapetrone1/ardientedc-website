@@ -39,11 +39,11 @@
           let classInfo = classes[classId];
           console.log('classInfo', classInfo);
           var onlineReg = classInfo.paypal_key ? "onlineReg" : "noOnlineReg"
-          $('#lessons ul').append(
-            `<li>
+          $('#classlist').append(
+            `<li class="class">
               <article class="info">
                 <div class="img-container">
-                  <img src="/img/${classInfo.img}" alt="Mambo Thursdays class">
+                  <img src="/img/${classInfo.img}" alt="${classInfo.full_name}">
                 </div>
 
                 <div class="title_price">
@@ -114,7 +114,7 @@
       </section>
 
       <section id="lessons">
-        <ul>
+        <ul id="classlist">
 
 
         </ul>
