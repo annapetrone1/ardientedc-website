@@ -77,7 +77,7 @@ function getClassInfo(classId) {
     classPaypal['beginner-intensives'] = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <table>
-<tr><td><input type="hidden" name="on0" value="Pass type">Pass type</td></tr><tr><td><select name="os0">
+<tr><td><input type="hidden" name="on0" value="Pass type"></td></tr><tr><td><select name="os0">
 	<option value="6-week full pass">6-week full pass $85.00 USD</option>
 	<option value="Single drop-in">Single drop-in $20.00 USD</option>
 </select> </td></tr>
@@ -91,7 +91,7 @@ function getClassInfo(classId) {
     classPaypal['beginner-intensives'] = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <table>
-<tr><td><input type="hidden" name="on0" value="Pass type">Pass type</td></tr><tr><td><select name="os0">
+<tr><td><input type="hidden" name="on0" value="Pass type"></td></tr><tr><td><select name="os0">
 	<option value="6-week full pass">6-week full pass $100.00 USD</option>
 	<option value="Single drop-in">Single drop-in $20.00 USD</option>
 </select> </td></tr>
