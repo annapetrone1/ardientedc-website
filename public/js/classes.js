@@ -71,7 +71,7 @@ function getClassInfo(classId) {
     'beginner-intensives': ''
   };
 
-  oct1 = new Date('2019-10-02'); // give people the full day on 10/1 to get the discount
+  oct1 = new Date('2019-10-01'); // give people the full day on 10/1 to get the discount
   today = new Date();
   if (today <= oct1){
     classPaypal['beginner-intensives'] = `<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
