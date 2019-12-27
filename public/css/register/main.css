@@ -49,7 +49,7 @@ body {
     background-color: rgba(250, 250, 250, .85);
   }
   .infoblock, .confirmation-box {
-    background-color: rgba(225, 222, 237, .75);
+    background-color: rgba(225, 225, 225, .75);
     border: 1px solid gray
   }
 }
@@ -80,7 +80,7 @@ body {
     background-color: rgba(250, 250, 250, .98);
   }
   .infoblock, .confirmation-box {
-    background-color: rgba(225, 222, 237, .45);
+    background-color: rgba(225, 225, 225, .45);
   }
 }
 
